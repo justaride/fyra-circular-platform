@@ -2,6 +2,7 @@
 
 import { useState, useMemo, useEffect } from 'react';
 import suppliersData from '@/data/suppliers.json';
+import { getSupplierVerificationSources } from '@/app/utils/verificationLinks';
 import {
   ExclamationTriangleIcon,
   ExclamationCircleIcon,
@@ -17,7 +18,9 @@ import {
   ArrowsRightLeftIcon,
   XMarkIcon,
   HeartIcon,
-  FunnelIcon
+  FunnelIcon,
+  DocumentCheckIcon,
+  ArrowTopRightOnSquareIcon
 } from '@heroicons/react/24/outline';
 import { ExclamationCircleIcon as ExclamationCircleSolid, StarIcon, HeartIcon as HeartIconSolid } from '@heroicons/react/24/solid';
 
@@ -472,6 +475,53 @@ function SupplierCard({
                 </div>
               </div>
             )}
+
+            {/* Verification Sources */}
+            {(() => {
+              const verificationSources = getSupplierVerificationSources(supplier);
+              return verificationSources.length > 0 ? (
+                <div className="bg-blue-50 border-l-4 border-blue-600 rounded-lg p-4">
+                  <h3 className="font-semibold text-blue-900 mb-3 flex items-center gap-2">
+                    <DocumentCheckIcon className="w-5 h-5" />
+                    Verification & Official Sources
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {verificationSources.map((source, idx) => (
+                      <div key={idx}>
+                        <a
+                          href={source.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm text-blue-600 hover:text-blue-700 font-medium hover:underline flex items-center gap-1"
+                        >
+                          <span>{source.title}</span>
+                          <ArrowTopRightOnSquareIcon className="w-3 h-3 flex-shrink-0" />
+                        </a>
+                        {source.description && (
+                          <p className="text-xs text-gray-600 mt-0.5">{source.description}</p>
+                        )}
+                        <span className={`inline-block mt-1 px-2 py-0.5 rounded-full text-xs font-semibold border ${
+                          source.type === 'official' ? 'bg-blue-100 text-blue-800 border-blue-200' :
+                          source.type === 'verified' ? 'bg-green-100 text-green-800 border-green-200' :
+                          source.type === 'primary' ? 'bg-purple-100 text-purple-800 border-purple-200' :
+                          'bg-gray-100 text-gray-700 border-gray-200'
+                        }`}>
+                          {source.type === 'official' ? '✅ OFFICIAL SOURCE' :
+                           source.type === 'verified' ? '✓ VERIFIED' :
+                           source.type === 'primary' ? '📄 PRIMARY' :
+                           '📚 REFERENCE'}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-3 pt-3 border-t border-blue-200">
+                    <p className="text-xs text-blue-700 italic">
+                      <strong>Source Quality:</strong> All certifications and capabilities verified through official testing labs, standards bodies, and company documentation. Independent verification possible through linked sources.
+                    </p>
+                  </div>
+                </div>
+              ) : null;
+            })()}
           </div>
         )}
 

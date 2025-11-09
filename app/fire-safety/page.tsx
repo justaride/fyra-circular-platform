@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import fireSafetyData from '@/data/fire_safety.json';
 import { ExclamationTriangleIcon, CheckIcon } from '@heroicons/react/24/outline';
+import RelatedResources from '@/app/components/RelatedResources';
 
 export default function FireSafetyPage() {
   const [selectedTier, setSelectedTier] = useState<number | null>(null);
@@ -27,24 +28,115 @@ export default function FireSafetyPage() {
 
   const estimatedCost = calculateCost();
 
+  // Related Resources for Fire Safety page
+  const fireSafetySources = [
+    {
+      title: 'Official Regulations',
+      icon: 'document' as const,
+      sources: [
+        {
+          title: 'BBR Chapter 5 - Fire Safety (Boverket)',
+          url: 'https://www.boverket.se/sv/PBL-kunskapsbanken/regler-om-byggande/boverkets-byggregler/brandskydd/',
+          type: 'official' as const,
+          description: 'Official Swedish building regulations for fire safety'
+        },
+        {
+          title: 'MSB - Fire Safety Guidance',
+          url: 'https://www.msb.se/sv/amnesomraden/skydd-mot-olyckor-och-farliga-amnen/brandskydd/',
+          type: 'official' as const,
+          description: 'Swedish Civil Contingencies Agency guidance'
+        }
+      ]
+    },
+    {
+      title: 'Fire Testing Standards',
+      icon: 'lab' as const,
+      sources: [
+        {
+          title: 'EN 1021-1/2 - Furniture Fire Testing',
+          url: 'https://www.sis.se/',
+          type: 'official' as const,
+          description: 'Swedish Standards Institute (search EN 1021)'
+        },
+        {
+          title: 'BS 5852 - UK Fire Test Standard',
+          url: 'https://shop.bsigroup.com/',
+          type: 'official' as const,
+          description: 'British Standards Institution (Crib 5 testing)'
+        },
+        {
+          title: 'EN 13501-1 - Fire Classification',
+          url: 'https://www.sis.se/',
+          type: 'official' as const,
+          description: 'Euroclass system (A1 to F classification)'
+        }
+      ]
+    },
+    {
+      title: 'Testing Laboratories',
+      icon: 'building' as const,
+      sources: [
+        {
+          title: 'RISE Fire Research (Borås)',
+          url: 'https://www.ri.se/en/what-we-do/expertises/fire-research',
+          type: 'verified' as const,
+          description: 'Primary testing lab for Sweden'
+        },
+        {
+          title: 'SP Technical Research Institute',
+          url: 'https://www.ri.se/',
+          type: 'verified' as const,
+          description: 'Alternate testing facility'
+        },
+        {
+          title: 'Teknologisk Institut (Denmark)',
+          url: 'https://www.teknologisk.dk/',
+          type: 'verified' as const,
+          description: 'Nordic partner lab'
+        }
+      ]
+    },
+    {
+      title: 'Certification Resources',
+      icon: 'verified' as const,
+      sources: [
+        {
+          title: 'SGBC - Sweden Green Building Council',
+          url: 'https://www.sgbc.se/',
+          type: 'official' as const,
+          description: 'Miljöbyggnad and BREEAM-SE certifications'
+        },
+        {
+          title: 'Nordic Swan Ecolabel',
+          url: 'https://www.nordic-ecolabel.org/',
+          type: 'official' as const,
+          description: 'Nordic environmental certification'
+        }
+      ]
+    }
+  ];
+
   return (
     <div className="container mx-auto px-4 py-8">
-      {/* Hero Section */}
-      <div className="mb-8">
-        <h1 className="text-4xl font-bold text-gray-900 mb-2">Fire Safety Guide</h1>
-        <p className="text-xl text-gray-600">
-          Swedish building code compliance for reused hotel furniture
-        </p>
-        <div className="mt-4 p-4 bg-red-50 border-l-4 border-red-600 rounded">
-          <p className="text-sm text-red-800 flex items-start gap-2">
-            <ExclamationTriangleIcon className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-            <span><strong>CRITICAL:</strong> Fire safety is a legal requirement for Swedish hotel projects.
-            This guide helps you navigate BBR Chapter 5 compliance for circular furniture.</span>
-          </p>
-        </div>
-      </div>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Main Content */}
+        <div className="lg:col-span-2">
+          {/* Hero Section */}
+          <div className="mb-8">
+            <h1 className="text-4xl font-bold text-gray-900 mb-2">Fire Safety Guide</h1>
+            <p className="text-xl text-gray-600">
+              Swedish building code compliance for reused hotel furniture
+            </p>
+            <div className="mt-4 p-4 bg-red-50 border-l-4 border-red-600 rounded">
+              <p className="text-sm text-red-800 flex items-start gap-2">
+                <ExclamationTriangleIcon className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+                <span><strong>CRITICAL:</strong> Fire safety is a legal requirement for Swedish hotel projects.
+                This guide helps you navigate <a href="https://www.boverket.se/sv/PBL-kunskapsbanken/regler-om-byggande/boverkets-byggregler/brandskydd/" target="_blank" rel="noopener noreferrer" className="underline hover:text-red-900">BBR Chapter 5</a> compliance for circular furniture.</span>
+              </p>
+            </div>
+          </div>
 
-      {/* Three-Tier System */}
+          {/* Three-Tier System */}
       <section className="mb-12">
         <h2 className="text-3xl font-bold text-gray-900 mb-6">Three-Tier Risk Assessment System</h2>
         <p className="text-gray-600 mb-6">
@@ -356,6 +448,15 @@ export default function FireSafetyPage() {
           </p>
         </div>
       </section>
+        </div>
+
+        {/* Sidebar - Related Resources */}
+        <div className="lg:col-span-1">
+          <div className="sticky top-8">
+            <RelatedResources sections={fireSafetySources} />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
