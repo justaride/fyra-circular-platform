@@ -10,11 +10,15 @@ import {
   BuildingOffice2Icon,
   CheckIcon,
   ClipboardDocumentListIcon,
-  BanknotesIcon
+  BanknotesIcon,
+  PhoneIcon,
+  EnvelopeIcon,
+  GlobeAltIcon
 } from '@heroicons/react/24/outline';
 import { ExclamationCircleIcon as ExclamationCircleSolid, StarIcon } from '@heroicons/react/24/solid';
 
 type Supplier = typeof suppliersData[0];
+type TabType = 'overview' | 'services' | 'trackRecord' | 'contact';
 
 // Service categorization helper
 const categorizeServices = (services: string[]) => {
@@ -27,6 +31,472 @@ const categorizeServices = (services: string[]) => {
 
   return { core, support: [...support, ...other] };
 };
+
+// Supplier Card with Tabs Component
+function SupplierCard({ supplier }: { supplier: Supplier }) {
+  const [activeTab, setActiveTab] = useState<TabType>('overview');
+  const { core, support } = categorizeServices(supplier.services || []);
+
+  // Merge all strengths with hotel-specific markers
+  const allStrengths = [
+    ...(supplier.hospitalityReadiness?.strengths || []).map(s => ({ text: s, isHotel: true })),
+    ...(supplier.strengths || []).map(s => ({ text: s, isHotel: false }))
+  ];
+
+  const uniqueStrengths = allStrengths.reduce((acc, curr) => {
+    const existing = acc.find(item => item.text.toLowerCase() === curr.text.toLowerCase());
+    if (!existing) {
+      acc.push(curr);
+    } else if (curr.isHotel && !existing.isHotel) {
+      acc[acc.indexOf(existing)] = curr;
+    }
+    return acc;
+  }, [] as typeof allStrengths);
+
+  const allGaps = [
+    ...(supplier.hospitalityReadiness?.gaps || []),
+    ...(supplier.gaps || [])
+  ];
+  const uniqueGaps = [...new Set(allGaps)];
+
+  const getTierBorderClass = (tier?: string) => {
+    if (tier === 'Tier 1') return 'border-l-4 border-emerald-500';
+    if (tier === 'Tier 2') return 'border-l-4 border-blue-400';
+    if (tier === 'Tier 3') return 'border-l-2 border-gray-300';
+    return '';
+  };
+
+  const getTierBgClass = (tier?: string) => {
+    if (tier === 'Tier 1') return 'bg-emerald-50/50';
+    if (tier === 'Tier 2') return 'bg-blue-50/50';
+    if (tier === 'Tier 3') return 'bg-gray-50/50';
+    return '';
+  };
+
+  const tabs = [
+    { id: 'overview' as TabType, label: 'Overview', icon: BuildingOffice2Icon },
+    { id: 'services' as TabType, label: 'Services & Capabilities', icon: ClipboardDocumentListIcon },
+    { id: 'trackRecord' as TabType, label: 'Track Record', icon: CheckIcon },
+    { id: 'contact' as TabType, label: 'Contact', icon: PhoneIcon }
+  ];
+
+  return (
+    <div className={`bg-white rounded-lg shadow-md hover:shadow-lg transition ${getTierBorderClass(supplier.hospitalityReadiness?.tier)}`}>
+      {/* Sticky Header */}
+      <div className={`sticky top-0 z-10 ${getTierBgClass(supplier.hospitalityReadiness?.tier)} border-b border-gray-200 rounded-t-lg px-6 py-4`}>
+        <div className="flex justify-between items-center">
+          <div className="flex items-center gap-3">
+            <h2 className="text-2xl font-bold text-gray-900">{supplier.name}</h2>
+            <p className="text-gray-600 flex items-center gap-1 text-sm">
+              <MapPinIcon className="w-4 h-4" />
+              {supplier.location}
+            </p>
+          </div>
+          {supplier.hospitalityReadiness?.tier && (
+            <span className={`px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1 ${
+              supplier.hospitalityReadiness.tier === 'Tier 1'
+                ? 'bg-emerald-100 text-emerald-800'
+                : supplier.hospitalityReadiness.tier === 'Tier 2'
+                ? 'bg-blue-100 text-blue-800'
+                : 'bg-gray-100 text-gray-800'
+            }`}>
+              {supplier.hospitalityReadiness.tier === 'Tier 1' && (
+                <>
+                  <StarIcon className="w-3 h-3" />
+                  <StarIcon className="w-3 h-3" />
+                  <StarIcon className="w-3 h-3" />
+                </>
+              )}
+              {supplier.hospitalityReadiness.tier === 'Tier 2' && (
+                <>
+                  <StarIcon className="w-3 h-3" />
+                  <StarIcon className="w-3 h-3" />
+                </>
+              )}
+              {supplier.hospitalityReadiness.tier === 'Tier 3' && (
+                <StarIcon className="w-3 h-3" />
+              )}
+              {supplier.hospitalityReadiness.tier}
+            </span>
+          )}
+        </div>
+
+        {/* Tabs Navigation */}
+        <div className="mt-4 flex gap-1 border-b border-gray-200 -mb-px">
+          {tabs.map((tab) => {
+            const Icon = tab.icon;
+            return (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`px-4 py-2 text-sm font-medium rounded-t-md border-b-2 transition-colors flex items-center gap-2 ${
+                  activeTab === tab.id
+                    ? 'border-emerald-500 text-emerald-700 bg-white'
+                    : 'border-transparent text-gray-600 hover:text-gray-900 hover:border-gray-300'
+                }`}
+              >
+                <Icon className="w-4 h-4" />
+                {tab.label}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Tab Content */}
+      <div className="p-6">
+        {/* Overview Tab */}
+        {activeTab === 'overview' && (
+          <div className="space-y-4">
+            <p className="text-gray-700 leading-relaxed">{supplier.description}</p>
+
+            {/* Key Metrics Grid */}
+            {supplier.capabilities && (
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {supplier.capabilities.inventory && (
+                  <div className="bg-gradient-to-br from-emerald-50 to-emerald-100/50 p-4 rounded-lg border border-emerald-200">
+                    <div className="text-xs font-medium text-emerald-700 uppercase tracking-wide mb-1">Inventory</div>
+                    <div className="text-lg font-bold text-emerald-900">{supplier.capabilities.inventory}</div>
+                  </div>
+                )}
+                {supplier.capabilities.leadTime && (
+                  <div className="bg-gradient-to-br from-blue-50 to-blue-100/50 p-4 rounded-lg border border-blue-200">
+                    <div className="text-xs font-medium text-blue-700 uppercase tracking-wide mb-1">Lead Time</div>
+                    <div className="text-lg font-bold text-blue-900">{supplier.capabilities.leadTime}</div>
+                  </div>
+                )}
+                {supplier.pricing && (
+                  <div className="bg-gradient-to-br from-amber-50 to-amber-100/50 p-4 rounded-lg border border-amber-200">
+                    <div className="text-xs font-medium text-amber-700 uppercase tracking-wide mb-1">Pricing</div>
+                    <div className="text-sm font-semibold text-amber-900">{supplier.pricing.split('.')[0]}</div>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Top 3 Differentiators */}
+            {uniqueStrengths.length > 0 && (
+              <div className="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
+                <h3 className="font-semibold text-emerald-900 mb-3 flex items-center gap-2">
+                  <CheckIcon className="w-5 h-5" />
+                  Top Strengths
+                </h3>
+                <ul className="space-y-2">
+                  {uniqueStrengths.slice(0, 3).map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
+                      <CheckIcon className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" />
+                      <span className="flex-1">
+                        {item.text}
+                        {item.isHotel && (
+                          <BuildingOffice2Icon className="w-3.5 h-3.5 inline-block ml-1 text-emerald-600" title="Hotel-specific" />
+                        )}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+                {uniqueStrengths.length > 3 && (
+                  <button
+                    onClick={() => setActiveTab('trackRecord')}
+                    className="mt-3 text-xs text-emerald-700 hover:text-emerald-800 font-medium"
+                  >
+                    View all {uniqueStrengths.length} strengths →
+                  </button>
+                )}
+              </div>
+            )}
+
+            {/* Quick Contact */}
+            <div className="flex gap-3 pt-2">
+              {supplier.contact.phone && (
+                <a
+                  href={`tel:${supplier.contact.phone}`}
+                  className="flex-1 bg-emerald-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-emerald-700 transition flex items-center justify-center gap-2"
+                >
+                  <PhoneIcon className="w-4 h-4" />
+                  Call Now
+                </a>
+              )}
+              {supplier.contact.email && (
+                <a
+                  href={`mailto:${supplier.contact.email}`}
+                  className="flex-1 bg-white text-emerald-600 px-4 py-2 rounded-md text-sm font-medium border-2 border-emerald-600 hover:bg-emerald-50 transition flex items-center justify-center gap-2"
+                >
+                  <EnvelopeIcon className="w-4 h-4" />
+                  Email
+                </a>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* Services & Capabilities Tab */}
+        {activeTab === 'services' && (
+          <div className="space-y-6">
+            {/* Categorized Services */}
+            {(core.length > 0 || support.length > 0) && (
+              <div>
+                <h3 className="font-semibold text-gray-900 mb-3">Services Offered</h3>
+                <div className="space-y-3">
+                  {core.length > 0 && (
+                    <div>
+                      <div className="text-xs text-gray-500 uppercase tracking-wide mb-1.5">Core Services</div>
+                      <div className="flex flex-wrap gap-2">
+                        {core.map((service, idx) => (
+                          <span key={idx} className="bg-emerald-100 text-emerald-800 px-3 py-1.5 rounded-md text-sm font-medium">
+                            {service}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {support.length > 0 && (
+                    <div>
+                      <div className="text-xs text-gray-500 uppercase tracking-wide mb-1.5">Support Services</div>
+                      <div className="flex flex-wrap gap-2">
+                        {support.map((service, idx) => (
+                          <span key={idx} className="bg-gray-100 text-gray-700 px-3 py-1.5 rounded-md text-sm border border-gray-300">
+                            {service}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+
+            {/* Fire Safety */}
+            {supplier.fireSafety && (
+              <div className="bg-red-50 border-l-4 border-red-600 rounded-lg p-4">
+                <h3 className="font-semibold text-gray-900 mb-3 flex items-center">
+                  <FireIcon className="w-5 h-5 text-red-600 mr-2" />
+                  Fire Safety Compliance
+                </h3>
+                <div className="flex flex-wrap gap-2 mb-3">
+                  {supplier.fireSafety.tiers.map((tier) => (
+                    <span key={tier} className={`px-3 py-1 rounded-md text-xs font-semibold ${
+                      tier === 1 ? 'bg-emerald-100 text-emerald-800' :
+                      tier === 2 ? 'bg-yellow-100 text-yellow-800' :
+                      'bg-red-100 text-red-800'
+                    }`}>
+                      Tier {tier}
+                    </span>
+                  ))}
+                </div>
+                <p className="text-sm text-gray-700">{supplier.fireSafety.capabilities}</p>
+              </div>
+            )}
+
+            {/* Capabilities Grid */}
+            {supplier.capabilities && (
+              <div>
+                <h3 className="font-semibold text-gray-900 mb-3">Operational Capabilities</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {supplier.capabilities.volume && (
+                    <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                      <div className="text-xs font-medium text-gray-500 mb-1">Volume Capacity</div>
+                      <div className="text-sm text-gray-900 font-medium">{supplier.capabilities.volume}</div>
+                    </div>
+                  )}
+                  {supplier.capabilities.leadTime && (
+                    <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                      <div className="text-xs font-medium text-gray-500 mb-1">Lead Time</div>
+                      <div className="text-sm text-gray-900 font-medium">{supplier.capabilities.leadTime}</div>
+                    </div>
+                  )}
+                  {supplier.capabilities.inventory && (
+                    <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                      <div className="text-xs font-medium text-gray-500 mb-1">Inventory Size</div>
+                      <div className="text-sm text-gray-900 font-medium">{supplier.capabilities.inventory}</div>
+                    </div>
+                  )}
+                  {supplier.capabilities.logistics && (
+                    <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                      <div className="text-xs font-medium text-gray-500 mb-1">Logistics Coverage</div>
+                      <div className="text-sm text-gray-900 font-medium">{supplier.capabilities.logistics}</div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Track Record Tab */}
+        {activeTab === 'trackRecord' && (
+          <div className="space-y-6">
+            {/* All Strengths */}
+            {uniqueStrengths.length > 0 && (
+              <div className="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
+                <h3 className="font-semibold text-emerald-900 mb-3 flex items-center gap-2">
+                  <CheckIcon className="w-5 h-5" />
+                  Key Strengths ({uniqueStrengths.length})
+                </h3>
+                <ul className="space-y-2">
+                  {uniqueStrengths.map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
+                      <span className="text-emerald-600 mt-0.5">•</span>
+                      <span className="flex-1">
+                        {item.text}
+                        {item.isHotel && (
+                          <BuildingOffice2Icon className="w-3.5 h-3.5 inline-block ml-1 text-emerald-600" title="Hotel-specific" />
+                        )}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Considerations */}
+            {uniqueGaps.length > 0 && (
+              <div className="bg-orange-50 rounded-lg p-4 border border-orange-200">
+                <h3 className="font-semibold text-orange-900 mb-3 flex items-center gap-2">
+                  <ExclamationTriangleIcon className="w-5 h-5" />
+                  Considerations ({uniqueGaps.length})
+                </h3>
+                <ul className="space-y-2">
+                  {uniqueGaps.map((gap, idx) => (
+                    <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
+                      <span className="text-orange-600 mt-0.5">•</span>
+                      <span>{gap}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Project Examples */}
+            {supplier.projectExamples && supplier.projectExamples.length > 0 && (
+              <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                <h3 className="font-semibold text-blue-900 mb-3 flex items-center gap-2">
+                  <ClipboardDocumentListIcon className="w-5 h-5" />
+                  Project Examples
+                </h3>
+                <ul className="space-y-2">
+                  {supplier.projectExamples.map((project, idx) => (
+                    <li key={idx} className="text-sm text-gray-700 flex items-start gap-2">
+                      <span className="text-blue-600 mt-0.5">•</span>
+                      <span>{project}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Certifications */}
+            {supplier.certifications && supplier.certifications.length > 0 && (
+              <div>
+                <h3 className="font-semibold text-gray-900 mb-3">Certifications & Standards</h3>
+                <div className="flex flex-wrap gap-2">
+                  {supplier.certifications.map((cert, idx) => (
+                    <span key={idx} className="bg-blue-50 text-blue-700 px-3 py-1.5 rounded-md text-xs border border-blue-200 font-medium">
+                      {cert}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Contact Tab */}
+        {activeTab === 'contact' && (
+          <div className="space-y-6">
+            {/* Contact Information */}
+            <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+              <h3 className="font-semibold text-gray-900 mb-4">Contact Information</h3>
+              <div className="space-y-4">
+                {supplier.contact.name && (
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-emerald-700 font-semibold text-sm">{supplier.contact.name.charAt(0)}</span>
+                    </div>
+                    <div>
+                      <div className="text-xs text-gray-500 uppercase tracking-wide">Contact Person</div>
+                      <div className="text-sm font-medium text-gray-900">{supplier.contact.name}</div>
+                    </div>
+                  </div>
+                )}
+                {supplier.contact.phone && (
+                  <div className="flex items-start gap-3">
+                    <PhoneIcon className="w-5 h-5 text-gray-400 mt-1" />
+                    <div>
+                      <div className="text-xs text-gray-500 uppercase tracking-wide">Phone</div>
+                      <a href={`tel:${supplier.contact.phone}`} className="text-sm font-medium text-emerald-600 hover:text-emerald-700">
+                        {supplier.contact.phone}
+                      </a>
+                    </div>
+                  </div>
+                )}
+                {supplier.contact.email && (
+                  <div className="flex items-start gap-3">
+                    <EnvelopeIcon className="w-5 h-5 text-gray-400 mt-1" />
+                    <div>
+                      <div className="text-xs text-gray-500 uppercase tracking-wide">Email</div>
+                      <a href={`mailto:${supplier.contact.email}`} className="text-sm font-medium text-emerald-600 hover:text-emerald-700 break-all">
+                        {supplier.contact.email}
+                      </a>
+                    </div>
+                  </div>
+                )}
+                {supplier.contact.website && supplier.contact.website.startsWith('http') && (
+                  <div className="flex items-start gap-3">
+                    <GlobeAltIcon className="w-5 h-5 text-gray-400 mt-1" />
+                    <div>
+                      <div className="text-xs text-gray-500 uppercase tracking-wide">Website</div>
+                      <a
+                        href={supplier.contact.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm font-medium text-emerald-600 hover:text-emerald-700"
+                      >
+                        Visit Website →
+                      </a>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Quick Actions */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {supplier.contact.phone && (
+                <a
+                  href={`tel:${supplier.contact.phone}`}
+                  className="bg-emerald-600 text-white px-6 py-3 rounded-md font-medium hover:bg-emerald-700 transition flex items-center justify-center gap-2"
+                >
+                  <PhoneIcon className="w-5 h-5" />
+                  Call {supplier.name}
+                </a>
+              )}
+              {supplier.contact.email && (
+                <a
+                  href={`mailto:${supplier.contact.email}`}
+                  className="bg-white text-emerald-600 px-6 py-3 rounded-md font-medium border-2 border-emerald-600 hover:bg-emerald-50 transition flex items-center justify-center gap-2"
+                >
+                  <EnvelopeIcon className="w-5 h-5" />
+                  Send Email
+                </a>
+              )}
+            </div>
+
+            {/* Pricing Info */}
+            {supplier.pricing && (
+              <div className="bg-amber-50 rounded-lg p-4 border border-amber-200">
+                <h3 className="font-semibold text-amber-900 mb-2 flex items-center gap-2">
+                  <BanknotesIcon className="w-5 h-5" />
+                  Pricing Model
+                </h3>
+                <p className="text-sm text-gray-700">{supplier.pricing}</p>
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
 
 export default function SuppliersPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -62,14 +532,12 @@ export default function SuppliersPage() {
         } else if (sortBy === 'name') {
           return a.name.localeCompare(b.name);
         } else if (sortBy === 'inventory') {
-          // Priority to suppliers with large inventory
           const aHasLarge = a.capabilities?.inventory?.toLowerCase().includes('large') || a.capabilities?.inventory?.includes('65,000');
           const bHasLarge = b.capabilities?.inventory?.toLowerCase().includes('large') || b.capabilities?.inventory?.includes('65,000');
           if (aHasLarge && !bHasLarge) return -1;
           if (!aHasLarge && bHasLarge) return 1;
           return 0;
         } else if (sortBy === 'leadTime') {
-          // Shorter lead times first
           const aLeadTime = a.capabilities?.leadTime || '';
           const bLeadTime = b.capabilities?.leadTime || '';
           const aWeeks = parseInt(aLeadTime.match(/\d+/)?.[0] || '999');
@@ -79,13 +547,6 @@ export default function SuppliersPage() {
         return 0;
       });
   }, [searchTerm, hospitalityFilter, sortBy]);
-
-  const getTierBorderClass = (tier?: string) => {
-    if (tier === 'Tier 1') return 'border-l-4 border-emerald-500';
-    if (tier === 'Tier 2') return 'border-l-4 border-blue-400';
-    if (tier === 'Tier 3') return 'border-l-2 border-gray-300';
-    return '';
-  };
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -202,300 +663,9 @@ export default function SuppliersPage() {
 
       {/* Suppliers Grid */}
       <div className="grid grid-cols-1 gap-6">
-        {filteredSuppliers.map((supplier) => {
-          const { core, support } = categorizeServices(supplier.services || []);
-
-          // Merge all strengths with hotel-specific markers
-          const allStrengths = [
-            ...(supplier.hospitalityReadiness?.strengths || []).map(s => ({ text: s, isHotel: true })),
-            ...(supplier.strengths || []).map(s => ({ text: s, isHotel: false }))
-          ];
-
-          // Remove duplicates (keep hotel-specific version if exists)
-          const uniqueStrengths = allStrengths.reduce((acc, curr) => {
-            const existing = acc.find(item => item.text.toLowerCase() === curr.text.toLowerCase());
-            if (!existing) {
-              acc.push(curr);
-            } else if (curr.isHotel && !existing.isHotel) {
-              // Replace with hotel-specific version
-              acc[acc.indexOf(existing)] = curr;
-            }
-            return acc;
-          }, [] as typeof allStrengths);
-
-          // Merge all gaps/considerations
-          const allGaps = [
-            ...(supplier.hospitalityReadiness?.gaps || []),
-            ...(supplier.gaps || [])
-          ];
-          const uniqueGaps = [...new Set(allGaps)];
-
-          return (
-            <div
-              key={supplier.id}
-              className={`bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition ${getTierBorderClass(supplier.hospitalityReadiness?.tier)}`}
-            >
-              <div className="flex justify-between items-start mb-4">
-                <div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-1">{supplier.name}</h2>
-                  <p className="text-gray-600 flex items-center gap-1">
-                    <MapPinIcon className="w-4 h-4" />
-                    {supplier.location}
-                  </p>
-                </div>
-                <div className="flex flex-col items-end gap-2">
-                  {supplier.hospitalityReadiness?.tier && (
-                    <span className={`px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1 ${
-                      supplier.hospitalityReadiness.tier === 'Tier 1'
-                        ? 'bg-emerald-100 text-emerald-800'
-                        : supplier.hospitalityReadiness.tier === 'Tier 2'
-                        ? 'bg-blue-100 text-blue-800'
-                        : 'bg-gray-100 text-gray-800'
-                    }`}>
-                      {supplier.hospitalityReadiness.tier === 'Tier 1' && (
-                        <>
-                          <StarIcon className="w-3 h-3" />
-                          <StarIcon className="w-3 h-3" />
-                          <StarIcon className="w-3 h-3" />
-                        </>
-                      )}
-                      {supplier.hospitalityReadiness.tier === 'Tier 2' && (
-                        <>
-                          <StarIcon className="w-3 h-3" />
-                          <StarIcon className="w-3 h-3" />
-                        </>
-                      )}
-                      {supplier.hospitalityReadiness.tier === 'Tier 3' && (
-                        <StarIcon className="w-3 h-3" />
-                      )}
-                      {supplier.hospitalityReadiness.tier}
-                    </span>
-                  )}
-                  {supplier.hospitalityReadiness?.score && (
-                    <div className="text-xs text-gray-600 text-right max-w-xs">
-                      {supplier.hospitalityReadiness.score}
-                    </div>
-                  )}
-                </div>
-              </div>
-
-              <p className="text-gray-700 mb-4">{supplier.description}</p>
-
-              {/* Services - Categorized */}
-              {(core.length > 0 || support.length > 0) && (
-                <div className="mb-4">
-                  <h3 className="font-semibold text-gray-900 mb-3">Services</h3>
-                  <div className="space-y-3">
-                    {core.length > 0 && (
-                      <div>
-                        <div className="text-xs text-gray-500 uppercase tracking-wide mb-1.5">Core Services</div>
-                        <div className="flex flex-wrap gap-2">
-                          {core.map((service, idx) => (
-                            <span key={idx} className="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-md text-sm font-medium">
-                              {service}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                    {support.length > 0 && (
-                      <div>
-                        <div className="text-xs text-gray-500 uppercase tracking-wide mb-1.5">Support Services</div>
-                        <div className="flex flex-wrap gap-2">
-                          {support.map((service, idx) => (
-                            <span key={idx} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-md text-sm border border-gray-300">
-                              {service}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              )}
-
-              {/* Fire Safety */}
-              {supplier.fireSafety && (
-                <div className="mb-4 bg-red-50 border-l-4 border-red-600 rounded p-4">
-                  <h3 className="font-semibold text-gray-900 mb-2 flex items-center">
-                    <FireIcon className="w-5 h-5 text-red-600 mr-2" />
-                    Fire Safety Compliance
-                  </h3>
-                  <div className="flex flex-wrap gap-2 mb-2">
-                    {supplier.fireSafety.tiers.map((tier) => (
-                      <span key={tier} className={`px-3 py-1 rounded-md text-xs font-semibold ${
-                        tier === 1 ? 'bg-emerald-100 text-emerald-800' :
-                        tier === 2 ? 'bg-yellow-100 text-yellow-800' :
-                        'bg-red-100 text-red-800'
-                      }`}>
-                        Tier {tier}
-                      </span>
-                    ))}
-                  </div>
-                  <p className="text-sm text-gray-700">{supplier.fireSafety.capabilities}</p>
-                </div>
-              )}
-
-              {/* Capabilities */}
-              {supplier.capabilities && (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                  {supplier.capabilities.volume && (
-                    <div className="bg-gray-50 p-3 rounded">
-                      <div className="text-xs font-medium text-gray-500 mb-1">Volume Capacity</div>
-                      <div className="text-sm text-gray-900">{supplier.capabilities.volume}</div>
-                    </div>
-                  )}
-                  {supplier.capabilities.leadTime && (
-                    <div className="bg-gray-50 p-3 rounded">
-                      <div className="text-xs font-medium text-gray-500 mb-1">Lead Time</div>
-                      <div className="text-sm text-gray-900">{supplier.capabilities.leadTime}</div>
-                    </div>
-                  )}
-                  {supplier.capabilities.inventory && (
-                    <div className="bg-gray-50 p-3 rounded">
-                      <div className="text-xs font-medium text-gray-500 mb-1">Inventory</div>
-                      <div className="text-sm text-gray-900">{supplier.capabilities.inventory}</div>
-                    </div>
-                  )}
-                  {supplier.capabilities.logistics && (
-                    <div className="bg-gray-50 p-3 rounded">
-                      <div className="text-xs font-medium text-gray-500 mb-1">Logistics</div>
-                      <div className="text-sm text-gray-900">{supplier.capabilities.logistics}</div>
-                    </div>
-                  )}
-                </div>
-              )}
-
-              {/* Unified Strengths & Considerations */}
-              {(uniqueStrengths.length > 0 || uniqueGaps.length > 0) && (
-                <div className="bg-emerald-50 rounded-lg p-4 mb-4">
-                  <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                    <BuildingOffice2Icon className="w-5 h-5 text-emerald-600" />
-                    Key Strengths & Considerations
-                  </h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {uniqueStrengths.length > 0 && (
-                      <div>
-                        <h4 className="font-semibold text-emerald-800 mb-2 text-sm flex items-center gap-1">
-                          <CheckIcon className="w-4 h-4" />
-                          Strengths
-                        </h4>
-                        <ul className="text-sm text-gray-700 space-y-1">
-                          {uniqueStrengths.map((item, idx) => (
-                            <li key={idx} className="flex items-start gap-1">
-                              <span>•</span>
-                              <span className="flex-1">
-                                {item.text}
-                                {item.isHotel && (
-                                  <BuildingOffice2Icon className="w-3.5 h-3.5 inline-block ml-1 text-emerald-600" title="Hotel-specific" />
-                                )}
-                              </span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                    {uniqueGaps.length > 0 && (
-                      <div>
-                        <h4 className="font-semibold text-orange-800 mb-2 text-sm flex items-center gap-1">
-                          <ExclamationTriangleIcon className="w-4 h-4" />
-                          Considerations
-                        </h4>
-                        <ul className="text-sm text-gray-700 space-y-1">
-                          {uniqueGaps.map((gap, idx) => (
-                            <li key={idx}>• {gap}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              )}
-
-              {/* Project Examples */}
-              {supplier.projectExamples && supplier.projectExamples.length > 0 && (
-                <div className="bg-blue-50 rounded-lg p-4 mb-4">
-                  <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                    <ClipboardDocumentListIcon className="w-5 h-5 text-blue-600" />
-                    Project Examples
-                  </h3>
-                  <ul className="text-sm text-gray-700 space-y-1">
-                    {supplier.projectExamples.map((project, idx) => (
-                      <li key={idx}>• {project}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {/* Pricing */}
-              {supplier.pricing && (
-                <div className="bg-gray-50 rounded-lg p-4 mb-4">
-                  <h3 className="font-semibold text-gray-900 mb-2 text-sm flex items-center gap-2">
-                    <BanknotesIcon className="w-5 h-5 text-emerald-600" />
-                    Pricing Model
-                  </h3>
-                  <p className="text-sm text-gray-700">{supplier.pricing}</p>
-                </div>
-              )}
-
-              {/* Certifications */}
-              {supplier.certifications && supplier.certifications.length > 0 && (
-                <div className="mb-4">
-                  <h3 className="font-semibold text-gray-900 mb-2 text-sm">Certifications</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {supplier.certifications.map((cert, idx) => (
-                      <span key={idx} className="bg-blue-50 text-blue-700 px-2 py-1 rounded text-xs border border-blue-200">
-                        {cert}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Contact */}
-              <div className="border-t pt-4 mt-4">
-                <h3 className="font-semibold text-gray-900 mb-2 text-sm">Contact Information</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-2 text-sm">
-                  {supplier.contact.name && (
-                    <div>
-                      <span className="text-gray-600">Contact:</span>{' '}
-                      <span className="text-gray-900">{supplier.contact.name}</span>
-                    </div>
-                  )}
-                  {supplier.contact.phone && (
-                    <div>
-                      <span className="text-gray-600">Phone:</span>{' '}
-                      <a href={`tel:${supplier.contact.phone}`} className="text-emerald-600 hover:underline">
-                        {supplier.contact.phone}
-                      </a>
-                    </div>
-                  )}
-                  {supplier.contact.email && (
-                    <div>
-                      <span className="text-gray-600">Email:</span>{' '}
-                      <a href={`mailto:${supplier.contact.email}`} className="text-emerald-600 hover:underline">
-                        {supplier.contact.email}
-                      </a>
-                    </div>
-                  )}
-                  {supplier.contact.website && supplier.contact.website.startsWith('http') && (
-                    <div>
-                      <span className="text-gray-600">Website:</span>{' '}
-                      <a
-                        href={supplier.contact.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-emerald-600 hover:underline"
-                      >
-                        Visit →
-                      </a>
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
-          );
-        })}
+        {filteredSuppliers.map((supplier) => (
+          <SupplierCard key={supplier.id} supplier={supplier} />
+        ))}
       </div>
 
       {filteredSuppliers.length === 0 && (
