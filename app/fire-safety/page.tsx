@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import fireSafetyData from '@/data/fire_safety.json';
+import { ExclamationTriangleIcon, CheckIcon } from '@heroicons/react/24/outline';
 
 export default function FireSafetyPage() {
   const [selectedTier, setSelectedTier] = useState<number | null>(null);
@@ -35,9 +36,10 @@ export default function FireSafetyPage() {
           Swedish building code compliance for reused hotel furniture
         </p>
         <div className="mt-4 p-4 bg-red-50 border-l-4 border-red-600 rounded">
-          <p className="text-sm text-red-800">
-            <strong>⚠️ CRITICAL:</strong> Fire safety is a legal requirement for Swedish hotel projects.
-            This guide helps you navigate BBR Chapter 5 compliance for circular furniture.
+          <p className="text-sm text-red-800 flex items-start gap-2">
+            <ExclamationTriangleIcon className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+            <span><strong>CRITICAL:</strong> Fire safety is a legal requirement for Swedish hotel projects.
+            This guide helps you navigate BBR Chapter 5 compliance for circular furniture.</span>
           </p>
         </div>
       </div>
@@ -114,7 +116,10 @@ export default function FireSafetyPage() {
 
                     {tier.recommendation && (
                       <div className="mt-3 p-3 bg-white rounded border border-gray-300">
-                        <p className="text-sm font-semibold text-gray-900 mb-1">⚠️ Recommendation:</p>
+                        <p className="text-sm font-semibold text-gray-900 mb-1 flex items-center gap-1">
+                          <ExclamationTriangleIcon className="w-4 h-4 text-yellow-600" />
+                          Recommendation:
+                        </p>
                         <p className="text-sm text-gray-700">{tier.recommendation}</p>
                       </div>
                     )}
@@ -261,7 +266,10 @@ export default function FireSafetyPage() {
         <div className="space-y-4">
           {fireSafetyData.bestPractices.map((practice, idx) => (
             <div key={idx} className="bg-white rounded-lg p-4 border border-emerald-200">
-              <h3 className="font-bold text-gray-900 mb-2">✓ {practice.title}</h3>
+              <h3 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
+                <CheckIcon className="w-5 h-5 text-emerald-600" />
+                {practice.title}
+              </h3>
               <p className="text-sm text-gray-700">{practice.description}</p>
             </div>
           ))}
@@ -282,8 +290,9 @@ export default function FireSafetyPage() {
                   <h3 className="text-lg font-bold text-gray-900">{precedent.project}</h3>
                   <p className="text-sm text-gray-600">{precedent.location}</p>
                 </div>
-                <span className="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-semibold rounded-full">
-                  ✓ Approved
+                <span className="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-semibold rounded-full flex items-center gap-1">
+                  <CheckIcon className="w-3 h-3" />
+                  Approved
                 </span>
               </div>
 
@@ -320,7 +329,10 @@ export default function FireSafetyPage() {
                 <h4 className="font-semibold text-gray-900">{implication.scenario}</h4>
                 <p className="text-sm text-gray-600">{implication.cost}</p>
                 {implication.recommendation && (
-                  <p className="text-xs text-red-600 mt-1">⚠️ {implication.recommendation}</p>
+                  <p className="text-xs text-red-600 mt-1 flex items-start gap-1">
+                    <ExclamationTriangleIcon className="w-3 h-3 flex-shrink-0 mt-0.5" />
+                    {implication.recommendation}
+                  </p>
                 )}
               </div>
               <div className="text-right">

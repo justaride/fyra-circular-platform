@@ -1,4 +1,15 @@
 import Link from 'next/link';
+import {
+  BuildingOfficeIcon,
+  UserGroupIcon,
+  HandRaisedIcon,
+  BuildingOffice2Icon,
+  ClipboardDocumentListIcon,
+  PresentationChartLineIcon,
+  ShieldExclamationIcon,
+  MapIcon,
+  BookOpenIcon,
+} from '@heroicons/react/24/outline';
 
 export default function Home() {
   return (
@@ -60,8 +71,8 @@ export default function Home() {
         <h2 className="text-3xl font-bold text-center mb-12">Quick Access</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Suppliers Card */}
-          <Link href="/suppliers" className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
-            <div className="text-emerald-600 text-4xl mb-4">🏢</div>
+          <Link href="/suppliers" className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition group">
+            <BuildingOfficeIcon className="w-10 h-10 text-emerald-600 mb-4 group-hover:scale-110 transition-transform" />
             <h3 className="text-xl font-bold mb-2">B2B Suppliers</h3>
             <p className="text-gray-600 mb-4">
               Searchable directory of Swedish reuse operators with capabilities, contact info, and readiness for hospitality projects.
@@ -70,8 +81,8 @@ export default function Home() {
           </Link>
 
           {/* Consultants Card */}
-          <Link href="/consultants" className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
-            <div className="text-emerald-600 text-4xl mb-4">👷</div>
+          <Link href="/consultants" className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition group">
+            <UserGroupIcon className="w-10 h-10 text-emerald-600 mb-4 group-hover:scale-110 transition-transform" />
             <h3 className="text-xl font-bold mb-2">Project Partners</h3>
             <p className="text-gray-600 mb-4">
               Technical consultants and PMs with experience in Swedish hotel renovations and circular economy integration.
@@ -80,8 +91,8 @@ export default function Home() {
           </Link>
 
           {/* Partnership Strategy Card */}
-          <Link href="/partnership-strategy" className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition border-2 border-emerald-200">
-            <div className="text-emerald-600 text-4xl mb-4">🤝</div>
+          <Link href="/partnership-strategy" className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition border-2 border-emerald-200 group">
+            <HandRaisedIcon className="w-10 h-10 text-emerald-600 mb-4 group-hover:scale-110 transition-transform" />
             <h3 className="text-xl font-bold mb-2">Partnership Strategy</h3>
             <p className="text-gray-600 mb-4">
               Decision frameworks, market gap analysis, and immediate action plans for selecting and approaching Swedish consultants.
@@ -90,8 +101,8 @@ export default function Home() {
           </Link>
 
           {/* Case Studies Card */}
-          <Link href="/case-studies" className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
-            <div className="text-emerald-600 text-4xl mb-4">🏨</div>
+          <Link href="/case-studies" className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition group">
+            <BuildingOffice2Icon className="w-10 h-10 text-emerald-600 mb-4 group-hover:scale-110 transition-transform" />
             <h3 className="text-xl font-bold mb-2">Case Studies</h3>
             <p className="text-gray-600 mb-4">
               Real hotel renovation projects across the Nordics showcasing successful circular economy implementations.
@@ -100,8 +111,8 @@ export default function Home() {
           </Link>
 
           {/* Regulatory Card */}
-          <Link href="/regulatory" className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
-            <div className="text-emerald-600 text-4xl mb-4">📋</div>
+          <Link href="/regulatory" className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition group">
+            <ClipboardDocumentListIcon className="w-10 h-10 text-emerald-600 mb-4 group-hover:scale-110 transition-transform" />
             <h3 className="text-xl font-bold mb-2">Regulatory Guide</h3>
             <p className="text-gray-600 mb-4">
               Swedish building codes, fire safety requirements, and BVB standards for hotel renovations with reused materials.
@@ -110,8 +121,8 @@ export default function Home() {
           </Link>
 
           {/* Scenarios Card */}
-          <Link href="/scenarios" className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition border-2 border-blue-200">
-            <div className="text-blue-600 text-4xl mb-4">🎯</div>
+          <Link href="/scenarios" className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition border-2 border-blue-200 group">
+            <PresentationChartLineIcon className="w-10 h-10 text-blue-600 mb-4 group-hover:scale-110 transition-transform" />
             <h3 className="text-xl font-bold mb-2">Project Scenarios</h3>
             <p className="text-gray-600 mb-4">
               Strategic guidance for 5 project types: rush projects, large hotels, boutique renovations, cross-border, and fire-critical spaces.
@@ -120,8 +131,8 @@ export default function Home() {
           </Link>
 
           {/* Fire Safety Card */}
-          <Link href="/fire-safety" className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition border-2 border-red-200">
-            <div className="text-red-600 text-4xl mb-4">🔥</div>
+          <Link href="/fire-safety" className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition border-2 border-red-200 group">
+            <ShieldExclamationIcon className="w-10 h-10 text-red-600 mb-4 group-hover:scale-110 transition-transform" />
             <h3 className="text-xl font-bold mb-2">Fire Safety Guide</h3>
             <p className="text-gray-600 mb-4">
               Three-tier risk assessment system for reused furniture, BBR compliance, testing costs, and certified labs.
@@ -130,8 +141,8 @@ export default function Home() {
           </Link>
 
           {/* Implementation Card */}
-          <Link href="/about" className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
-            <div className="text-emerald-600 text-4xl mb-4">🎯</div>
+          <Link href="/about" className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition group">
+            <MapIcon className="w-10 h-10 text-emerald-600 mb-4 group-hover:scale-110 transition-transform" />
             <h3 className="text-xl font-bold mb-2">Strategy & Roadmap</h3>
             <p className="text-gray-600 mb-4">
               Market analysis, implementation roadmap, and strategic recommendations for Fyra's Swedish expansion.
@@ -141,7 +152,7 @@ export default function Home() {
 
           {/* Data Source Card */}
           <div className="bg-emerald-50 p-6 rounded-lg border-2 border-emerald-200">
-            <div className="text-emerald-600 text-4xl mb-4">📚</div>
+            <BookOpenIcon className="w-10 h-10 text-emerald-600 mb-4" />
             <h3 className="text-xl font-bold mb-2">About This Platform</h3>
             <p className="text-gray-600 mb-4">
               Data compiled from Nordic Circular Construction (NCC) research partnership with Natural State, October 2025.

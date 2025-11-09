@@ -3,6 +3,17 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import consultantsData from '@/data/consultants.json';
+import {
+  MapPinIcon,
+  UserGroupIcon,
+  ExclamationTriangleIcon,
+  BuildingOffice2Icon,
+  ArrowPathIcon,
+  BanknotesIcon,
+  WrenchScrewdriverIcon,
+  CheckIcon
+} from '@heroicons/react/24/outline';
+import { StarIcon } from '@heroicons/react/24/solid';
 
 type Consultant = typeof consultantsData[0];
 
@@ -43,9 +54,15 @@ export default function ConsultantsPage() {
           {consultant.tagline && (
             <p className="text-emerald-700 font-medium text-sm mb-2">{consultant.tagline}</p>
           )}
-          <p className="text-gray-600 text-sm">📍 {consultant.location}</p>
+          <p className="text-gray-600 text-sm flex items-center gap-1">
+            <MapPinIcon className="w-4 h-4" />
+            {consultant.location}
+          </p>
           {consultant.size && (
-            <p className="text-gray-600 text-sm">👥 {consultant.size}</p>
+            <p className="text-gray-600 text-sm flex items-center gap-1">
+              <UserGroupIcon className="w-4 h-4" />
+              {consultant.size}
+            </p>
           )}
         </div>
         <div className="flex flex-col items-end gap-2 ml-4">
@@ -54,7 +71,20 @@ export default function ConsultantsPage() {
               ? 'bg-emerald-100 text-emerald-800'
               : 'bg-blue-100 text-blue-800'
           }`}>
-            {consultant.tier === 1 ? '⭐⭐⭐ TIER 1' : '⭐⭐ TIER 2'}
+            {consultant.tier === 1 ? (
+              <span className="flex items-center gap-1">
+                <StarIcon className="w-3 h-3" />
+                <StarIcon className="w-3 h-3" />
+                <StarIcon className="w-3 h-3" />
+                TIER 1
+              </span>
+            ) : (
+              <span className="flex items-center gap-1">
+                <StarIcon className="w-3 h-3" />
+                <StarIcon className="w-3 h-3" />
+                TIER 2
+              </span>
+            )}
           </span>
           {consultant.priority && (
             <div className="text-right">
@@ -69,7 +99,7 @@ export default function ConsultantsPage() {
       {consultant.scopingCritical && (
         <div className="bg-red-50 border-l-4 border-red-600 rounded p-4 mb-4">
           <h3 className="font-bold text-red-900 mb-1 flex items-center text-sm">
-            <span className="mr-2">⚠️</span>
+            <ExclamationTriangleIcon className="w-5 h-5 text-red-600 mr-2" />
             SCOPING CRITICAL
           </h3>
           <p className="text-sm text-red-800">{consultant.scopingCritical}</p>
@@ -81,18 +111,21 @@ export default function ConsultantsPage() {
       {/* Experience Badges */}
       <div className="flex flex-wrap gap-2 mb-4">
         {consultant.hospitalityExperience && (
-          <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-md text-xs font-semibold">
-            🏨 {consultant.hospitalityProjects} Hotel Projects
+          <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-md text-xs font-semibold flex items-center gap-1">
+            <BuildingOffice2Icon className="w-4 h-4" />
+            {consultant.hospitalityProjects} Hotel Projects
           </span>
         )}
         {consultant.circularRating && (
-          <span className="bg-green-100 text-green-800 px-3 py-1 rounded-md text-xs font-semibold">
-            ♻️ {consultant.circularRating}
+          <span className="bg-green-100 text-green-800 px-3 py-1 rounded-md text-xs font-semibold flex items-center gap-1">
+            <ArrowPathIcon className="w-4 h-4" />
+            {consultant.circularRating}
           </span>
         )}
         {consultant.pricing && (
-          <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-md text-xs font-semibold">
-            💰 {consultant.pricing}
+          <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-md text-xs font-semibold flex items-center gap-1">
+            <BanknotesIcon className="w-4 h-4" />
+            {consultant.pricing}
           </span>
         )}
       </div>
@@ -101,7 +134,7 @@ export default function ConsultantsPage() {
       {consultant.keyProjects && consultant.keyProjects.length > 0 && (
         <div className="bg-blue-50 rounded-lg p-4 mb-4">
           <h3 className="font-semibold text-gray-900 mb-2 text-sm flex items-center">
-            <span className="mr-2">🏗️</span>
+            <WrenchScrewdriverIcon className="w-5 h-5 text-blue-600 mr-2" />
             Key Projects
           </h3>
           <ul className="text-sm text-gray-700 space-y-1">
@@ -119,7 +152,7 @@ export default function ConsultantsPage() {
       {consultant.bestFor && consultant.bestFor.length > 0 && (
         <div className="bg-emerald-50 rounded-lg p-4 mb-4">
           <h3 className="font-semibold text-gray-900 mb-2 text-sm flex items-center">
-            <span className="mr-2">✓</span>
+            <CheckIcon className="w-5 h-5 text-emerald-600 mr-2" />
             Best For
           </h3>
           <div className="flex flex-wrap gap-2">
@@ -136,7 +169,10 @@ export default function ConsultantsPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
         {consultant.strengths && consultant.strengths.length > 0 && (
           <div>
-            <h3 className="font-semibold text-emerald-800 mb-2 text-sm">✓ Strengths</h3>
+            <h3 className="font-semibold text-emerald-800 mb-2 text-sm flex items-center gap-1">
+              <CheckIcon className="w-4 h-4" />
+              Strengths
+            </h3>
             <ul className="text-sm text-gray-700 space-y-1">
               {consultant.strengths.slice(0, 4).map((strength, idx) => (
                 <li key={idx} className="flex items-start">
@@ -149,7 +185,10 @@ export default function ConsultantsPage() {
         )}
         {consultant.concerns && consultant.concerns.length > 0 && (
           <div>
-            <h3 className="font-semibold text-orange-800 mb-2 text-sm">⚠ Considerations</h3>
+            <h3 className="font-semibold text-orange-800 mb-2 text-sm flex items-center gap-1">
+              <ExclamationTriangleIcon className="w-4 h-4" />
+              Considerations
+            </h3>
             <ul className="text-sm text-gray-700 space-y-1">
               {consultant.concerns.map((concern, idx) => (
                 <li key={idx} className="flex items-start">
@@ -304,8 +343,10 @@ export default function ConsultantsPage() {
       {filteredTier1.length > 0 && (
         <div className="mb-12">
           <div className="mb-6">
-            <h2 className="text-3xl font-bold text-gray-900 mb-2 flex items-center">
-              <span className="mr-3">⭐⭐⭐</span>
+            <h2 className="text-3xl font-bold text-gray-900 mb-2 flex items-center gap-2">
+              <StarIcon className="w-6 h-6 text-amber-500" />
+              <StarIcon className="w-6 h-6 text-amber-500" />
+              <StarIcon className="w-6 h-6 text-amber-500" />
               Tier 1: Premium Hotel-Ready Consultants
             </h2>
             <p className="text-gray-600">
@@ -324,8 +365,9 @@ export default function ConsultantsPage() {
       {filteredTier2.length > 0 && (
         <div>
           <div className="mb-6">
-            <h2 className="text-3xl font-bold text-gray-900 mb-2 flex items-center">
-              <span className="mr-3">⭐⭐</span>
+            <h2 className="text-3xl font-bold text-gray-900 mb-2 flex items-center gap-2">
+              <StarIcon className="w-6 h-6 text-blue-500" />
+              <StarIcon className="w-6 h-6 text-blue-500" />
               Tier 2: Specialist Partners
             </h2>
             <p className="text-gray-600">

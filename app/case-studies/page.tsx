@@ -3,6 +3,18 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import casesData from '@/data/case_studies.json';
+import {
+  MapPinIcon,
+  WrenchIcon,
+  ChartBarIcon,
+  CheckIcon,
+  ArrowPathIcon,
+  ExclamationTriangleIcon,
+  ArrowsRightLeftIcon,
+  PhoneIcon,
+  LinkIcon,
+  ArrowTrendingUpIcon
+} from '@heroicons/react/24/outline';
 
 type CaseStudy = typeof casesData[0];
 
@@ -129,8 +141,9 @@ export default function CaseStudiesPage() {
                       {caseStudy.tier}
                     </span>
                   </div>
-                  <p className="text-gray-600 mb-1">
-                    📍 {caseStudy.location} | {caseStudy.size} | {caseStudy.year}
+                  <p className="text-gray-600 mb-1 flex items-center gap-1">
+                    <MapPinIcon className="w-4 h-4" />
+                    {caseStudy.location} | {caseStudy.size} | {caseStudy.year}
                   </p>
                   <p className="text-gray-700 font-medium">{caseStudy.chain}</p>
                   {caseStudy.category && (
@@ -141,7 +154,10 @@ export default function CaseStudiesPage() {
 
               {/* Renovation Scope */}
               <div className="bg-gray-50 rounded-lg p-4 mb-6">
-                <h3 className="font-semibold text-gray-900 mb-2">🔧 Renovation Scope</h3>
+                <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                  <WrenchIcon className="w-5 h-5 text-gray-600" />
+                  Renovation Scope
+                </h3>
                 <p className="text-sm text-gray-700">{caseStudy.renovationScope}</p>
               </div>
 
@@ -149,7 +165,7 @@ export default function CaseStudiesPage() {
               {caseStudy.quantifiedImpact && Object.keys(caseStudy.quantifiedImpact).length > 0 && (
                 <div className="bg-emerald-50 border-l-4 border-emerald-600 rounded-lg p-4 mb-6">
                   <h3 className="font-semibold text-gray-900 mb-3 flex items-center">
-                    <span className="mr-2">📊</span>
+                    <ChartBarIcon className="w-5 h-5 text-emerald-600 mr-2" />
                     Quantified Impact
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -171,8 +187,9 @@ export default function CaseStudiesPage() {
                   <h3 className="font-semibold text-gray-900 mb-2 text-sm">Certifications</h3>
                   <div className="flex flex-wrap gap-2">
                     {caseStudy.certifications.map((cert, idx) => (
-                      <span key={idx} className="bg-green-50 text-green-700 px-3 py-1 rounded-md text-xs border border-green-200 font-medium">
-                        ✓ {cert}
+                      <span key={idx} className="bg-green-50 text-green-700 px-3 py-1 rounded-md text-xs border border-green-200 font-medium flex items-center gap-1">
+                        <CheckIcon className="w-3 h-3" />
+                        {cert}
                       </span>
                     ))}
                   </div>
@@ -182,7 +199,10 @@ export default function CaseStudiesPage() {
               {/* Circular Elements */}
               {caseStudy.circularElements && caseStudy.circularElements.length > 0 && (
                 <div className="mb-6">
-                  <h3 className="font-semibold text-gray-900 mb-3">♻️ Circular Elements ({caseStudy.circularElements.length})</h3>
+                  <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                    <ArrowPathIcon className="w-5 h-5 text-emerald-600" />
+                    Circular Elements ({caseStudy.circularElements.length})
+                  </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2">
                     {caseStudy.circularElements.slice(0, 10).map((element, idx) => (
                       <div key={idx} className="text-sm text-gray-700 flex items-start">
@@ -204,7 +224,10 @@ export default function CaseStudiesPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   {caseStudy.lessons.whatWorked && caseStudy.lessons.whatWorked.length > 0 && (
                     <div className="bg-green-50 rounded-lg p-4">
-                      <h3 className="font-semibold text-green-900 mb-2 text-sm">✓ What Worked Well</h3>
+                      <h3 className="font-semibold text-green-900 mb-2 text-sm flex items-center gap-1">
+                        <CheckIcon className="w-4 h-4" />
+                        What Worked Well
+                      </h3>
                       <ul className="text-sm text-gray-700 space-y-1">
                         {caseStudy.lessons.whatWorked.slice(0, 4).map((item, idx) => (
                           <li key={idx} className="flex items-start">
@@ -217,7 +240,10 @@ export default function CaseStudiesPage() {
                   )}
                   {caseStudy.lessons.challenges && caseStudy.lessons.challenges.length > 0 && (
                     <div className="bg-orange-50 rounded-lg p-4">
-                      <h3 className="font-semibold text-orange-900 mb-2 text-sm">⚠️ Challenges</h3>
+                      <h3 className="font-semibold text-orange-900 mb-2 text-sm flex items-center gap-1">
+                        <ExclamationTriangleIcon className="w-4 h-4" />
+                        Challenges
+                      </h3>
                       <ul className="text-sm text-gray-700 space-y-1">
                         {caseStudy.lessons.challenges.slice(0, 4).map((item, idx) => (
                           <li key={idx} className="flex items-start">
@@ -234,7 +260,10 @@ export default function CaseStudiesPage() {
               {/* Replicability */}
               {caseStudy.replicability && (
                 <div className="bg-blue-50 rounded-lg p-4 mb-6">
-                  <h3 className="font-semibold text-gray-900 mb-3">🔄 Replicability Assessment</h3>
+                  <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                    <ArrowsRightLeftIcon className="w-5 h-5 text-blue-600" />
+                    Replicability Assessment
+                  </h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                     {caseStudy.replicability.scalability && (
                       <div>
@@ -261,7 +290,10 @@ export default function CaseStudiesPage() {
               {/* Key Contacts */}
               {caseStudy.keyContacts && Object.keys(caseStudy.keyContacts).length > 0 && (
                 <div className="bg-gray-50 rounded-lg p-4 mb-6">
-                  <h3 className="font-semibold text-gray-900 mb-3">📞 Key Contacts</h3>
+                  <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                    <PhoneIcon className="w-5 h-5 text-gray-600" />
+                    Key Contacts
+                  </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
                     {Object.entries(caseStudy.keyContacts).map(([role, contact]) => (
                       <div key={role}>
@@ -278,7 +310,10 @@ export default function CaseStudiesPage() {
               {/* Cross-References */}
               {caseStudy.crossReferences && (caseStudy.crossReferences.suppliers.length > 0 || caseStudy.crossReferences.consultants.length > 0) && (
                 <div className="bg-emerald-50 border-l-4 border-emerald-600 rounded-lg p-4 mb-6">
-                  <h3 className="font-semibold text-gray-900 mb-3">🔗 Cross-References to Platform Data</h3>
+                  <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                    <LinkIcon className="w-5 h-5 text-emerald-600" />
+                    Cross-References to Platform Data
+                  </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {caseStudy.crossReferences.suppliers.length > 0 && (
                       <div>
@@ -319,7 +354,10 @@ export default function CaseStudiesPage() {
               {/* Fyra Actions */}
               {caseStudy.fyraActions && caseStudy.fyraActions.length > 0 && (
                 <div className="bg-purple-50 border-l-4 border-purple-600 rounded-lg p-4 mb-6">
-                  <h3 className="font-semibold text-purple-900 mb-2">🎯 Immediate Fyra Actions</h3>
+                  <h3 className="font-semibold text-purple-900 mb-2 flex items-center gap-2">
+                    <ArrowTrendingUpIcon className="w-5 h-5" />
+                    Immediate Fyra Actions
+                  </h3>
                   <ul className="text-sm text-gray-700 space-y-1">
                     {caseStudy.fyraActions.map((action, idx) => (
                       <li key={idx} className="flex items-start">

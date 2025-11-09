@@ -2,6 +2,17 @@
 
 import { useState } from 'react';
 import suppliersData from '@/data/suppliers.json';
+import {
+  ExclamationTriangleIcon,
+  ExclamationCircleIcon,
+  MapPinIcon,
+  FireIcon,
+  BuildingOffice2Icon,
+  CheckIcon,
+  ClipboardDocumentListIcon,
+  BanknotesIcon
+} from '@heroicons/react/24/outline';
+import { ExclamationCircleIcon as ExclamationCircleSolid, StarIcon } from '@heroicons/react/24/solid';
 
 type Supplier = typeof suppliersData[0];
 
@@ -44,13 +55,13 @@ export default function SuppliersPage() {
       {/* Known Market Gaps */}
       <div className="bg-yellow-50 border-l-4 border-yellow-600 rounded-lg p-6 mb-8">
         <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-          <span className="mr-2">⚠️</span>
+          <ExclamationTriangleIcon className="w-6 h-6 text-yellow-600 mr-2" />
           Known Market Gaps & Limitations
         </h2>
         <div className="space-y-3">
           <div className="bg-white rounded-lg p-4 border-2 border-red-400">
             <h3 className="font-bold text-red-900 mb-2 flex items-center">
-              <span className="mr-2">🚨</span>
+              <ExclamationCircleSolid className="w-5 h-5 text-red-600 mr-2" />
               CRITICAL: Hotel Bed Frames
             </h3>
             <p className="text-sm text-gray-700 mb-2">
@@ -130,20 +141,36 @@ export default function SuppliersPage() {
             <div className="flex justify-between items-start mb-4">
               <div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-1">{supplier.name}</h2>
-                <p className="text-gray-600">📍 {supplier.location}</p>
+                <p className="text-gray-600 flex items-center gap-1">
+                  <MapPinIcon className="w-4 h-4" />
+                  {supplier.location}
+                </p>
               </div>
               <div className="flex flex-col items-end gap-2">
                 {supplier.hospitalityReadiness?.tier && (
-                  <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                  <span className={`px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1 ${
                     supplier.hospitalityReadiness.tier === 'Tier 1'
                       ? 'bg-emerald-100 text-emerald-800'
                       : supplier.hospitalityReadiness.tier === 'Tier 2'
                       ? 'bg-blue-100 text-blue-800'
                       : 'bg-gray-100 text-gray-800'
                   }`}>
-                    {supplier.hospitalityReadiness.tier === 'Tier 1' && '⭐⭐⭐ '}
-                    {supplier.hospitalityReadiness.tier === 'Tier 2' && '⭐⭐ '}
-                    {supplier.hospitalityReadiness.tier === 'Tier 3' && '⭐ '}
+                    {supplier.hospitalityReadiness.tier === 'Tier 1' && (
+                      <>
+                        <StarIcon className="w-3 h-3" />
+                        <StarIcon className="w-3 h-3" />
+                        <StarIcon className="w-3 h-3" />
+                      </>
+                    )}
+                    {supplier.hospitalityReadiness.tier === 'Tier 2' && (
+                      <>
+                        <StarIcon className="w-3 h-3" />
+                        <StarIcon className="w-3 h-3" />
+                      </>
+                    )}
+                    {supplier.hospitalityReadiness.tier === 'Tier 3' && (
+                      <StarIcon className="w-3 h-3" />
+                    )}
                     {supplier.hospitalityReadiness.tier}
                   </span>
                 )}
@@ -175,7 +202,7 @@ export default function SuppliersPage() {
             {supplier.fireSafety && (
               <div className="mb-4 bg-red-50 border-l-4 border-red-600 rounded p-4">
                 <h3 className="font-semibold text-gray-900 mb-2 flex items-center">
-                  <span className="text-red-600 mr-2">🔥</span>
+                  <FireIcon className="w-5 h-5 text-red-600 mr-2" />
                   Fire Safety Compliance
                 </h3>
                 <div className="flex flex-wrap gap-2 mb-2">
@@ -185,7 +212,7 @@ export default function SuppliersPage() {
                       tier === 2 ? 'bg-yellow-100 text-yellow-800' :
                       'bg-red-100 text-red-800'
                     }`}>
-                      Tier {tier} {tier === 1 ? '✅' : tier === 2 ? '⚠️' : '🚨'}
+                      Tier {tier}
                     </span>
                   ))}
                 </div>
@@ -226,11 +253,17 @@ export default function SuppliersPage() {
             {/* Hospitality Readiness Details */}
             {supplier.hospitalityReadiness && (supplier.hospitalityReadiness.strengths?.length > 0 || supplier.hospitalityReadiness.gaps?.length > 0) && (
               <div className="bg-emerald-50 rounded-lg p-4 mb-4">
-                <h3 className="font-semibold text-gray-900 mb-3">🏨 Hospitality Readiness Assessment</h3>
+                <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                  <BuildingOffice2Icon className="w-5 h-5 text-emerald-600" />
+                  Hospitality Readiness Assessment
+                </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {supplier.hospitalityReadiness.strengths && supplier.hospitalityReadiness.strengths.length > 0 && (
                     <div>
-                      <h4 className="font-semibold text-emerald-800 mb-2 text-sm">✓ Hotel-Specific Strengths</h4>
+                      <h4 className="font-semibold text-emerald-800 mb-2 text-sm flex items-center gap-1">
+                        <CheckIcon className="w-4 h-4" />
+                        Hotel-Specific Strengths
+                      </h4>
                       <ul className="text-sm text-gray-700 space-y-1">
                         {supplier.hospitalityReadiness.strengths.map((strength, idx) => (
                           <li key={idx}>• {strength}</li>
@@ -240,7 +273,10 @@ export default function SuppliersPage() {
                   )}
                   {supplier.hospitalityReadiness.gaps && supplier.hospitalityReadiness.gaps.length > 0 && (
                     <div>
-                      <h4 className="font-semibold text-orange-800 mb-2 text-sm">⚠ Hotel Project Considerations</h4>
+                      <h4 className="font-semibold text-orange-800 mb-2 text-sm flex items-center gap-1">
+                        <ExclamationTriangleIcon className="w-4 h-4" />
+                        Hotel Project Considerations
+                      </h4>
                       <ul className="text-sm text-gray-700 space-y-1">
                         {supplier.hospitalityReadiness.gaps.map((gap, idx) => (
                           <li key={idx}>• {gap}</li>
@@ -256,7 +292,10 @@ export default function SuppliersPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               {supplier.strengths && supplier.strengths.length > 0 && (
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2 text-sm">✓ Overall Strengths</h3>
+                  <h3 className="font-semibold text-gray-900 mb-2 text-sm flex items-center gap-1">
+                    <CheckIcon className="w-4 h-4 text-emerald-600" />
+                    Overall Strengths
+                  </h3>
                   <ul className="text-sm text-gray-700 space-y-1">
                     {supplier.strengths.map((strength, idx) => (
                       <li key={idx}>• {strength}</li>
@@ -266,7 +305,10 @@ export default function SuppliersPage() {
               )}
               {supplier.gaps && supplier.gaps.length > 0 && (
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2 text-sm">⚠ Overall Considerations</h3>
+                  <h3 className="font-semibold text-gray-900 mb-2 text-sm flex items-center gap-1">
+                    <ExclamationTriangleIcon className="w-4 h-4 text-yellow-600" />
+                    Overall Considerations
+                  </h3>
                   <ul className="text-sm text-gray-700 space-y-1">
                     {supplier.gaps.map((gap, idx) => (
                       <li key={idx}>• {gap}</li>
@@ -279,7 +321,10 @@ export default function SuppliersPage() {
             {/* Project Examples */}
             {supplier.projectExamples && supplier.projectExamples.length > 0 && (
               <div className="bg-blue-50 rounded-lg p-4 mb-4">
-                <h3 className="font-semibold text-gray-900 mb-2">📋 Project Examples</h3>
+                <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                  <ClipboardDocumentListIcon className="w-5 h-5 text-blue-600" />
+                  Project Examples
+                </h3>
                 <ul className="text-sm text-gray-700 space-y-1">
                   {supplier.projectExamples.map((project, idx) => (
                     <li key={idx}>• {project}</li>
@@ -291,7 +336,10 @@ export default function SuppliersPage() {
             {/* Pricing */}
             {supplier.pricing && (
               <div className="bg-gray-50 rounded-lg p-4 mb-4">
-                <h3 className="font-semibold text-gray-900 mb-2 text-sm">💰 Pricing Model</h3>
+                <h3 className="font-semibold text-gray-900 mb-2 text-sm flex items-center gap-2">
+                  <BanknotesIcon className="w-5 h-5 text-emerald-600" />
+                  Pricing Model
+                </h3>
                 <p className="text-sm text-gray-700">{supplier.pricing}</p>
               </div>
             )}

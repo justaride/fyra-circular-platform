@@ -3,6 +3,12 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import scenariosData from '@/data/scenarios.json';
+import {
+  CheckIcon,
+  ExclamationTriangleIcon,
+  ExclamationCircleIcon
+} from '@heroicons/react/24/outline';
+import { ExclamationCircleIcon as ExclamationCircleSolid } from '@heroicons/react/24/solid';
 
 export default function ScenariosPage() {
   const [selectedScenario, setSelectedScenario] = useState<string | null>(null);
@@ -180,7 +186,7 @@ export default function ScenariosPage() {
                 <ul className="space-y-2">
                   {scenario.criticalSuccessFactors.map((factor, idx) => (
                     <li key={idx} className="flex items-start">
-                      <span className="text-blue-600 mr-2 mt-1">✓</span>
+                      <CheckIcon className="w-4 h-4 text-blue-600 mr-2 mt-1 flex-shrink-0" />
                       <span className="text-gray-700">{factor}</span>
                     </li>
                   ))}
@@ -194,7 +200,7 @@ export default function ScenariosPage() {
                   {scenario.risks.map((risk, idx) => (
                     <div key={idx} className="bg-red-50 border-l-4 border-red-600 rounded p-4">
                       <div className="flex items-start mb-2">
-                        <span className="text-red-600 mr-2 mt-1">⚠</span>
+                        <ExclamationTriangleIcon className="w-5 h-5 text-red-600 mr-2 mt-1 flex-shrink-0" />
                         <div className="flex-1">
                           <p className="font-semibold text-gray-900 mb-1">{risk.risk}</p>
                           {'timeline' in risk && risk.timeline && (
@@ -219,7 +225,7 @@ export default function ScenariosPage() {
               {scenario.criticalGap && (
                 <section className="mb-8 bg-yellow-50 border-2 border-yellow-600 rounded-lg p-6">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
-                    <span className="mr-2">🚨</span>
+                    <ExclamationCircleSolid className="w-6 h-6 text-red-600 mr-2" />
                     Critical Gap: {scenario.criticalGap.item}
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
@@ -248,7 +254,10 @@ export default function ScenariosPage() {
                   <div className="space-y-4">
                     {/* Tier 1 */}
                     <div className="bg-emerald-50 border-2 border-emerald-600 rounded-lg p-6">
-                      <h4 className="text-lg font-bold text-emerald-900 mb-3">Tier 1: Low-Risk ✅</h4>
+                      <h4 className="text-lg font-bold text-emerald-900 mb-3 flex items-center gap-2">
+                        <CheckIcon className="w-5 h-5" />
+                        Tier 1: Low-Risk
+                      </h4>
                       <div className="space-y-2 text-sm">
                         <p><strong>Use:</strong> {scenario.recommendedApproach.tier1.use}</p>
                         <p><strong>Furniture:</strong> {scenario.recommendedApproach.tier1.furniture}</p>
@@ -259,7 +268,10 @@ export default function ScenariosPage() {
 
                     {/* Tier 2 */}
                     <div className="bg-yellow-50 border-2 border-yellow-600 rounded-lg p-6">
-                      <h4 className="text-lg font-bold text-yellow-900 mb-3">Tier 2: Medium-Risk ⚠️</h4>
+                      <h4 className="text-lg font-bold text-yellow-900 mb-3 flex items-center gap-2">
+                        <ExclamationTriangleIcon className="w-5 h-5" />
+                        Tier 2: Medium-Risk
+                      </h4>
                       <div className="space-y-2 text-sm">
                         <p><strong>Use:</strong> {scenario.recommendedApproach.tier2.use}</p>
                         <p><strong>Furniture:</strong> {scenario.recommendedApproach.tier2.furniture}</p>
@@ -271,7 +283,10 @@ export default function ScenariosPage() {
 
                     {/* Tier 3 */}
                     <div className="bg-red-50 border-2 border-red-600 rounded-lg p-6">
-                      <h4 className="text-lg font-bold text-red-900 mb-3">Tier 3: High-Risk 🚨</h4>
+                      <h4 className="text-lg font-bold text-red-900 mb-3 flex items-center gap-2">
+                        <ExclamationCircleSolid className="w-5 h-5" />
+                        Tier 3: High-Risk
+                      </h4>
                       <div className="space-y-2 text-sm">
                         <p><strong>Use:</strong> <span className="text-red-700 font-semibold">{scenario.recommendedApproach.tier3.use}</span></p>
                         <p><strong>Furniture:</strong> {scenario.recommendedApproach.tier3.furniture}</p>
