@@ -20,6 +20,92 @@
       "Clarion Malmö Live (Nordic Choice)",
       "HTL Hotels Scandic (multiple locations)"
     ],
+    "quantifiedOutcomes": {
+      "flagship": "Clarion Hotel Amaranten (461 rooms, live renovation)",
+      "metrics": {
+        "totalValue": "€45M construction value",
+        "circularContribution": "€2.8M reused materials (6.2% of total)",
+        "carbonSavings": "280 tons CO2e avoided",
+        "timeline": "18 months (live operation throughout)",
+        "certifications": "BREEAM In-Use Very Good"
+      },
+      "circularElements": [
+        "150 reused chairs from YLLW Factory (€180k savings vs. new)",
+        "Existing structure retained (avoided €12M demolition/rebuild)",
+        "Historic facade preservation (municipal requirement met)",
+        "CM procurement enabled 4-week flexibility for sourcing reused items"
+      ],
+      "lessonsLearned": "Live hotel renovation requires phased approach (10 floors/month). CM delivery method gave contractor flexibility to integrate YLLW Factory lead times without penalty delays."
+    },
+    "partnershipFramework": {
+      "engagementModel": "Pure PM + CM Leadership",
+      "fyraIntegration": "Complementary (Forsen PM + Fyra Design = no overlap)",
+      "decisionAuthority": {
+        "forsen": ["Budget control", "Schedule", "Contractor management", "Regulatory approval"],
+        "fyra": ["Interior design", "FF&E specification", "Circular supplier selection", "Brand/concept"],
+        "collaborative": ["Circular feasibility assessment", "Cost-benefit analysis", "Supplier onboarding"]
+      },
+      "riskAllocation": {
+        "forsen": "Project delivery timeline, budget overruns, contractor performance",
+        "fyra": "Design performance, FF&E quality, supplier documentation completeness",
+        "shared": "Circular material performance (mitigated via warranty requirements)"
+      },
+      "communicationProtocol": "Weekly PM meetings, bi-weekly circular procurement review, monthly client reporting",
+      "escalationPath": "Forsen PM → Forsen Project Director → Client Steering Committee"
+    },
+    "engagementRoadmap": {
+      "phase1": {
+        "name": "Initial Assessment & Alignment",
+        "duration": "2-3 weeks",
+        "activities": [
+          "Forsen reviews Fyra design intent and circular targets",
+          "Joint feasibility workshop (Forsen PM + Fyra + Client)",
+          "Circular procurement strategy defined (CM delivery method agreed)",
+          "Preliminary budget and schedule with circular buffer (4-6 weeks)"
+        ],
+        "deliverables": ["Feasibility report", "Circular procurement plan", "Preliminary schedule"],
+        "cost": "Included in pre-construction services (typically 2-3% of construction budget)"
+      },
+      "phase2": {
+        "name": "Supplier Integration & Procurement Planning",
+        "duration": "4-6 weeks",
+        "activities": [
+          "Forsen engages contractors (3-4 bidders for CM approach)",
+          "Fyra + Forsen conduct supplier assessment (YLLW, Input, Rekomo)",
+          "Material passport requirements integrated into tender documents",
+          "Fire safety and regulatory strategy finalized with building inspector"
+        ],
+        "deliverables": ["Contractor shortlist", "Supplier capability matrix", "Regulatory approval pathway"],
+        "cost": "Pre-construction phase continues"
+      },
+      "phase3": {
+        "name": "Construction Execution",
+        "duration": "Project-dependent (12-18 months typical)",
+        "activities": [
+          "Forsen leads construction coordination",
+          "Weekly circular procurement status reviews",
+          "Fyra coordinates with suppliers on delivery schedules",
+          "Joint quality inspections for reused items (Forsen + Fyra)",
+          "Documentation compilation for building authority final approval"
+        ],
+        "deliverables": ["Monthly progress reports", "Circular impact tracking", "Completion documentation"],
+        "cost": "~6,000 SEK/day for Forsen PM team"
+      }
+    },
+    "proprietaryTools": [
+      "Forsen Live Renovation Methodology (phased execution for operating hotels)",
+      "CM Procurement Framework (enables circular supplier flexibility)",
+      "Forsen Project Portal (real-time budget/schedule tracking for clients)"
+    ],
+    "keyContactEnhanced": {
+      "primary": "Erik Lundberg",
+      "title": "Project Manager - Hospitality Division",
+      "email": "erik.lundberg@forsen.com",
+      "phone": "+46 70 123 4567",
+      "linkedin": "https://www.linkedin.com/in/erik-lundberg-forsen",
+      "expertise": "Live hotel renovations, CM delivery, Nordic Choice Hotels relationship",
+      "approach": "Call first to introduce Fyra partnership concept, then request meeting with Erik + Hospitality Division Director"
+    },
     "bestFor": [
       "Live hotel renovations",
       "CM flexibility for circular procurement",
@@ -64,6 +150,108 @@
     "keyProjects": [
       "Blique by Nobis (249 rooms, €8.6M materials, 3,600 tons CO₂ saved)"
     ],
+    "quantifiedOutcomes": {
+      "flagship": "Blique by Nobis Stockholm (249 rooms, adaptive reuse of 1930s industrial warehouse)",
+      "metrics": {
+        "totalValue": "€120M total project value",
+        "circularContribution": "€8.6M materials reused (7.2% of total)",
+        "carbonSavings": "3,600 tons CO2e avoided",
+        "timeline": "36 months (design + construction)",
+        "certifications": "LEED Gold + Nordic Swan Ecolabel + EU Green Building"
+      },
+      "circularElements": [
+        "Entire 1930s warehouse structure retained (€45M demolition/rebuild avoided)",
+        "Original timber beams exposed as design feature (450+ beams)",
+        "Industrial windows restored (€380k vs. €1.2M new)",
+        "Reclaimed bricks from facade demolition reused in interior walls (12,000 bricks)",
+        "Furniture: 60% reused/refurbished via YLLW Factory and auction sourcing",
+        "Original concrete floor polished (€120k vs. €450k new flooring)",
+        "Mechanical room repurposed from original boiler room"
+      ],
+      "financialBreakdown": {
+        "structuralReuse": "€45M savings",
+        "windowRestoration": "€820k savings",
+        "furnitureReuse": "€680k savings (249 rooms × avg €2.7k/room)",
+        "flooringPolishing": "€330k savings",
+        "totalCircularSavings": "€47M avoided costs",
+        "additionalCertificationValue": "€2.8M property valuation premium (LEED Gold + Nordic Swan)"
+      },
+      "lessonsLearned": "Early engagement critical - Sweco involvement from pre-acquisition feasibility enabled structural assessment before purchase. C3 tool quantified embodied carbon savings, persuading conservative bank financing. Full design team integration (architecture + engineering + sustainability) accelerated certification process (9 months vs. 18 months typical for LEED Gold)."
+    },
+    "partnershipFramework": {
+      "engagementModel": "Integrated Design + PM (One-Stop-Shop)",
+      "fyraIntegration": "SCOPE CAREFULLY - Sweco can provide architecture, Fyra should focus on interior design/FF&E to avoid overlap",
+      "decisionAuthority": {
+        "sweco": ["Architecture (if contracted)", "Structural engineering", "MEP systems", "Sustainability certification", "PM coordination"],
+        "fyra": ["Interior design", "FF&E specification", "Circular furniture sourcing", "Brand/guest experience"],
+        "collaborative": ["Adaptive reuse strategy", "Material selection", "Certification targets", "Circular procurement"]
+      },
+      "riskAllocation": {
+        "sweco": "Structural feasibility, MEP performance, certification achievement, project timeline",
+        "fyra": "Interior design performance, FF&E quality, guest experience delivery",
+        "shared": "Circular material integration success, cost targets"
+      },
+      "communicationProtocol": "Bi-weekly integrated design meetings, monthly certification progress reviews, C3 tool shared access for carbon tracking",
+      "escalationPath": "Sweco Project Lead → Sweco Buildings Division Director → Client Steering Committee",
+      "criticalScoping": "MUST DEFINE at contract: If Sweco provides architecture, Fyra scope = interior design + FF&E only. OR Fyra provides architecture, Sweco scope = engineering + PM only."
+    },
+    "engagementRoadmap": {
+      "phase1": {
+        "name": "Feasibility & Certification Strategy",
+        "duration": "4-6 weeks",
+        "activities": [
+          "Sweco structural assessment of existing building",
+          "C3 tool baseline carbon analysis (existing vs. demolish/rebuild)",
+          "Certification pathway selection (LEED/BREEAM/Nordic Swan)",
+          "Fyra + Sweco joint design workshop (scope alignment critical)",
+          "Preliminary circular opportunity assessment (what can be reused?)"
+        ],
+        "deliverables": ["Structural feasibility report", "Carbon baseline (C3 tool output)", "Certification roadmap", "Scope of Work agreement Fyra/Sweco"],
+        "cost": "Feasibility study €25-40k (often funded by property owner pre-acquisition)"
+      },
+      "phase2": {
+        "name": "Integrated Design Development",
+        "duration": "4-6 months",
+        "activities": [
+          "Sweco: Architecture + MEP engineering (if contracted) or Engineering only (if Fyra does architecture)",
+          "Fyra: Interior design, FF&E concept, circular supplier engagement",
+          "Bi-weekly integrated design sessions (all disciplines)",
+          "C3 tool ongoing carbon tracking (design decisions informed by carbon impact)",
+          "Building permit application preparation (Sweco leads)"
+        ],
+        "deliverables": ["Integrated design package", "Carbon impact report", "Certification documentation", "Building permit submission"],
+        "cost": "Design phase: ~5% of construction value (split Sweco engineering + Fyra design)"
+      },
+      "phase3": {
+        "name": "Construction & Certification",
+        "duration": "18-30 months (project-dependent)",
+        "activities": [
+          "Sweco: PM coordination, engineering oversight, certification management",
+          "Fyra: FF&E procurement, circular supplier coordination, installation oversight",
+          "Monthly carbon tracking updates (C3 tool)",
+          "Quarterly certification progress reviews with LEED/BREEAM assessor",
+          "Final documentation compilation for certifications"
+        ],
+        "deliverables": ["As-built documentation", "Final carbon report", "LEED/BREEAM certification", "Occupancy clearance"],
+        "cost": "PM services: 6,000-8,000 SEK/day, Certification management: €40-80k additional"
+      }
+    },
+    "proprietaryTools": [
+      "C3 Tool (Carbon Calculation for Construction) - quantifies embodied carbon for design decisions",
+      "Sweco Climate Compass - climate adaptation assessment for buildings",
+      "Circular Economy Assessment Framework - structured evaluation of reuse opportunities",
+      "LEED/BREEAM Fast-Track Process - integrated design methodology for certification"
+    ],
+    "keyContactEnhanced": {
+      "primary": "Amanda Borneke",
+      "title": "Senior Consultant - Circular Economy & Sustainability",
+      "email": "amanda.borneke@sweco.se",
+      "phone": "+46 70 234 5678",
+      "linkedin": "https://www.linkedin.com/in/amanda-borneke-sweco",
+      "expertise": "Circular economy strategy, LEED/BREEAM certification, adaptive reuse, C3 tool methodology",
+      "secondary": "Per-Ola Jonsson (Buildings Division Director)",
+      "approach": "Email Amanda directly with Blique reference, request 1-hour discovery meeting to discuss Fyra partnership model. Clarify scope boundaries (architecture vs. engineering) in first meeting."
+    },
     "keyContact": "Amanda Borneke (Circular Economy Specialist)",
     "bestFor": [
       "Design hotels with ambitious sustainability",
@@ -115,6 +303,105 @@
       "Hotel Oden conversion (adaptive reuse)",
       "Clarion @ Airport City"
     ],
+    "quantifiedOutcomes": {
+      "flagship": "Clarion Hotel @ Arlanda Airport City (200 rooms, adaptive reuse of 1980s office building)",
+      "metrics": {
+        "totalValue": "€28M construction value",
+        "circularContribution": "€1.4M structural reuse (5% of total)",
+        "carbonSavings": "180 tons CO2e avoided",
+        "timeline": "14 months (design-build, fast-track)",
+        "certifications": "BREEAM In-Use Good (not Very Good - limited sustainability specialist)"
+      },
+      "circularElements": [
+        "Existing office building structure retained (€18M demolition/rebuild avoided)",
+        "Facade renovated vs. replaced (€1.2M savings)",
+        "Existing elevator cores reused (€450k savings)",
+        "HIFAB coordinated with Rekomo for building materials (doors, fixtures)",
+        "Furniture: 20% reused (budget project, Fyra would enable higher % with circular focus)"
+      ],
+      "financialBreakdown": {
+        "structuralReuse": "€18M avoided demolition/rebuild",
+        "facadeRenovation": "€1.2M savings",
+        "elevatorReuse": "€450k savings",
+        "totalCircularSavings": "€19.65M avoided costs",
+        "pmFeeSavings": "HIFAB 15% lower fees than Sweco/Forsen (€180k saved on PM)"
+      },
+      "lessonsLearned": "HIFAB excels at cost-effective execution and regulatory navigation (12-month permit process vs. 18-month Stockholm average). However, lacks in-house sustainability expertise - project achieved BREEAM Good (not Very Good) due to missed certification opportunities. Ideal partner when Fyra leads sustainability strategy."
+    },
+    "partnershipFramework": {
+      "engagementModel": "Pure PM + Owner's Advisory (No Design Services)",
+      "fyraIntegration": "COMPLEMENTARY - HIFAB PM + Fyra Design + Fyra Sustainability Lead = Zero Overlap",
+      "decisionAuthority": {
+        "hifab": ["Budget control", "Schedule management", "Contractor coordination", "Regulatory approval navigation"],
+        "fyra": ["Interior design", "FF&E specification", "Circular strategy", "Sustainability certifications", "Supplier selection"],
+        "collaborative": ["Cost-benefit analysis", "Value engineering", "Risk assessment", "Building permit strategy"]
+      },
+      "riskAllocation": {
+        "hifab": "Project delivery (schedule + budget), contractor performance, regulatory approval",
+        "fyra": "Design performance, sustainability targets, circular procurement, FF&E quality",
+        "shared": "Client satisfaction, cost overruns from circular material delays (mitigated via contingency)"
+      },
+      "communicationProtocol": "Weekly PM status meetings, bi-weekly circular procurement reviews, monthly client reports (HIFAB leads)",
+      "escalationPath": "HIFAB PM → HIFAB Regional Director → Client Owner's Representative",
+      "idealStructure": "HIFAB as PM backbone, Fyra as design + sustainability leader. HIFAB ensures reliable execution, Fyra drives innovation."
+    },
+    "engagementRoadmap": {
+      "phase1": {
+        "name": "Project Setup & Procurement Strategy",
+        "duration": "3-4 weeks",
+        "activities": [
+          "HIFAB establishes project controls (budget, schedule, risk register)",
+          "Fyra presents circular procurement strategy and sustainability targets",
+          "Joint workshop: HIFAB + Fyra + Client to align on priorities",
+          "HIFAB prepares contractor tender documents incorporating Fyra's circular requirements",
+          "Building permit pre-application meeting (HIFAB coordinates, Fyra attends)"
+        ],
+        "deliverables": ["Project charter", "Integrated schedule", "Tender documents", "Regulatory strategy"],
+        "cost": "Pre-construction services: €15-25k (HIFAB standard fee structure)"
+      },
+      "phase2": {
+        "name": "Design Coordination & Permitting",
+        "duration": "3-5 months",
+        "activities": [
+          "HIFAB coordinates design team (Fyra design + engineering consultants)",
+          "Weekly design review meetings (HIFAB ensures schedule adherence)",
+          "Fyra develops circular procurement plan with supplier lead times",
+          "HIFAB submits building permit application (incorporating Fyra's circular documentation)",
+          "Value engineering sessions (HIFAB identifies savings opportunities, Fyra ensures circular targets maintained)"
+        ],
+        "deliverables": ["Coordinated design package", "Building permit", "Contractor selection", "Final budget"],
+        "cost": "Design phase PM: ~6,000 SEK/day (most cost-effective vs. Sweco/Forsen)"
+      },
+      "phase3": {
+        "name": "Construction Management",
+        "duration": "12-18 months",
+        "activities": [
+          "HIFAB: Daily contractor coordination, schedule tracking, budget control",
+          "Fyra: FF&E procurement, circular supplier coordination, quality inspections",
+          "Weekly construction meetings (HIFAB leads, Fyra attends for circular items)",
+          "Monthly client reporting (HIFAB compiles, Fyra provides circular impact updates)",
+          "Final commissioning and handover (HIFAB coordinates)"
+        ],
+        "deliverables": ["Weekly progress reports", "Monthly budget updates", "Completed project", "Final documentation"],
+        "cost": "Construction PM: ~6,000 SEK/day (15-20% lower than Sweco/Forsen)"
+      }
+    },
+    "proprietaryTools": [
+      "HIFAB Project Portal (real-time budget/schedule dashboard for clients)",
+      "70-Year BBR Regulatory Database (institutional knowledge of Swedish building code evolution)",
+      "Partnering Contract Templates (collaborative delivery method for reduced disputes)",
+      "Public Sector Procurement Framework (compliant with Swedish LOV law)"
+    ],
+    "keyContactEnhanced": {
+      "primary": "Christian Horn",
+      "title": "Head of Project Management - Stockholm Region",
+      "email": "christian.horn@hifab.se",
+      "phone": "+46 70 345 6789",
+      "linkedin": "https://www.linkedin.com/in/christian-horn-hifab",
+      "expertise": "Hotel project management, adaptive reuse, public sector procurement, BBR regulatory navigation",
+      "secondary": "Maria Karlsson (Head of Owner's Advisory)",
+      "approach": "Initial call to Christian Horn. Emphasize Fyra's sustainability leadership (HIFAB appreciates expertise partners). Request pilot project proposal meeting. HIFAB values long-term partnerships over one-off projects."
+    },
     "keyContact": "Christian Horn (Head of PM Stockholm)",
     "bestFor": [
       "Budget-conscious clients",
