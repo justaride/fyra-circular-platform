@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import suppliersData from '@/data/suppliers.json';
 import {
   ExclamationTriangleIcon,
@@ -13,9 +13,13 @@ import {
   BanknotesIcon,
   PhoneIcon,
   EnvelopeIcon,
-  GlobeAltIcon
+  GlobeAltIcon,
+  ArrowsRightLeftIcon,
+  XMarkIcon,
+  HeartIcon,
+  FunnelIcon
 } from '@heroicons/react/24/outline';
-import { ExclamationCircleIcon as ExclamationCircleSolid, StarIcon } from '@heroicons/react/24/solid';
+import { ExclamationCircleIcon as ExclamationCircleSolid, StarIcon, HeartIcon as HeartIconSolid } from '@heroicons/react/24/solid';
 
 type Supplier = typeof suppliersData[0];
 type TabType = 'overview' | 'services' | 'trackRecord' | 'contact';
@@ -32,10 +36,45 @@ const categorizeServices = (services: string[]) => {
   return { core, support: [...support, ...other] };
 };
 
+// Quick decision helper
+const getQuickDecisionIndicators = (supplier: Supplier) => {
+  const inventory = supplier.capabilities?.inventory || '';
+  const leadTime = supplier.capabilities?.leadTime || '';
+  const hasHotelExperience = (supplier.hospitalityReadiness?.strengths || []).length > 0;
+
+  const inventorySize = inventory.includes('65,000') || inventory.toLowerCase().includes('large') ? 'Large' :
+                       inventory.toLowerCase().includes('medium') ? 'Medium' : 'Standard';
+
+  const leadTimeWeeks = leadTime.match(/\d+/)?.[0] || '4+';
+  const deliverySpeed = parseInt(leadTimeWeeks) <= 2 ? 'Fast' : parseInt(leadTimeWeeks) <= 4 ? 'Standard' : 'Slow';
+
+  return {
+    inventorySize,
+    inventoryLabel: inventory || 'Not specified',
+    deliverySpeed,
+    deliveryLabel: leadTime || 'Contact for details',
+    hotelReady: hasHotelExperience,
+    tier: supplier.hospitalityReadiness?.tier || 'No tier'
+  };
+};
+
 // Supplier Card with Tabs Component
-function SupplierCard({ supplier }: { supplier: Supplier }) {
+function SupplierCard({
+  supplier,
+  isComparing,
+  onCompareToggle,
+  isFavorite,
+  onFavoriteToggle
+}: {
+  supplier: Supplier;
+  isComparing: boolean;
+  onCompareToggle: (id: string) => void;
+  isFavorite: boolean;
+  onFavoriteToggle: (id: string) => void;
+}) {
   const [activeTab, setActiveTab] = useState<TabType>('overview');
   const { core, support } = categorizeServices(supplier.services || []);
+  const indicators = getQuickDecisionIndicators(supplier);
 
   // Merge all strengths with hotel-specific markers
   const allStrengths = [
@@ -81,44 +120,64 @@ function SupplierCard({ supplier }: { supplier: Supplier }) {
   ];
 
   return (
-    <div className={`bg-white rounded-lg shadow-md hover:shadow-lg transition ${getTierBorderClass(supplier.hospitalityReadiness?.tier)}`}>
+    <div className={`bg-white rounded-lg shadow-md hover:shadow-lg transition ${getTierBorderClass(supplier.hospitalityReadiness?.tier)} ${isComparing ? 'ring-2 ring-blue-400' : ''}`}>
       {/* Sticky Header */}
       <div className={`sticky top-0 z-10 ${getTierBgClass(supplier.hospitalityReadiness?.tier)} border-b border-gray-200 rounded-t-lg px-6 py-4`}>
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-3">
+            {/* Compare Checkbox */}
+            <input
+              type="checkbox"
+              checked={isComparing}
+              onChange={() => onCompareToggle(supplier.id)}
+              className="w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+              title="Add to comparison"
+            />
+
             <h2 className="text-2xl font-bold text-gray-900">{supplier.name}</h2>
             <p className="text-gray-600 flex items-center gap-1 text-sm">
               <MapPinIcon className="w-4 h-4" />
               {supplier.location}
             </p>
           </div>
-          {supplier.hospitalityReadiness?.tier && (
-            <span className={`px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1 ${
-              supplier.hospitalityReadiness.tier === 'Tier 1'
-                ? 'bg-emerald-100 text-emerald-800'
-                : supplier.hospitalityReadiness.tier === 'Tier 2'
-                ? 'bg-blue-100 text-blue-800'
-                : 'bg-gray-100 text-gray-800'
-            }`}>
-              {supplier.hospitalityReadiness.tier === 'Tier 1' && (
-                <>
+          <div className="flex items-center gap-3">
+            {/* Favorite Button */}
+            <button
+              onClick={() => onFavoriteToggle(supplier.id)}
+              className={`p-2 rounded-full transition ${isFavorite ? 'bg-red-100 text-red-600' : 'bg-gray-100 text-gray-400 hover:text-red-500'}`}
+              title={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
+            >
+              {isFavorite ? <HeartIconSolid className="w-5 h-5" /> : <HeartIcon className="w-5 h-5" />}
+            </button>
+
+            {supplier.hospitalityReadiness?.tier && (
+              <span className={`px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1 ${
+                supplier.hospitalityReadiness.tier === 'Tier 1'
+                  ? 'bg-emerald-100 text-emerald-800'
+                  : supplier.hospitalityReadiness.tier === 'Tier 2'
+                  ? 'bg-blue-100 text-blue-800'
+                  : 'bg-gray-100 text-gray-800'
+              }`}>
+                {supplier.hospitalityReadiness.tier === 'Tier 1' && (
+                  <>
+                    <StarIcon className="w-3 h-3" />
+                    <StarIcon className="w-3 h-3" />
+                    <StarIcon className="w-3 h-3" />
+                  </>
+                )}
+                {supplier.hospitalityReadiness.tier === 'Tier 2' && (
+                  <>
+                    <StarIcon className="w-3 h-3" />
+                    <StarIcon className="w-3 h-3" />
+                  </>
+                )}
+                {supplier.hospitalityReadiness.tier === 'Tier 3' && (
                   <StarIcon className="w-3 h-3" />
-                  <StarIcon className="w-3 h-3" />
-                  <StarIcon className="w-3 h-3" />
-                </>
-              )}
-              {supplier.hospitalityReadiness.tier === 'Tier 2' && (
-                <>
-                  <StarIcon className="w-3 h-3" />
-                  <StarIcon className="w-3 h-3" />
-                </>
-              )}
-              {supplier.hospitalityReadiness.tier === 'Tier 3' && (
-                <StarIcon className="w-3 h-3" />
-              )}
-              {supplier.hospitalityReadiness.tier}
-            </span>
-          )}
+                )}
+                {supplier.hospitalityReadiness.tier}
+              </span>
+            )}
+          </div>
         </div>
 
         {/* Tabs Navigation */}
@@ -148,6 +207,29 @@ function SupplierCard({ supplier }: { supplier: Supplier }) {
         {/* Overview Tab */}
         {activeTab === 'overview' && (
           <div className="space-y-4">
+            {/* Quick Decision Indicators */}
+            <div className="flex flex-wrap gap-2 mb-4">
+              <span className={`px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 ${
+                indicators.inventorySize === 'Large' ? 'bg-emerald-100 text-emerald-800' :
+                indicators.inventorySize === 'Medium' ? 'bg-blue-100 text-blue-800' :
+                'bg-gray-100 text-gray-700'
+              }`}>
+                📦 {indicators.inventorySize} Inventory
+              </span>
+              <span className={`px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 ${
+                indicators.deliverySpeed === 'Fast' ? 'bg-emerald-100 text-emerald-800' :
+                indicators.deliverySpeed === 'Standard' ? 'bg-blue-100 text-blue-800' :
+                'bg-gray-100 text-gray-700'
+              }`}>
+                ⚡ {indicators.deliverySpeed} Delivery
+              </span>
+              {indicators.hotelReady && (
+                <span className="px-3 py-1.5 rounded-full text-xs font-bold bg-purple-100 text-purple-800 flex items-center gap-1.5">
+                  <BuildingOffice2Icon className="w-3.5 h-3.5" /> Hotel-Ready
+                </span>
+              )}
+            </div>
+
             <p className="text-gray-700 leading-relaxed">{supplier.description}</p>
 
             {/* Key Metrics Grid */}
@@ -232,7 +314,6 @@ function SupplierCard({ supplier }: { supplier: Supplier }) {
         {/* Services & Capabilities Tab */}
         {activeTab === 'services' && (
           <div className="space-y-6">
-            {/* Categorized Services */}
             {(core.length > 0 || support.length > 0) && (
               <div>
                 <h3 className="font-semibold text-gray-900 mb-3">Services Offered</h3>
@@ -265,7 +346,6 @@ function SupplierCard({ supplier }: { supplier: Supplier }) {
               </div>
             )}
 
-            {/* Fire Safety */}
             {supplier.fireSafety && (
               <div className="bg-red-50 border-l-4 border-red-600 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-900 mb-3 flex items-center">
@@ -287,7 +367,6 @@ function SupplierCard({ supplier }: { supplier: Supplier }) {
               </div>
             )}
 
-            {/* Capabilities Grid */}
             {supplier.capabilities && (
               <div>
                 <h3 className="font-semibold text-gray-900 mb-3">Operational Capabilities</h3>
@@ -325,7 +404,6 @@ function SupplierCard({ supplier }: { supplier: Supplier }) {
         {/* Track Record Tab */}
         {activeTab === 'trackRecord' && (
           <div className="space-y-6">
-            {/* All Strengths */}
             {uniqueStrengths.length > 0 && (
               <div className="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
                 <h3 className="font-semibold text-emerald-900 mb-3 flex items-center gap-2">
@@ -348,7 +426,6 @@ function SupplierCard({ supplier }: { supplier: Supplier }) {
               </div>
             )}
 
-            {/* Considerations */}
             {uniqueGaps.length > 0 && (
               <div className="bg-orange-50 rounded-lg p-4 border border-orange-200">
                 <h3 className="font-semibold text-orange-900 mb-3 flex items-center gap-2">
@@ -366,7 +443,6 @@ function SupplierCard({ supplier }: { supplier: Supplier }) {
               </div>
             )}
 
-            {/* Project Examples */}
             {supplier.projectExamples && supplier.projectExamples.length > 0 && (
               <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
                 <h3 className="font-semibold text-blue-900 mb-3 flex items-center gap-2">
@@ -384,7 +460,6 @@ function SupplierCard({ supplier }: { supplier: Supplier }) {
               </div>
             )}
 
-            {/* Certifications */}
             {supplier.certifications && supplier.certifications.length > 0 && (
               <div>
                 <h3 className="font-semibold text-gray-900 mb-3">Certifications & Standards</h3>
@@ -403,7 +478,6 @@ function SupplierCard({ supplier }: { supplier: Supplier }) {
         {/* Contact Tab */}
         {activeTab === 'contact' && (
           <div className="space-y-6">
-            {/* Contact Information */}
             <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
               <h3 className="font-semibold text-gray-900 mb-4">Contact Information</h3>
               <div className="space-y-4">
@@ -459,7 +533,6 @@ function SupplierCard({ supplier }: { supplier: Supplier }) {
               </div>
             </div>
 
-            {/* Quick Actions */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {supplier.contact.phone && (
                 <a
@@ -481,7 +554,6 @@ function SupplierCard({ supplier }: { supplier: Supplier }) {
               )}
             </div>
 
-            {/* Pricing Info */}
             {supplier.pricing && (
               <div className="bg-amber-50 rounded-lg p-4 border border-amber-200">
                 <h3 className="font-semibold text-amber-900 mb-2 flex items-center gap-2">
@@ -498,22 +570,208 @@ function SupplierCard({ supplier }: { supplier: Supplier }) {
   );
 }
 
+// Comparison Table Component
+function ComparisonTable({
+  suppliers,
+  onClose
+}: {
+  suppliers: Supplier[];
+  onClose: () => void;
+}) {
+  const getIndicators = (supplier: Supplier) => getQuickDecisionIndicators(supplier);
+
+  return (
+    <div className="fixed inset-0 bg-black/50 z-50 overflow-y-auto">
+      <div className="container mx-auto px-4 py-8">
+        <div className="bg-white rounded-lg shadow-2xl max-w-6xl mx-auto">
+          <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 rounded-t-lg flex justify-between items-center">
+            <div className="flex items-center gap-3">
+              <ArrowsRightLeftIcon className="w-6 h-6 text-blue-600" />
+              <h2 className="text-2xl font-bold text-gray-900">Compare Suppliers ({suppliers.length})</h2>
+            </div>
+            <button
+              onClick={onClose}
+              className="p-2 hover:bg-gray-100 rounded-full transition"
+            >
+              <XMarkIcon className="w-6 h-6" />
+            </button>
+          </div>
+
+          <div className="overflow-x-auto p-6">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="border-b-2 border-gray-200">
+                  <th className="text-left p-3 font-semibold text-gray-700 sticky left-0 bg-white">Criteria</th>
+                  {suppliers.map(supplier => (
+                    <th key={supplier.id} className="text-center p-3 min-w-[200px]">
+                      <div className="font-bold text-gray-900">{supplier.name}</div>
+                      <div className="text-xs text-gray-500 font-normal">{supplier.location}</div>
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-gray-100 bg-emerald-50/50">
+                  <td className="p-3 font-medium text-gray-700 sticky left-0 bg-emerald-50/50">Tier</td>
+                  {suppliers.map(supplier => (
+                    <td key={supplier.id} className="p-3 text-center">
+                      <span className={`px-3 py-1 rounded-full text-xs font-semibold inline-flex items-center gap-1 ${
+                        supplier.hospitalityReadiness?.tier === 'Tier 1' ? 'bg-emerald-100 text-emerald-800' :
+                        supplier.hospitalityReadiness?.tier === 'Tier 2' ? 'bg-blue-100 text-blue-800' :
+                        'bg-gray-100 text-gray-800'
+                      }`}>
+                        {supplier.hospitalityReadiness?.tier}
+                      </span>
+                    </td>
+                  ))}
+                </tr>
+                <tr className="border-b border-gray-100">
+                  <td className="p-3 font-medium text-gray-700 sticky left-0 bg-white">Inventory Size</td>
+                  {suppliers.map(supplier => {
+                    const ind = getIndicators(supplier);
+                    return (
+                      <td key={supplier.id} className="p-3 text-center">
+                        <div className="font-semibold text-gray-900">{ind.inventorySize}</div>
+                        <div className="text-xs text-gray-500">{ind.inventoryLabel}</div>
+                      </td>
+                    );
+                  })}
+                </tr>
+                <tr className="border-b border-gray-100 bg-blue-50/50">
+                  <td className="p-3 font-medium text-gray-700 sticky left-0 bg-blue-50/50">Lead Time</td>
+                  {suppliers.map(supplier => {
+                    const ind = getIndicators(supplier);
+                    return (
+                      <td key={supplier.id} className="p-3 text-center">
+                        <div className="font-semibold text-gray-900">{ind.deliverySpeed}</div>
+                        <div className="text-xs text-gray-500">{ind.deliveryLabel}</div>
+                      </td>
+                    );
+                  })}
+                </tr>
+                <tr className="border-b border-gray-100">
+                  <td className="p-3 font-medium text-gray-700 sticky left-0 bg-white">Hotel Experience</td>
+                  {suppliers.map(supplier => {
+                    const ind = getIndicators(supplier);
+                    return (
+                      <td key={supplier.id} className="p-3 text-center">
+                        {ind.hotelReady ? (
+                          <CheckIcon className="w-6 h-6 text-emerald-600 mx-auto" />
+                        ) : (
+                          <XMarkIcon className="w-6 h-6 text-gray-400 mx-auto" />
+                        )}
+                      </td>
+                    );
+                  })}
+                </tr>
+                <tr className="border-b border-gray-100 bg-amber-50/50">
+                  <td className="p-3 font-medium text-gray-700 sticky left-0 bg-amber-50/50">Pricing</td>
+                  {suppliers.map(supplier => (
+                    <td key={supplier.id} className="p-3 text-center">
+                      <div className="text-sm text-gray-700">{supplier.pricing?.split('.')[0] || 'Contact'}</div>
+                    </td>
+                  ))}
+                </tr>
+                <tr className="border-b border-gray-100">
+                  <td className="p-3 font-medium text-gray-700 sticky left-0 bg-white">Fire Safety</td>
+                  {suppliers.map(supplier => (
+                    <td key={supplier.id} className="p-3 text-center">
+                      <div className="flex gap-1 justify-center">
+                        {supplier.fireSafety?.tiers.map(tier => (
+                          <span key={tier} className={`px-2 py-0.5 rounded text-xs font-semibold ${
+                            tier === 1 ? 'bg-emerald-100 text-emerald-800' :
+                            tier === 2 ? 'bg-yellow-100 text-yellow-800' :
+                            'bg-red-100 text-red-800'
+                          }`}>
+                            T{tier}
+                          </span>
+                        ))}
+                      </div>
+                    </td>
+                  ))}
+                </tr>
+                <tr className="border-b border-gray-100 bg-gray-50">
+                  <td className="p-3 font-medium text-gray-700 sticky left-0 bg-gray-50">Contact</td>
+                  {suppliers.map(supplier => (
+                    <td key={supplier.id} className="p-3 text-center">
+                      <div className="flex gap-2 justify-center">
+                        {supplier.contact.phone && (
+                          <a
+                            href={`tel:${supplier.contact.phone}`}
+                            className="p-2 bg-emerald-100 text-emerald-700 rounded-full hover:bg-emerald-200"
+                          >
+                            <PhoneIcon className="w-4 h-4" />
+                          </a>
+                        )}
+                        {supplier.contact.email && (
+                          <a
+                            href={`mailto:${supplier.contact.email}`}
+                            className="p-2 bg-blue-100 text-blue-700 rounded-full hover:bg-blue-200"
+                          >
+                            <EnvelopeIcon className="w-4 h-4" />
+                          </a>
+                        )}
+                      </div>
+                    </td>
+                  ))}
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function SuppliersPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [hospitalityFilter, setHospitalityFilter] = useState<'all' | 'tier1' | 'tier2' | 'tier3'>('all');
   const [sortBy, setSortBy] = useState<'tier' | 'name' | 'inventory' | 'leadTime'>('tier');
+  const [compareList, setCompareList] = useState<string[]>([]);
+  const [favorites, setFavorites] = useState<string[]>([]);
+  const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
+  const [showComparison, setShowComparison] = useState(false);
+  const [advancedFilters, setAdvancedFilters] = useState({
+    hasHotelExperience: false,
+    fastDelivery: false,
+    largeInventory: false
+  });
+
+  // Load favorites from localStorage
+  useEffect(() => {
+    const saved = localStorage.getItem('fyra-favorites');
+    if (saved) {
+      setFavorites(JSON.parse(saved));
+    }
+  }, []);
+
+  // Save favorites to localStorage
+  useEffect(() => {
+    localStorage.setItem('fyra-favorites', JSON.stringify(favorites));
+  }, [favorites]);
+
+  const toggleCompare = (id: string) => {
+    setCompareList(prev =>
+      prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id]
+    );
+  };
+
+  const toggleFavorite = (id: string) => {
+    setFavorites(prev =>
+      prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id]
+    );
+  };
 
   // Filter and sort suppliers
   const filteredSuppliers = useMemo(() => {
     return suppliersData
       .filter(supplier => {
-        // Search filter
         const matchesSearch = searchTerm === '' ||
           supplier.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
           supplier.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
           supplier.description.toLowerCase().includes(searchTerm.toLowerCase());
 
-        // Hospitality readiness filter
         const tier = supplier.hospitalityReadiness?.tier || '';
         const matchesHospitality =
           hospitalityFilter === 'all' ||
@@ -521,7 +779,19 @@ export default function SuppliersPage() {
           (hospitalityFilter === 'tier2' && tier === 'Tier 2') ||
           (hospitalityFilter === 'tier3' && tier === 'Tier 3');
 
-        return matchesSearch && matchesHospitality;
+        const matchesFavorites = !showFavoritesOnly || favorites.includes(supplier.id);
+
+        // Advanced filters
+        const hasHotelExp = !advancedFilters.hasHotelExperience ||
+          (supplier.hospitalityReadiness?.strengths || []).length > 0;
+
+        const hasFastDelivery = !advancedFilters.fastDelivery ||
+          (supplier.capabilities?.leadTime && parseInt(supplier.capabilities.leadTime.match(/\d+/)?.[0] || '999') <= 2);
+
+        const hasLargeInv = !advancedFilters.largeInventory ||
+          (supplier.capabilities?.inventory?.toLowerCase().includes('large') || supplier.capabilities?.inventory?.includes('65,000'));
+
+        return matchesSearch && matchesHospitality && matchesFavorites && hasHotelExp && hasFastDelivery && hasLargeInv;
       })
       .sort((a, b) => {
         if (sortBy === 'tier') {
@@ -546,7 +816,9 @@ export default function SuppliersPage() {
         }
         return 0;
       });
-  }, [searchTerm, hospitalityFilter, sortBy]);
+  }, [searchTerm, hospitalityFilter, sortBy, favorites, showFavoritesOnly, advancedFilters]);
+
+  const comparedSuppliers = suppliersData.filter(s => compareList.includes(s.id));
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -599,8 +871,7 @@ export default function SuppliersPage() {
 
       {/* Filters */}
       <div className="bg-white p-6 rounded-lg shadow-md mb-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          {/* Search */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
           <div className="md:col-span-2">
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Search
@@ -614,7 +885,6 @@ export default function SuppliersPage() {
             />
           </div>
 
-          {/* Hospitality Ready Filter */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Hospitality Readiness
@@ -631,7 +901,6 @@ export default function SuppliersPage() {
             </select>
           </div>
 
-          {/* Sort By */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Sort By
@@ -649,14 +918,67 @@ export default function SuppliersPage() {
           </div>
         </div>
 
+        {/* Advanced Filters */}
+        <div className="border-t border-gray-200 pt-4">
+          <div className="flex items-center gap-2 mb-3">
+            <FunnelIcon className="w-4 h-4 text-gray-500" />
+            <span className="text-sm font-medium text-gray-700">Advanced Filters</span>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <label className="flex items-center gap-2 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={advancedFilters.hasHotelExperience}
+                onChange={(e) => setAdvancedFilters(prev => ({ ...prev, hasHotelExperience: e.target.checked }))}
+                className="w-4 h-4 text-emerald-600 border-gray-300 rounded focus:ring-emerald-500"
+              />
+              <span className="text-sm text-gray-700">Hotel Experience Required</span>
+            </label>
+            <label className="flex items-center gap-2 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={advancedFilters.fastDelivery}
+                onChange={(e) => setAdvancedFilters(prev => ({ ...prev, fastDelivery: e.target.checked }))}
+                className="w-4 h-4 text-emerald-600 border-gray-300 rounded focus:ring-emerald-500"
+              />
+              <span className="text-sm text-gray-700">Fast Delivery (≤2 weeks)</span>
+            </label>
+            <label className="flex items-center gap-2 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={advancedFilters.largeInventory}
+                onChange={(e) => setAdvancedFilters(prev => ({ ...prev, largeInventory: e.target.checked }))}
+                className="w-4 h-4 text-emerald-600 border-gray-300 rounded focus:ring-emerald-500"
+              />
+              <span className="text-sm text-gray-700">Large Inventory Only</span>
+            </label>
+            <label className="flex items-center gap-2 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={showFavoritesOnly}
+                onChange={(e) => setShowFavoritesOnly(e.target.checked)}
+                className="w-4 h-4 text-red-600 border-gray-300 rounded focus:ring-red-500"
+              />
+              <span className="text-sm text-gray-700 flex items-center gap-1">
+                <HeartIconSolid className="w-4 h-4 text-red-500" />
+                Favorites Only ({favorites.length})
+              </span>
+            </label>
+          </div>
+        </div>
+
         <div className="mt-4 flex justify-between items-center">
           <div className="text-sm text-gray-600">
             Showing {filteredSuppliers.length} of {suppliersData.length} suppliers
           </div>
-          {sortBy !== 'tier' && (
-            <div className="text-xs text-gray-500">
-              Sorted by: {sortBy === 'inventory' ? 'Inventory Size' : sortBy === 'leadTime' ? 'Lead Time' : 'Name'}
-            </div>
+          {compareList.length > 0 && (
+            <button
+              onClick={() => setShowComparison(true)}
+              className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition flex items-center gap-2"
+            >
+              <ArrowsRightLeftIcon className="w-4 h-4" />
+              Compare Selected ({compareList.length})
+            </button>
           )}
         </div>
       </div>
@@ -664,7 +986,14 @@ export default function SuppliersPage() {
       {/* Suppliers Grid */}
       <div className="grid grid-cols-1 gap-6">
         {filteredSuppliers.map((supplier) => (
-          <SupplierCard key={supplier.id} supplier={supplier} />
+          <SupplierCard
+            key={supplier.id}
+            supplier={supplier}
+            isComparing={compareList.includes(supplier.id)}
+            onCompareToggle={toggleCompare}
+            isFavorite={favorites.includes(supplier.id)}
+            onFavoriteToggle={toggleFavorite}
+          />
         ))}
       </div>
 
@@ -675,12 +1004,22 @@ export default function SuppliersPage() {
             onClick={() => {
               setSearchTerm('');
               setHospitalityFilter('all');
+              setAdvancedFilters({ hasHotelExperience: false, fastDelivery: false, largeInventory: false });
+              setShowFavoritesOnly(false);
             }}
             className="mt-4 text-emerald-600 hover:text-emerald-700 font-semibold"
           >
-            Clear Filters
+            Clear All Filters
           </button>
         </div>
+      )}
+
+      {/* Comparison Modal */}
+      {showComparison && comparedSuppliers.length > 0 && (
+        <ComparisonTable
+          suppliers={comparedSuppliers}
+          onClose={() => setShowComparison(false)}
+        />
       )}
     </div>
   );
