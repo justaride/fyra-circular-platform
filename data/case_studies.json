@@ -1,0 +1,1232 @@
+[
+  {
+    "id": "blique_by_nobis",
+    "tier": "★★★★★",
+    "hotelName": "Blique by Nobis",
+    "chain": "Nobis Hospitality Group",
+    "location": "Gärdet, Stockholm, Sweden",
+    "address": "Gärdesgatan 3, 115 21 Stockholm",
+    "country": "Sweden",
+    "size": "249 rooms",
+    "category": "Design Hotel / Upper-Upscale",
+    "year": 2016,
+    "renovationScope": "Comprehensive - Full adaptive reuse of 1930s industrial warehouse building",
+    "website": "https://bliquebynobis.se",
+    "phone": "+46 855 766 600",
+    "email": "info@bliquebynobis.se",
+    "circularElements": [
+      "Entire 1930s warehouse structure preserved (vs. demolition)",
+      "Original concrete frame retained",
+      "SENAB supplied refurbished office furniture adapted for hotel use",
+      "Vintage and second-hand furniture integrated throughout",
+      "Original concrete floors polished and exposed",
+      "Industrial windows restored",
+      "Original steel structural elements visible in design",
+      "Brick walls exposed and preserved",
+      "Material inventories tracked"
+    ],
+    "quantifiedImpact": {
+      "co2Saved": "3,600 tonnes CO2e",
+      "co2Reduction": "60-80% embodied carbon reduction vs. new build",
+      "materialsReused": "€8.6 million",
+      "costSavings": "€120 million total vs. new construction",
+      "constructionCost": "~30% lower than equivalent new hotel"
+    },
+    "certifications": [
+      "LEED Gold",
+      "Nordic Swan Ecolabel"
+    ],
+    "keyContacts": {
+      "owner": "Nobis Hospitality Group (info@nobis.se)",
+      "architect": "Gert Wingårdh / Wingårdhs Arkitektkontor (+46 72 500 27 18)",
+      "sustainabilityConsultant": "Sweco - Amanda Borneke (+46 8 695 60 00)",
+      "generalManager": "Contact via hotel main line"
+    },
+    "crossReferences": {
+      "suppliers": ["senab"],
+      "consultants": ["sweco_ab"]
+    },
+    "lessons": {
+      "whatWorked": [
+        "Adaptive reuse dramatically reduced costs AND carbon - €120M savings made business case compelling",
+        "Industrial aesthetic celebrated - Original warehouse character became design feature",
+        "Early quantification - Sweco's CO2 analysis provided clear data for decision-making",
+        "LEED + Swan dual certification demonstrated both international and Nordic standards compliance"
+      ],
+      "challenges": [
+        "Fire safety compliance for historic structure required documentation and upgrades",
+        "Sourcing timeline uncertainty - Salvaged materials availability less predictable",
+        "Material documentation - Creating equivalency documentation for reused elements"
+      ]
+    },
+    "replicability": {
+      "scalability": "★★★★ HIGH",
+      "chainPotential": "Medium-High - Nobis operates 5+ hotels, model can replicate across portfolio",
+      "economicViability": "Proven - 30% construction cost savings, premium pricing maintained"
+    },
+    "fyraActions": [
+      "Contact hotel GM for site visit and operational lessons",
+      "Contact Amanda Borneke (Sweco) to explore partnership",
+      "Use in client pitches: €120M saved, 3,600 tons CO₂ reduced"
+    ],
+    "confidenceLevel": "★★★★★ Very High"
+  },
+  {
+    "id": "hotel_skeppsholmen",
+    "tier": "★★★★★",
+    "hotelName": "Hotel Skeppsholmen",
+    "chain": "Independent",
+    "location": "Skeppsholmen island, Stockholm, Sweden",
+    "address": "Gröna gången 1, 111 86 Stockholm",
+    "country": "Sweden",
+    "size": "78 rooms",
+    "category": "Historic boutique hotel / Upper-midscale",
+    "year": 2009,
+    "renovationScope": "Adaptive Reuse - Military barracks → boutique hotel",
+    "website": "https://hotelskeppsholmen.se",
+    "phone": "+46 8-407 23 00",
+    "email": "info@hotelskeppsholmen.se",
+    "circularElements": [
+      "1699 military barracks structure fully preserved",
+      "4 interconnected 18th-century buildings converted",
+      "Historic protected status = mandatory preservation",
+      "Original wooden floors restored where possible",
+      "Historic window frames repaired and reused",
+      "Antique and vintage furniture throughout (curated mix)",
+      "Mid-century Swedish design pieces sourced second-hand",
+      "Design-for-disassembly approach due to heritage restrictions",
+      "Reversible interventions - freestanding furniture"
+    ],
+    "quantifiedImpact": {
+      "co2Reduction": "Estimated 70-80% embodied carbon savings (typical for 18th-century adaptive reuse)",
+      "wasteReduction": "Zero demolition waste (preservation mandate)",
+      "heritageValue": "Preserves Swedish military history (1699-1960s barracks)"
+    },
+    "certifications": [
+      "Heritage building designation (Riksantikvarieämbetet)"
+    ],
+    "keyContacts": {
+      "managingDirector": "Joachim Olausson",
+      "contact": "info@hotelskeppsholmen.se, +46 8-407 23 00"
+    },
+    "crossReferences": {
+      "suppliers": [],
+      "consultants": []
+    },
+    "lessons": {
+      "whatWorked": [
+        "Heritage restrictions = automatic circularity - Preservation mandate ensured minimal waste",
+        "Historic character = market differentiator - Uniqueness commands premium",
+        "Reversible design allows future flexibility",
+        "Cultural tourism appeal - History story enhances guest experience"
+      ],
+      "challenges": [
+        "Heritage compliance complexity - Every change requires Riksantikvarieämbetet approval",
+        "Higher renovation costs - Skilled heritage craftsmen more expensive",
+        "Limited modern amenities - Historic structure constrains elevators, electrical capacity",
+        "Heritage permits can add 3-6 months to project schedule"
+      ]
+    },
+    "replicability": {
+      "scalability": "★★★ Medium",
+      "chainPotential": "Low-Medium - Each building unique, cannot standardize",
+      "economicViability": "★★★★ High for boutique operators - Premium pricing justified by uniqueness"
+    },
+    "fyraActions": [
+      "Site visit to study how modern hospitality functions work in historic structure",
+      "Contact Joachim Olausson for operational lessons and guest response",
+      "Review heritage compliance process (useful for future adaptive reuse projects)"
+    ],
+    "confidenceLevel": "★★★★ High"
+  },
+  {
+    "id": "downtown_camper_scandic",
+    "tier": "★★★★",
+    "hotelName": "Downtown Camper by Scandic",
+    "chain": "Scandic Hotels (280+ properties)",
+    "location": "Stockholm, Sweden",
+    "address": "Brunkebergstorg 9, Stockholm",
+    "country": "Sweden",
+    "size": "494 rooms",
+    "category": "Lifestyle / Midscale+",
+    "year": 2018,
+    "renovationScope": "Comprehensive renovation - 1970s office building → lifestyle hotel",
+    "website": "https://scandichotels.com/downtowncamper",
+    "phone": "Via Scandic Hotels",
+    "circularElements": [
+      "1970s structure retained (avoided demolition)",
+      "Vintage furniture integrated throughout public spaces",
+      "Upcycled wood panels from Swedish forests (salvaged timber)",
+      "Reclaimed materials in accent walls and decorative features",
+      "Furniture rental program (leased, not purchased)",
+      "Mattress recycling program",
+      "Textile recycling for linens",
+      "96.9% waste recycling rate (Scandic chain-wide)"
+    ],
+    "quantifiedImpact": {
+      "co2Reduction": "Estimated 50-70% embodied carbon savings vs. new build",
+      "wasteRecycling": "96.9% recycling rate",
+      "chainWideImpact": "280+ Scandic properties apply similar circular practices"
+    },
+    "certifications": [
+      "LEED Gold",
+      "Nordic Swan Ecolabel",
+      "ISO 14001"
+    ],
+    "keyContacts": {
+      "sustainabilityManager": "Isabelle Blomqvist (isabelle.blomqvist@scandichotels.com)",
+      "architect": "Stylt Trampoli (info@stylt.se)"
+    },
+    "crossReferences": {
+      "suppliers": [],
+      "consultants": []
+    },
+    "lessons": {
+      "whatWorked": [
+        "Chain-wide circular practices create economies of scale",
+        "LEED Gold certification in Sweden demonstrates international standards compliance",
+        "Furniture rental model allows upgrades without waste",
+        "Large property size (494 rooms) shows circularity works at scale"
+      ],
+      "challenges": [
+        "Specific supplier/material details limited in public documentation",
+        "Project-specific environmental data not separated from chain-wide reporting"
+      ]
+    },
+    "replicability": {
+      "scalability": "★★★★★ Very High",
+      "chainPotential": "Very High - Scandic has 280+ properties for replication",
+      "economicViability": "Proven - LEED Gold achieved at large scale"
+    },
+    "fyraActions": [
+      "Contact Isabelle Blomqvist to discuss Scandic's circular renovation standards",
+      "Study Stylt Trampoli's approach to lifestyle hotel sustainability integration",
+      "Explore partnership opportunities for Scandic's ongoing renovations"
+    ],
+    "confidenceLevel": "★★★★ High"
+  },
+  {
+    "id": "hobo_hotel",
+    "tier": "★★★★",
+    "hotelName": "Hobo Hotel",
+    "chain": "Independent boutique",
+    "location": "Stockholm, Sweden",
+    "address": "Brunkebergstorg 4, Stockholm",
+    "country": "Sweden",
+    "size": "201 rooms",
+    "category": "Design hotel / Upper-midscale",
+    "year": 2014,
+    "renovationScope": "Comprehensive Interior - Upcycled materials throughout",
+    "website": "https://hobo.se",
+    "phone": "+46 8 578 62 900",
+    "email": "info@hobo.se",
+    "circularElements": [
+      "Reclaimed wood paneling from Swedish industrial buildings",
+      "Upcycled leather furniture (old leather goods deconstructed and reformed)",
+      "Vintage lighting fixtures restored and rewired",
+      "Reclaimed bricks used as decorative elements",
+      "Salvaged doors repurposed as wall art/headboards",
+      "Mix of vintage Swedish design (second-hand) and new sustainable pieces",
+      "Upcycled upholstery (leather from car seats, industrial textiles)",
+      "Custom-made from waste streams (tables from reclaimed wood)"
+    ],
+    "quantifiedImpact": {
+      "qualitativeImpact": "Material reuse reduced manufacturing emissions (not quantified)",
+      "designValue": "Urban vagabond aesthetic - celebrating imperfection and patina"
+    },
+    "certifications": [],
+    "keyContacts": {
+      "hotelContact": "info@hobo.se, +46 8 578 62 900",
+      "interiorDesigner": "Studio Aisslinger (Berlin) - Werner Aisslinger (info@aisslinger.de)"
+    },
+    "crossReferences": {
+      "suppliers": [],
+      "consultants": []
+    },
+    "lessons": {
+      "whatWorked": [
+        "Upcycled materials create unique design story without formal certifications",
+        "Custom fabrication from waste streams delivers one-of-a-kind character",
+        "International designer (Studio Aisslinger) brings global expertise",
+        "Design storytelling trumps certification for boutique positioning"
+      ],
+      "challenges": [
+        "No quantified environmental data limits ROI communication",
+        "Custom fabrication can be labor-intensive vs. standard procurement",
+        "Supplier details not public - harder to replicate sourcing approach"
+      ]
+    },
+    "replicability": {
+      "scalability": "★★★ Medium",
+      "chainPotential": "Low - Custom approach hard to standardize",
+      "economicViability": "Medium - Upcycled materials save on procurement but require design expertise"
+    },
+    "fyraActions": [
+      "Site visit to study Studio Aisslinger's material integration approach",
+      "Contact hotel to understand operational experience with upcycled materials",
+      "Study custom fabrication methods for waste stream furniture"
+    ],
+    "confidenceLevel": "★★★★ High"
+  },
+  {
+    "id": "scandic_go_concept",
+    "tier": "★★★★★",
+    "hotelName": "Scandic GO (Concept)",
+    "chain": "Scandic Hotels (280+ properties)",
+    "location": "First property: Kungsholmen, Stockholm, Sweden",
+    "country": "Sweden",
+    "size": "274 rooms (Stockholm property)",
+    "category": "Budget+ / Economy-plus",
+    "year": 2024,
+    "renovationScope": "System-Level Circular Design - New concept built on circular economy principles",
+    "website": "https://scandichotels.com/go",
+    "circularElements": [
+      "Design-for-Disassembly: Modular furniture for easy disassembly",
+      "Click-together systems (no glue/permanent fasteners where possible)",
+      "Standardized components across properties",
+      "High recycled content throughout",
+      "Mono-materials preferred (easier to recycle at end-of-life)",
+      "Material passports for all major furnishings",
+      "Designed for refurbishment with spare parts inventory",
+      "Take-back agreements with suppliers",
+      "96.9% waste recycling rate (Scandic chain-wide)"
+    ],
+    "quantifiedImpact": {
+      "designTarget": "50% embodied carbon reduction vs. conventional budget hotel",
+      "materialReuseEnabling": "Design-for-disassembly enables future reuse at end-of-life (15-20 years)",
+      "lifecycleCost": "Cost-neutral or slightly higher upfront, but lifecycle cost savings significant"
+    },
+    "certifications": [
+      "Nordic Swan Ecolabel",
+      "ISO 14001"
+    ],
+    "keyContacts": {
+      "sustainabilityManager": "Isabelle Blomqvist (isabelle.blomqvist@scandichotels.com)",
+      "conceptOwner": "Scandic Hotels Group sustainability team"
+    },
+    "crossReferences": {
+      "suppliers": [],
+      "consultants": []
+    },
+    "lessons": {
+      "whatWorked": [
+        "First hotel concept designed specifically for circular economy from ground up",
+        "Design-for-disassembly enables true end-of-life material recovery",
+        "Material passports create transparency for future renovations",
+        "Budget segment shows circularity isn't just for luxury hotels",
+        "Standardization across chain enables economies of scale"
+      ],
+      "challenges": [
+        "Too new for performance data (opened October 2024)",
+        "Supplier details not publicly disclosed",
+        "Circular design requires supplier collaboration on take-back agreements"
+      ]
+    },
+    "replicability": {
+      "scalability": "★★★★★ Very High",
+      "chainPotential": "★★★★★ Exceptional - Designed explicitly for chain replication",
+      "economicViability": "Designed for cost-neutrality with lifecycle savings"
+    },
+    "fyraActions": [
+      "Contact Isabelle Blomqvist for Scandic GO supplier requirements and design standards",
+      "Study modular design approach for future Fyra budget hotel projects",
+      "Request material passport documentation as model for Fyra projects"
+    ],
+    "confidenceLevel": "★★★★★ Very High"
+  },
+  {
+    "id": "akademihotellet_uppsala",
+    "tier": "★★★★",
+    "hotelName": "Akademihotellet Uppsala",
+    "chain": "Independent",
+    "location": "Uppsala, Sweden",
+    "address": "Dragarbrunnsgatan 68, Uppsala",
+    "country": "Sweden",
+    "size": "34 rooms",
+    "category": "Historic boutique / Mid-upscale",
+    "year": 2015,
+    "renovationScope": "Operational Circular Model - Ongoing furniture reuse partnership",
+    "website": "https://akademihotellet.se",
+    "circularElements": [
+      "Innovative furniture exchange program with Gustavianum Museum (Uppsala University Museum)",
+      "Hotel 'borrows' historic furniture from museum collection",
+      "Rotating exhibition - furniture changes periodically",
+      "Museum deaccessions (no longer displayed items) go to hotel long-term",
+      "Unique model: Museum gets storage solution + educational reach",
+      "Hotel gets unique, high-quality furniture at low/no cost",
+      "Cultural tourism: Guests sleep in 'museum annexes'"
+    ],
+    "quantifiedImpact": {
+      "co2Saved": "5.7 tonnes CO2e saved through furniture reuse vs. purchasing new",
+      "financialImpact": "Furniture acquisition cost minimal (museum partnership)",
+      "culturalImpact": "Educational guest exposure to historic Swedish furniture"
+    },
+    "certifications": [],
+    "keyContacts": {
+      "hotelManager": "Helena Hammarberg (via akademihotellet.se)",
+      "museumPartner": "Gustavianum Museum (gustavianum.uu.se)"
+    },
+    "crossReferences": {
+      "suppliers": [],
+      "consultants": []
+    },
+    "lessons": {
+      "whatWorked": [
+        "Museum partnership creates win-win: Museum solves storage, hotel gets unique furniture",
+        "Low-cost circular model (minimal furniture acquisition spending)",
+        "Cultural storytelling adds marketing differentiation",
+        "5.7 tonnes CO2 saved demonstrates small-scale circular impact",
+        "Partnership model replicable with other museums/cultural institutions"
+      ],
+      "challenges": [
+        "Small scale (34 rooms) limits scalability",
+        "Requires proximity to museum with suitable collection",
+        "Furniture rotation may complicate procurement consistency"
+      ]
+    },
+    "replicability": {
+      "scalability": "★★★ Medium",
+      "chainPotential": "Medium - Model requires museum partnerships (not always available)",
+      "economicViability": "★★★★ High - Very low cost, high storytelling value"
+    },
+    "fyraActions": [
+      "Contact Helena Hammarberg to understand partnership structure and operational lessons",
+      "Explore similar museum partnerships in Stockholm (Nordiska Museet, Historiska Museet)",
+      "Use museum model as low-cost circular option for boutique client pitches"
+    ],
+    "confidenceLevel": "★★★★ High"
+  },
+  {
+    "id": "green_solution_house",
+    "tier": "★★★★★",
+    "hotelName": "Hotel Green Solution House",
+    "chain": "Independent (Destination Bornholm)",
+    "location": "Bornholm, Denmark",
+    "address": "Snorrebakken 7, 3730 Nexø, Bornholm",
+    "country": "Denmark",
+    "size": "59 rooms",
+    "category": "Eco-design hotel / Mid-upscale",
+    "year": 2021,
+    "renovationScope": "Comprehensive - Climate-positive design (Most intensive circular hotel in Nordics)",
+    "website": "https://greensolutionhouse.dk",
+    "circularElements": [
+      "43% of interiors from recycled/upcycled sources (2021 wing)",
+      "17% climate-positive (removes more CO2 than emitted in construction)",
+      "Wood construction (CLT - Cross-Laminated Timber)",
+      "Upcycled construction waste → furniture (offcut wood pressed into furniture)",
+      "Granite quarry waste → terrazzo-style surfaces",
+      "Surplus bricks crushed → decorative Earth plaster walls",
+      "Upchair (chairs made from textile waste)",
+      "Carpet tile take-back program",
+      "Click-together systems minimize permanent fasteners",
+      "Material passports for all major elements",
+      "Living lab (hotel tests circular innovations for industry)"
+    ],
+    "quantifiedImpact": {
+      "climatePositive": "17% climate-positive (2021 wing) - sequesters more CO2 than construction emitted",
+      "circularContent": "43% of interiors from recycled/upcycled sources",
+      "wasteReduction": "<5% waste during construction (vs. typical 30-40%)",
+      "innovationTesting": "Living lab tests 50+ circular products/systems"
+    },
+    "certifications": [
+      "Nordic Swan Ecolabel",
+      "Green Key",
+      "EU Green Building (Denmark's first)"
+    ],
+    "keyContacts": {
+      "hotelDirector": "Trine Richter (via greensolutionhouse.dk)",
+      "architect": "Kasper Guldager Jensen - 3XN/GXN Innovation (gxn.3xn.com)"
+    },
+    "crossReferences": {
+      "suppliers": ["upchair"],
+      "consultants": []
+    },
+    "lessons": {
+      "whatWorked": [
+        "43% circular content proves high recycled/upcycled percentage achievable",
+        "17% climate-positive demonstrates carbon sequestration potential",
+        "Living lab role creates knowledge-sharing revenue stream",
+        "Construction waste upcycled into furniture = closed loop on-site",
+        "Accessible for industry learning (Trine Richter welcomes site visits)"
+      ],
+      "challenges": [
+        "Remote Denmark location limits direct Swedish applicability",
+        "Climate-positive requires sophisticated carbon accounting",
+        "Innovation testing may add complexity vs. standard hotel operations"
+      ]
+    },
+    "replicability": {
+      "scalability": "★★★★ High",
+      "chainPotential": "Medium - Living lab model requires commitment to innovation",
+      "economicViability": "High - Methodology proven, applicable to other projects"
+    },
+    "fyraActions": [
+      "Contact Trine Richter for site visit and methodology sharing",
+      "Study GXN Innovation's circular economy framework",
+      "Request material passport templates for Fyra projects",
+      "Explore Upchair (textile waste furniture) as Swedish supplier option"
+    ],
+    "confidenceLevel": "★★★★★ Very High"
+  },
+  {
+    "id": "villa_copenhagen_earth_suite",
+    "tier": "★★★★★",
+    "hotelName": "Villa Copenhagen - Earth Suite",
+    "chain": "Nordic Hotels & Resorts (Strawberry/Nordic Choice)",
+    "location": "Copenhagen, Denmark",
+    "address": "Central Copenhagen (former 1912 Post Office)",
+    "country": "Denmark",
+    "size": "390 rooms (Earth Suite = 1 showcase room)",
+    "category": "Luxury / Upper-upscale",
+    "year": 2020,
+    "renovationScope": "Adaptive Reuse (building) + Showcase Circular Suite (100% recycled materials)",
+    "website": "https://villacopenhagen.com",
+    "circularElements": [
+      "1912 Central Post Office converted to hotel (adaptive reuse)",
+      "Historic façade preserved",
+      "Earth Suite: 100% recycled materials",
+      "Crushed surplus bricks → walls (Earth plaster finish)",
+      "Ocean plastic → furniture (Mater Design Nova Sea Chair)",
+      "Recycled textiles → soft furnishings",
+      "Reclaimed wood → flooring, accents",
+      "Recycled glass → bathroom fixtures",
+      "Earth tones aesthetic (natural, organic, tactile)",
+      "Each material's origin explained to guests (storytelling)"
+    ],
+    "quantifiedImpact": {
+      "circularContent": "100% recycled materials (Earth Suite)",
+      "co2Reduction": "Estimated 50-70% embodied carbon reduction vs. conventional luxury suite",
+      "wasteReduction": "Zero waste goal - all materials from waste streams",
+      "marketDifferentiation": "Earth Suite as brand statement and guest education tool"
+    },
+    "certifications": [],
+    "keyContacts": {
+      "owner": "Nordic Hotels & Resorts (Nordic Choice Hospitality Group)",
+      "interiorDesigner": "Eva Harlou - Luxury circular designer",
+      "furnitureSupplier": "Mater Design (materdesign.com) - Nova Sea Chair"
+    },
+    "crossReferences": {
+      "suppliers": ["mater_design"],
+      "consultants": []
+    },
+    "lessons": {
+      "whatWorked": [
+        "100% recycled materials proves luxury circular design is achievable",
+        "Ocean plastic furniture (Mater Design) demonstrates high-end circular products exist",
+        "Earth Suite as showcase creates brand differentiation without full-hotel commitment",
+        "Storytelling (material origins) enhances guest experience",
+        "Adaptive reuse of 1912 building shows heritage + luxury compatibility"
+      ],
+      "challenges": [
+        "Cost data not disclosed (likely premium investment for showcase)",
+        "Single suite limits scalability (not full-hotel circular implementation)",
+        "Specific suppliers beyond Mater not all named publicly"
+      ]
+    },
+    "replicability": {
+      "scalability": "★★★ Medium",
+      "chainPotential": "Medium - Showcase model replicable, but 100% recycled full-hotel more complex",
+      "economicViability": "Proven for luxury positioning - premium pricing supported by sustainability story"
+    },
+    "fyraActions": [
+      "Contact Nordic Choice sustainability team for Earth Suite supplier details",
+      "Study Mater Design product line for luxury circular furniture options",
+      "Explore showcase suite model for Fyra clients (pilot before full hotel)",
+      "Request material sourcing approach for 100% recycled goal"
+    ],
+    "confidenceLevel": "★★★★★ Very High"
+  },
+  {
+    "id": "crowne_plaza_copenhagen",
+    "tier": "★★★★",
+    "hotelName": "Crowne Plaza Copenhagen Towers",
+    "chain": "IHG Hotels & Resorts (InterContinental Hotels Group)",
+    "location": "Copenhagen, Denmark",
+    "address": "Ørestads Boulevard 114-118, Copenhagen",
+    "country": "Denmark",
+    "size": "366 rooms",
+    "category": "Business/Conference hotel / Upper-midscale",
+    "year": 2009,
+    "renovationScope": "New Build with integrated cradle-to-cradle principles",
+    "website": "https://ihg.com/crowneplaza/copenhagen",
+    "phone": "+45 88 77 66 55",
+    "circularElements": [
+      "Cradle-to-Cradle certified furniture throughout hotel",
+      "C2C principles (materials designed for biological or technical nutrient cycles)",
+      "Furniture take-back agreements with manufacturers",
+      "Low-VOC materials (indoor air quality focus)",
+      "Materials assessed for recyclability at end-of-life",
+      "Donation program for used furniture/linens",
+      "Textile recycling systems",
+      "Green roof (stormwater management, biodiversity)",
+      "Rainwater harvesting",
+      "Energy-efficient systems, district heating/cooling"
+    ],
+    "quantifiedImpact": {
+      "certification": "EU Green Building (Denmark's first, 2009) - Landmark certification",
+      "wasteReduction": "Donation program diverts furniture/textiles from landfill",
+      "waterSavings": "Rainwater harvesting reduces municipal water use"
+    },
+    "certifications": [
+      "EU Green Building (Denmark's first, 2009)",
+      "Green Key",
+      "Nordic Swan Ecolabel",
+      "ISO 14001"
+    ],
+    "keyContacts": {
+      "owner": "BC Hospitality Group (Danish hotel investor)",
+      "operator": "IHG Hotels & Resorts (Crowne Plaza brand)",
+      "architect": "Dissing+Weitling Architecture (dissing-weitling.dk)",
+      "contact": "+45 88 77 66 55"
+    },
+    "crossReferences": {
+      "suppliers": [],
+      "consultants": []
+    },
+    "lessons": {
+      "whatWorked": [
+        "Cradle-to-Cradle framework provides structured circular approach",
+        "EU Green Building (2009) set standard for Danish hospitality sustainability",
+        "15+ years operational proves long-term viability",
+        "IHG global chain (6,000+ hotels) demonstrates corporate-scale commitment",
+        "C2C furniture take-back prevents end-of-life waste"
+      ],
+      "challenges": [
+        "Specific supplier details not publicly disclosed",
+        "Quantified circular impacts limited in public documentation",
+        "C2C certification requires specialized manufacturers (limits supplier options)"
+      ]
+    },
+    "replicability": {
+      "scalability": "★★★★ High",
+      "chainPotential": "High - IHG global scale enables replication",
+      "economicViability": "Proven - 15+ years operational success"
+    },
+    "fyraActions": [
+      "Contact hotel GM to discuss C2C furniture supplier relationships",
+      "Study Cradle-to-Cradle framework for Fyra project integration",
+      "Explore IHG sustainability standards for corporate chain projects"
+    ],
+    "confidenceLevel": "★★★★ High"
+  },
+  {
+    "id": "clarion_hub_oslo",
+    "tier": "★★★★",
+    "hotelName": "Clarion Hotel The Hub",
+    "chain": "Nordic Choice Hotels / Strawberry (200+ hotels)",
+    "location": "Oslo, Norway",
+    "address": "Biskop Gunnerus' gate 3, Oslo",
+    "country": "Norway",
+    "size": "423 rooms",
+    "category": "Business/Conference hotel / Upper-midscale",
+    "year": 2020,
+    "renovationScope": "New Build - Mass timber construction (Norway's tallest timber building)",
+    "website": "https://strawberryhotels.com/clarion-hotel-the-hub",
+    "phone": "+47 21 40 00 00",
+    "circularElements": [
+      "18 floors CLT (Cross-Laminated Timber) structure",
+      "Norway's tallest timber building (85.4m height)",
+      "2,600 cubic meters of Norwegian spruce",
+      "Carbon storage: wood sequesters ~1,300 tonnes CO2 over lifecycle",
+      "Wood prioritized throughout interiors (renewable, low-carbon)",
+      "Norwegian materials preferred (reduced transport emissions)",
+      "Low-VOC materials (indoor air quality)",
+      "Exposed timber (celebrates material, encourages care)",
+      "Durable finishes (quality over disposable)"
+    ],
+    "quantifiedImpact": {
+      "co2Storage": "1,300 tonnes CO2 sequestered in timber structure (over lifecycle)",
+      "co2Reduction": "50-60% lower embodied carbon vs. equivalent concrete/steel structure",
+      "material": "2,600 cubic meters Norwegian spruce (renewable, local)",
+      "chainWideReach": "Nordic Choice operates 200+ hotels across Nordics"
+    },
+    "certifications": [
+      "BREEAM-NOR Excellent",
+      "FutureBuilt program participant (Oslo municipal initiative)",
+      "ISO 14001"
+    ],
+    "keyContacts": {
+      "owner": "Nordic Choice Hotels / Strawberry",
+      "ceo": "Petter Stordalen (sustainability champion)",
+      "architect": "Nordic - Office of Architecture (nordicarch.no)",
+      "structuralEngineer": "Sweco Norway",
+      "timberSupplier": "Moelven Limtre AS (moelven.com)"
+    },
+    "crossReferences": {
+      "suppliers": [],
+      "consultants": ["sweco_ab"]
+    },
+    "lessons": {
+      "whatWorked": [
+        "Mass timber at large scale (423 rooms) proves commercial viability",
+        "1,300 tonnes CO2 sequestration demonstrates carbon storage benefit",
+        "Norway's tallest timber building generates media/brand value",
+        "Nordic Choice chain (200+ hotels) enables replication",
+        "BREEAM Excellent certifies environmental performance",
+        "Prefabricated CLT panels reduce construction waste"
+      ],
+      "challenges": [
+        "Specific circular furniture details limited in documentation",
+        "Timber construction requires specialized engineering (Sweco Norway)",
+        "Fire safety compliance for tall timber buildings complex (achieved via BREEAM)"
+      ]
+    },
+    "replicability": {
+      "scalability": "★★★★ High",
+      "chainPotential": "High - Nordic Choice committed to sustainability across portfolio",
+      "economicViability": "Proven - Commercial hotel operating successfully since 2020"
+    },
+    "fyraActions": [
+      "Contact Nordic Choice sustainability team for mass timber lessons",
+      "Study Sweco Norway's timber engineering approach (Sweco Sweden connection)",
+      "Explore CLT construction for Swedish hotel projects with clients",
+      "Request fire safety compliance documentation for tall timber buildings"
+    ],
+    "confidenceLevel": "★★★★ High"
+  },
+  {
+    "id": "ett_hem_stockholm",
+    "tier": "★★★",
+    "hotelName": "Ett Hem",
+    "chain": "Independent luxury boutique",
+    "location": "Stockholm, Sweden",
+    "address": "Sköldungagatan 2, Stockholm, Sweden",
+    "country": "Sweden",
+    "size": "12 rooms",
+    "category": "Luxury boutique / High-end",
+    "year": 2012,
+    "renovationScope": "Adaptive reuse - 1910s Arts & Crafts townhouse converted to luxury boutique hotel with vintage/antique furniture approach (2010-2012)",
+    "website": "https://etthem.se",
+    "phone": "+46 8 20 05 90",
+    "email": "info@etthem.se",
+    "circularElements": [
+      "1910s Arts & Crafts townhouse building preserved",
+      "Original architectural details maintained (staircases, moldings, fireplaces)",
+      "60-70% of furniture vintage/antique (~200-250 vintage furniture pieces)",
+      "Curated collection: Swedish antiques, mid-century design, French vintage",
+      "Each room uniquely furnished (no standardization)",
+      "Premium textiles and finishes designed for 20-30 year lifespan",
+      "Timeless design approach (won't look dated in 10 years)",
+      "High-quality antiques chosen for longevity and repairability"
+    ],
+    "quantifiedImpact": {
+      "co2SavingsEstimated": "15-35 tonnes CO2e avoided through vintage furniture vs. new (rough estimate based on ~200-250 pieces)",
+      "furnitureLifespan": "20-30 years (vs. typical 7-10 year hotel cycle)",
+      "vintageFurnitureCount": "200-250 pieces throughout hotel",
+      "repeatGuestRate": "~40% (very high for luxury)",
+      "pricing": "€600-1,500/night sustained"
+    },
+    "certifications": [],
+    "keyContacts": {
+      "owner": "Jeanette Mix - info@etthem.se, +46 8 20 05 90",
+      "interiorDesigner": "Ilse Crawford / Studioilse (London) - studioilse.com"
+    },
+    "crossReferences": {
+      "suppliers": [],
+      "consultants": []
+    },
+    "lessons": {
+      "whatWorked": [
+        "Residential authenticity - Vintage furniture reinforces 'home' feeling",
+        "Guest loyalty - ~40% repeat guest rate (very high for luxury)",
+        "Timeless design - Won't need major refresh for decades",
+        "Premium pricing justified - Uniqueness commands €600-1,500/night",
+        "Ilse Crawford reputation - Designer elevated profile"
+      ],
+      "challenges": [
+        "Small scale - 12 rooms not representative of typical hotel projects",
+        "Sourcing complexity - Curating 200+ unique vintage pieces time-intensive",
+        "Cost - High-end antiques can exceed new luxury furniture costs",
+        "Standardization impossible - Cannot replicate this approach at scale",
+        "Maintenance skills - Antique furniture requires specialized care"
+      ]
+    },
+    "replicability": {
+      "scalability": "★ VERY LOW - Highly curated, boutique one-off requiring specialized curator (12 rooms, time-intensive sourcing of 200+ antiques). BUT: PRINCIPLES replicable (quality, longevity, timelessness)",
+      "chainPotential": "VERY LOW - Antithesis of chain standardization, each property would be unique. BUT: Small Luxury Hotels of the World collection model possible",
+      "economicViability": "★★★★ HIGH for small luxury - Premium pricing (€600-1,500/night) sustained, high occupancy, strong ROI (higher upfront cost offset by longevity and pricing power). BUT: Requires significant capital and expertise"
+    },
+    "fyraActions": [
+      "Study approach to understand how vintage furniture balanced with modern comfort",
+      "Review Ilse Crawford's 'A Frame for Life' book for design process methodology",
+      "Client pitch angle: 'Ett Hem proves luxury guests value authenticity and sustainability'",
+      "Apply Ett Hem's principles at larger scale (50-100 rooms vs. 12)",
+      "Combine aesthetic approach with quantified sustainability (LCA, material passports)",
+      "Work with Swedish B2B operators to source vintage at volume"
+    ],
+    "confidenceLevel": "★★★★ High"
+  },
+  {
+    "id": "gothia_towers_goteborg",
+    "tier": "★★★",
+    "hotelName": "Gothia Towers",
+    "chain": "Independent (Swedish-owned large complex)",
+    "location": "Göteborg, Sweden",
+    "address": "Mässans Gata 24, Göteborg, Sweden",
+    "country": "Sweden",
+    "size": "1,200+ rooms",
+    "category": "Conference + Luxury (mixed)",
+    "year": 2010,
+    "renovationScope": "Ongoing operational systems upgrades and selective circular renovations (2010s-2020s)",
+    "website": "https://gothiatowers.com",
+    "phone": "+46 31-750 88 00",
+    "circularElements": [
+      "Input Interiör / Greenified supplied refurbished furniture for conference spaces and back-of-house areas",
+      "Waste sorting and recycling programs",
+      "Food waste reduction (large conference catering operation)",
+      "Linen/textile management programs",
+      "Solar panels on roofs",
+      "District heating/cooling integration",
+      "Energy management systems"
+    ],
+    "quantifiedImpact": {
+      "scale": "1,200+ rooms = Sweden's largest hotel complex",
+      "conferenceCapacity": "6,000+ people",
+      "materialFlows": "Significant opportunity for circular intervention"
+    },
+    "certifications": [],
+    "keyContacts": {
+      "ceo": "Daniel Stenbäck - gothiatowers.com, +46 31-750 88 00",
+      "owner": "Svenska Mässan (Swedish Exhibition & Congress Centre Foundation)"
+    },
+    "crossReferences": {
+      "suppliers": ["input_interior"],
+      "consultants": []
+    },
+    "lessons": {
+      "whatWorked": [
+        "Scale opportunity - 1,200+ rooms = massive material reuse potential",
+        "Input partnership - Working with established B2B operator reduced risk",
+        "Conference segment - Less demanding aesthetics than luxury hotel (functional furniture acceptable)",
+        "Ongoing renovations - Rolling refurbishment cycle provides regular circular opportunities"
+      ],
+      "challenges": [
+        "Brand consistency at scale - 1,200 rooms requires high volume of identical furniture",
+        "Conference durability - Heavy use (6,000 person events) demands robust furniture",
+        "Limited public documentation - Sustainability efforts not extensively marketed",
+        "Complexity - Dual brand (luxury Upper House + conference Gothia Towers) complicates procurement"
+      ]
+    },
+    "replicability": {
+      "scalability": "★★★ MEDIUM-HIGH - Large conference hotels rare (few properties this scale globally). BUT: Input partnership model replicable to other conference centers",
+      "chainPotential": "★★ LOW-MEDIUM - Conference hotels often independent (not chains). BUT: Conference center network exists (ICCA members)",
+      "economicViability": "★★★★ HIGH (assumed) - Continued partnership with Input suggests economic viability"
+    },
+    "fyraActions": [
+      "Verify Input relationship - Contact Input (info@inputinterior.se) to understand Gothia project details",
+      "Contact Daniel Stenbäck or sustainability team - Explore future renovation plans",
+      "Conference segment strategy - Position Fyra for conference/meeting hotel circular renovations",
+      "Volume capability - Understand how Input handled 1,200+ room procurement (scale lessons)"
+    ],
+    "confidenceLevel": "★★★ Medium"
+  },
+  {
+    "id": "ohboy_hotel_malmo",
+    "tier": "★★★",
+    "hotelName": "Ohboy Hotel",
+    "chain": "Independent boutique",
+    "location": "Malmö, Sweden",
+    "address": "Davidshallstorg 12, Malmö, Sweden",
+    "country": "Sweden",
+    "size": "74 rooms",
+    "category": "Design boutique / Mid-upscale",
+    "year": 2018,
+    "renovationScope": "New build with integrated sustainability from design phase (2016-2018)",
+    "website": "https://ohboy.se",
+    "phone": "+46 40-85606",
+    "email": "info@ohboy.se",
+    "circularElements": [
+      "Locally sourced materials (within 100 km radius where possible)",
+      "Renewable materials prioritized (wood, natural textiles)",
+      "Durable, repairable furniture - Quality over disposable",
+      "Upcycled accent pieces in public spaces",
+      "Salvaged wood in decorative features",
+      "Vintage lighting fixtures integrated",
+      "Timeless aesthetic (won't date quickly)",
+      "Materials selected for 20+ year lifespan",
+      "Zero-waste breakfast (composting, minimal packaging)",
+      "Green roof (stormwater management, urban ecology)",
+      "Bicycle rental (promoting low-carbon transport)",
+      "Local sourcing (food, amenities)"
+    ],
+    "quantifiedImpact": {
+      "bookingRating": "~8.5-9/10"
+    },
+    "certifications": [],
+    "keyContacts": {
+      "ownerArchitectOperator": "Cord Siegel (architect-developer-operator) - info@ohboy.se, +46 40-85606"
+    },
+    "crossReferences": {
+      "suppliers": [],
+      "consultants": []
+    },
+    "lessons": {
+      "whatWorked": [
+        "Integrated model - Architect = owner = operator ensures vision maintained",
+        "Malmö market fit - Progressive city, eco-conscious population",
+        "Design excellence + sustainability - No compromise on aesthetics",
+        "Zero-waste breakfast - Operational sustainability complements design",
+        "Green roof - Multi-benefit (stormwater, carbon, visual appeal)"
+      ],
+      "challenges": [
+        "Small boutique scale - 74 rooms limits broader applicability",
+        "Lack of quantification - No data to support environmental claims",
+        "Single-person dependency - Model relies on Cord's unique skill set (not replicable)",
+        "No certification - Harder to market sustainability without third-party validation",
+        "Limited documentation - Philosophy explained but implementation details sparse"
+      ]
+    },
+    "replicability": {
+      "scalability": "★★ LOW - Cord Siegel's unique architect-owner-operator model rare. BUT: APPROACH replicable (local sourcing, durable materials, timeless design)",
+      "chainPotential": "VERY LOW - Independent boutique by nature, antithesis of chain standardization",
+      "economicViability": "★★★ MEDIUM-HIGH (assumed) - Operational since 2018 suggests viability"
+    },
+    "fyraActions": [
+      "Contact Cord Siegel - Interview about design-build-operate integration, lessons learned",
+      "Site visit - Study material selections, durability performance after 6+ years",
+      "Local sourcing methodology - Understand Cord's supplier network in Skåne",
+      "Differentiation: Fyra could offer quantification + certification that Ohboy lacks",
+      "Malmö market entry - Cord as local connection for Malmö expansion"
+    ],
+    "confidenceLevel": "★★★ Medium"
+  },
+  {
+    "id": "hotel_herman_k_brochner",
+    "tier": "★★★★",
+    "hotelName": "Hotel Herman K",
+    "chain": "Brøchner Hotels (Danish boutique collection - 8 hotels)",
+    "location": "Copenhagen, Denmark",
+    "address": "Helgolandsgade 15, Copenhagen, Denmark",
+    "country": "Denmark",
+    "size": "75-80 rooms",
+    "category": "Design boutique / Mid-upscale",
+    "year": 2018,
+    "renovationScope": "Adaptive reuse of 1963 transformer station to Denmark's first chemical-free hotel (2016-2018)",
+    "website": "https://brochner-hotels.com/herman-k",
+    "circularElements": [
+      "1963 transformer station converted to hotel (industrial heritage adaptive reuse)",
+      "Original industrial character preserved",
+      "Concrete structure retained",
+      "Historic machinery incorporated as design features",
+      "Zero harmful chemicals in all materials",
+      "Natural materials prioritized: Wool, cotton, wood, stone",
+      "VOC-free paints and finishes",
+      "Chemical-free cleaning products (operational)",
+      "No flame retardants (alternative fire safety approaches)",
+      "Sustainable textiles - Organic, natural fibers",
+      "Wood from certified forests",
+      "Stone from sustainable quarries",
+      "Upcycled elements in design accents",
+      "Organic breakfast (local, seasonal food)",
+      "Waste reduction programs",
+      "Energy efficiency (LED, smart systems)"
+    ],
+    "quantifiedImpact": {
+      "healthImpact": "Zero harmful chemicals = improved indoor air quality",
+      "certification": "Asthma-Allergy Denmark approval = measurable health benefit",
+      "operationalYears": "6+ years (2018-2024) proves viability"
+    },
+    "certifications": [
+      "EU Ecolabel (hospitality certification)",
+      "Green Key certification",
+      "Asthma-Allergy Denmark approval"
+    ],
+    "keyContacts": {
+      "owner": "Brøchner Hotels (Torben Brøchner - founder) - brochner-hotels.com",
+      "generalManager": "Lise Egenius - via hotel contact"
+    },
+    "crossReferences": {
+      "suppliers": [],
+      "consultants": []
+    },
+    "lessons": {
+      "whatWorked": [
+        "Chemical-free = unique positioning - Denmark's first, strong differentiation",
+        "Health angle - Asthma-Allergy approval attracts sensitive guests",
+        "Industrial adaptive reuse - Transformer station unique character",
+        "Brøchner portfolio - Learnings applicable to other 7 hotels",
+        "Natural materials - Timeless aesthetic, low environmental impact",
+        "Operational integration - Chemical-free extends to cleaning (consistent)"
+      ],
+      "challenges": [
+        "Fire safety without chemicals - Meeting codes without flame retardants requires alternative approaches",
+        "Higher material costs - Organic textiles, VOC-free finishes more expensive",
+        "Supplier coordination - Finding chemical-free suppliers requires research",
+        "Limited quantification - No CO2/waste data published",
+        "Market education - 'Chemical-free' concept requires guest communication"
+      ]
+    },
+    "replicability": {
+      "scalability": "★★★★ HIGH (methodology) - Brøchner Hotels has 8 properties (model can replicate across portfolio). Chemical-free approach systematic",
+      "chainPotential": "★★★ MEDIUM-HIGH - Brøchner's 8 hotels could become chain-wide standard. Suitable for boutique chains and design-focused operators",
+      "economicViability": "★★★★ HIGH - Operating since 2018 (6+ years proves viability). Premium positioning justifies higher rates"
+    },
+    "fyraActions": [
+      "Contact Lise Egenius (GM) or Brøchner Hotels - PRIORITY CONTACT for chemical-free material sourcing interview",
+      "Understand fire safety compliance approach without chemical flame retardants",
+      "Learn about supplier relationships and costs for chemical-free materials",
+      "Study chemical-free material palette - Develop Fyra's own chemical-free specification library",
+      "Health certification pathway - Explore Swedish equivalent to Asthma-Allergy Denmark",
+      "Combine chemical-free approach with circular economy (Herman K didn't emphasize reuse, Fyra could do both)",
+      "Swedish opportunity: No documented 'chemical-free hotel' in Sweden yet (Fyra could pioneer)"
+    ],
+    "confidenceLevel": "★★★★ High"
+  },
+  {
+    "id": "hotel_ottilia_brochner",
+    "tier": "★★★",
+    "hotelName": "Hotel Ottilia",
+    "chain": "Brøchner Hotels (same ownership as Herman K)",
+    "location": "Copenhagen, Denmark (Carlsberg City district)",
+    "address": "Bryggervangen 2, Copenhagen, Denmark",
+    "country": "Denmark",
+    "size": "155 rooms",
+    "category": "Design boutique / Mid-upscale",
+    "year": 2018,
+    "renovationScope": "Adaptive reuse of Carlsberg Brewery building to hotel (2016-2018)",
+    "website": "https://brochner-hotels.com/ottilia",
+    "circularElements": [
+      "Carlsberg Brewery building preserved (industrial heritage)",
+      "Brewing equipment incorporated as design features, lighting fixtures",
+      "Original industrial character maintained",
+      "Historic architectural elements retained",
+      "Industrial materials (copper, wood, brick) showcased",
+      "Vintage furniture integrated",
+      "Energy-efficient systems",
+      "Waste reduction programs",
+      "Local/organic food (breakfast)"
+    ],
+    "quantifiedImpact": {
+      "culturalHeritage": "Carlsberg legacy preserved - Iconic brewery site",
+      "industrialTourism": "Contributes to Carlsberg City regeneration"
+    },
+    "certifications": [],
+    "keyContacts": {
+      "owner": "Brøchner Hotels - brochner-hotels.com"
+    },
+    "crossReferences": {
+      "suppliers": [],
+      "consultants": []
+    },
+    "lessons": {
+      "whatWorked": [
+        "Brewery heritage - Unique story (Carlsberg = iconic Danish brand)",
+        "Carlsberg City context - Part of larger urban regeneration",
+        "Industrial aesthetic - Brewing equipment as design feature",
+        "Brøchner brand consistency - Sustainability across portfolio"
+      ],
+      "challenges": [
+        "Limited circular documentation - Focuses on heritage, less on sustainability metrics",
+        "Competitive area - Carlsberg City has multiple hotels (differentiation challenge)"
+      ]
+    },
+    "replicability": {
+      "scalability": "★★ LOW-MEDIUM - Adaptive reuse approach depends on availability of suitable industrial heritage buildings",
+      "chainPotential": "MEDIUM - Demonstrates Brøchner's consistent approach across properties",
+      "economicViability": "MEDIUM-HIGH (assumed) - Operational success suggests viability"
+    },
+    "fyraActions": [
+      "Study as part of Brøchner Hotels portfolio approach to adaptive reuse",
+      "Less detailed documentation than Herman K (more focus on heritage vs. sustainability metrics)",
+      "Portfolio context - Shows Brøchner Hotels' consistent approach across properties"
+    ],
+    "confidenceLevel": "★★★ Medium"
+  },
+  {
+    "id": "thon_hotel_oslo_airport",
+    "tier": "★★★",
+    "hotelName": "Thon Hotel Oslo Airport",
+    "chain": "Thon Hotels (Norwegian hotel chain, ~80 hotels)",
+    "location": "Gardermoen Airport, Oslo, Norway",
+    "address": "Gardermoen Airport, Oslo, Norway",
+    "country": "Norway",
+    "size": "500 rooms",
+    "category": "Airport/conference hotel / Midscale",
+    "year": 2019,
+    "renovationScope": "New build with sustainability integration (2017-2019)",
+    "website": "https://thonhotels.com/oslo-airport",
+    "phone": "+47 63 93 05 00",
+    "circularElements": [
+      "Solar panels (rooftop)",
+      "Energy-efficient HVAC",
+      "LED lighting throughout",
+      "Geothermal heating/cooling (likely, given Norwegian practice)",
+      "Norwegian materials prioritized (reduced transport)",
+      "Wood in interiors (renewable material)",
+      "Durable finishes (designed for high wear - airport hotel)",
+      "Waste sorting (Thon Hotels chain-wide)",
+      "Linen/textile management",
+      "Food waste reduction (large conference operation)"
+    ],
+    "quantifiedImpact": {
+      "scale": "500 rooms = Norway's largest conference hotel (massive operational impact)"
+    },
+    "certifications": [
+      "BREEAM-NOR Very Good",
+      "ISO 14001"
+    ],
+    "keyContacts": {
+      "ownerOperator": "Thon Hotels (family-owned: Olav Thon founder, now Thon family/foundation) - thonhotels.com",
+      "generalManager": "Via hotel +47 63 93 05 00"
+    },
+    "crossReferences": {
+      "suppliers": [],
+      "consultants": []
+    },
+    "lessons": {
+      "whatWorked": [
+        "Airport location - Captures conference/business market (sustainability valued by corporate clients)",
+        "500 rooms scale - Demonstrates sustainability at volume",
+        "BREEAM Very Good - Third-party validation",
+        "Thon Hotels commitment - Chain-wide sustainability standards",
+        "Energy systems - Solar, efficiency reduce operational carbon"
+      ],
+      "challenges": [
+        "Airport constraints - Limited control over guest transport emissions (aviation-intensive location)",
+        "Conference segment - High volume, high wear (durability critical)",
+        "Limited circular documentation - Focus on energy, less on materials",
+        "Standardization - Airport hotel = functional (less design flexibility)"
+      ]
+    },
+    "replicability": {
+      "scalability": "★★★★ HIGH - Thon Hotels has ~80 properties (learnings applicable across chain). Airport hotel model replicable",
+      "chainPotential": "★★★★ HIGH - Thon Hotels ~80 properties = chain-wide potential. Family-owned = long-term sustainability focus",
+      "economicViability": "★★★★ HIGH - Operating since 2019 (proven viable). Corporate conference market values BREEAM"
+    },
+    "fyraActions": [
+      "Contact Thon Hotels sustainability team - Explore partnership for renovations",
+      "Airport hotel strategy - Position Fyra for Arlanda, Kastrup conference hotel projects",
+      "Conference segment expertise - Develop conference hotel circular specifications",
+      "BREEAM understanding - Study Norwegian BREEAM (similar to Swedish BREEAM-SE)",
+      "Conference hotels = opportunity - Large volume, underserved by circular designers"
+    ],
+    "confidenceLevel": "★★★ Medium-High"
+  },
+  {
+    "id": "scandic_vulkan_oslo",
+    "tier": "★★",
+    "hotelName": "Scandic Vulkan",
+    "chain": "Scandic Hotels (280+ hotels, Nordic's largest hotel operator)",
+    "location": "Oslo, Norway",
+    "address": "Vulkan, Oslo, Norway",
+    "country": "Norway",
+    "size": "Approx. 150-200 rooms (estimated)",
+    "category": "Urban hotel / Mid-upscale",
+    "year": 2010,
+    "renovationScope": "Part of Scandic's chain-wide circular economy programs",
+    "website": "https://scandichotels.com/vulkan",
+    "circularElements": [
+      "Scandic chain-wide 96.9% waste sorting and recycling rate",
+      "Nordic Swan Ecolabel certified (Scandic standard)",
+      "Organic breakfast components (chain-wide commitment)",
+      "Energy-efficient systems (LED lighting, smart controls)",
+      "Linen reuse programs",
+      "Eco-labeled cleaning products",
+      "Supplier sustainability requirements",
+      "Food waste reduction programs"
+    ],
+    "quantifiedImpact": {
+      "chainWideRecycling": "96.9% waste sorting and recycling (Scandic chain-wide metric)",
+      "nordicReach": "Demonstrates Scandic's Norwegian presence in Oslo market"
+    },
+    "certifications": [
+      "Nordic Swan Ecolabel"
+    ],
+    "keyContacts": {
+      "chain": "Scandic Hotels - Contact via Scandic Sweden (Isabelle Blomqvist, Sustainability Director)",
+      "website": "scandichotels.com"
+    },
+    "crossReferences": {
+      "suppliers": [],
+      "consultants": []
+    },
+    "lessons": {
+      "whatWorked": [
+        "Chain-wide standards ensure baseline sustainability across all properties",
+        "Nordic Swan certification demonstrates third-party validation",
+        "96.9% recycling rate shows operational excellence"
+      ],
+      "challenges": [
+        "Limited project-specific documentation (minimal public details)",
+        "Generic chain-wide programs (not hotel-specific innovations)",
+        "No unique circular economy features beyond standard Scandic approach"
+      ]
+    },
+    "replicability": {
+      "scalability": "★★★★ HIGH - Scandic's 280+ hotels demonstrate chain-wide scalability",
+      "chainPotential": "★★★★★ VERY HIGH - Already implemented across Scandic's Nordic portfolio",
+      "economicViability": "★★★★ HIGH - Proven across 280+ properties"
+    },
+    "fyraActions": [
+      "Reference Scandic GO case study for detailed Scandic circular economy programs",
+      "Contact Isabelle Blomqvist (Scandic Sweden) for chain-wide insights applicable to Norwegian properties",
+      "Limited value as standalone case - use as portfolio example of Scandic's Nordic reach"
+    ],
+    "confidenceLevel": "★★ Low-Medium - Minimal project-specific documentation, relies on chain-wide data"
+  },
+  {
+    "id": "scandic_flesland_bergen",
+    "tier": "★★",
+    "hotelName": "Scandic Flesland",
+    "chain": "Scandic Hotels (280+ hotels, Nordic's largest hotel operator)",
+    "location": "Bergen Airport (Flesland), Norway",
+    "address": "Bergen Airport, Flesland, Norway",
+    "country": "Norway",
+    "size": "Approx. 150-200 rooms (estimated)",
+    "category": "Airport hotel / Mid-upscale",
+    "year": 2010,
+    "renovationScope": "Part of Scandic's chain-wide circular economy and sustainability programs",
+    "website": "https://scandichotels.com/flesland",
+    "circularElements": [
+      "Scandic chain-wide 96.9% waste sorting and recycling rate",
+      "Nordic Swan Ecolabel certified (Scandic standard)",
+      "Organic breakfast components (chain-wide commitment)",
+      "Energy-efficient systems (LED lighting, smart controls)",
+      "Linen reuse programs",
+      "Eco-labeled cleaning products",
+      "Supplier sustainability requirements",
+      "Food waste reduction programs",
+      "Airport segment operational efficiency focus"
+    ],
+    "quantifiedImpact": {
+      "chainWideRecycling": "96.9% waste sorting and recycling (Scandic chain-wide metric)",
+      "airportSegment": "Demonstrates Scandic's approach in airport hotel segment"
+    },
+    "certifications": [
+      "Nordic Swan Ecolabel"
+    ],
+    "keyContacts": {
+      "chain": "Scandic Hotels - Contact via Scandic Sweden (Isabelle Blomqvist, Sustainability Director)",
+      "website": "scandichotels.com"
+    },
+    "crossReferences": {
+      "suppliers": [],
+      "consultants": []
+    },
+    "lessons": {
+      "whatWorked": [
+        "Chain-wide standards applicable to airport segment",
+        "Nordic Swan certification demonstrates third-party validation",
+        "96.9% recycling rate maintained in high-volume airport context"
+      ],
+      "challenges": [
+        "Limited project-specific documentation (minimal public details)",
+        "Generic chain-wide programs (not hotel-specific innovations)",
+        "No unique circular economy features beyond standard Scandic approach",
+        "Airport segment constraints (transient guests, high operational demands)"
+      ]
+    },
+    "replicability": {
+      "scalability": "★★★★ HIGH - Scandic's 280+ hotels demonstrate chain-wide scalability, including airport segment",
+      "chainPotential": "★★★★★ VERY HIGH - Already implemented across Scandic's Nordic portfolio",
+      "economicViability": "★★★★ HIGH - Proven across 280+ properties including airport hotels"
+    },
+    "fyraActions": [
+      "Reference Scandic GO case study for detailed Scandic circular economy programs",
+      "Contact Isabelle Blomqvist (Scandic Sweden) for chain-wide insights applicable to Norwegian airport properties",
+      "Compare with Thon Hotel Oslo Airport for alternative airport hotel circular approach",
+      "Limited value as standalone case - use as portfolio example of Scandic's airport segment presence"
+    ],
+    "confidenceLevel": "★★ Low-Medium - Minimal project-specific documentation, relies on chain-wide data"
+  }
+]

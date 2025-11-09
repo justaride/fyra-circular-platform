@@ -1,0 +1,259 @@
+[
+  {
+    "id": "forsen_ab",
+    "tier": 1,
+    "name": "FORSEN AB",
+    "priority": "★★★★★",
+    "priorityLabel": "HIGHEST - Top Choice",
+    "tagline": "Hospitality PM Specialist with CM Expertise",
+    "description": "Sweden's leading independent project and construction management company with proven hospitality track record (10+ hotel projects) and circular material procurement experience via Construction Management delivery method.",
+    "size": "~200 employees",
+    "location": "Stockholm HQ + nationwide (15+ offices from Luleå to Malmö)",
+    "website": "https://forsen.com/",
+    "hospitalityExperience": true,
+    "circularEconomyExperience": true,
+    "hospitalityProjects": "10+",
+    "circularRating": "★★★☆☆ Emerging",
+    "keyProjects": [
+      "Clarion Hotel Amaranten (461 rooms, live renovation)",
+      "Grow Hotel (circular CM procurement)",
+      "Clarion Malmö Live (Nordic Choice)",
+      "HTL Hotels Scandic (multiple locations)"
+    ],
+    "bestFor": [
+      "Live hotel renovations",
+      "CM flexibility for circular procurement",
+      "Chain hotels (Nordic Choice, Scandic)",
+      "50-150 room projects"
+    ],
+    "pricing": "~6,000 SEK/day",
+    "contact": {
+      "website": "https://forsen.com/",
+      "method": "Via contact form",
+      "reference": "Mention: Grow Hotel CM circular success"
+    },
+    "strengths": [
+      "CM leadership enables circular procurement flexibility",
+      "Proven circular integration (Grow Hotel)",
+      "Live hotel renovation expertise",
+      "Chain hotel relationships (Nordic Choice, Scandic)",
+      "PBL Inspector certified",
+      "Pure PM (no design overlap with Fyra)"
+    ],
+    "concerns": [
+      "Emerging circular practice (not yet market-leading)",
+      "No established reuse supplier network",
+      "Relies on external for LCA/certifications"
+    ]
+  },
+  {
+    "id": "sweco_ab",
+    "tier": 1,
+    "name": "SWECO",
+    "priority": "★★★★☆",
+    "priorityLabel": "VERY HIGH - Premium Choice",
+    "tagline": "Largest A&E with Proven Circular ROI",
+    "description": "Largest A&E consultancy in Europe (22,000 employees) with quantified circular economy success. Blique by Nobis: €8.6M materials reused, 3,600 tons CO₂ saved, LEED Gold + Nordic Swan.",
+    "size": "22,000 employees (2,000+ in Sweden)",
+    "location": "Stockholm + all Sweden + 8 European countries",
+    "website": "https://swecogroup.com/",
+    "hospitalityExperience": true,
+    "circularEconomyExperience": true,
+    "hospitalityProjects": "3-5",
+    "circularRating": "★★★★☆ High",
+    "keyProjects": [
+      "Blique by Nobis (249 rooms, €8.6M materials, 3,600 tons CO₂ saved)"
+    ],
+    "keyContact": "Amanda Borneke (Circular Economy Specialist)",
+    "bestFor": [
+      "Design hotels with ambitious sustainability",
+      "Adaptive reuse projects",
+      "LEED/BREEAM/Nordic Swan certification",
+      "100-250 room luxury projects",
+      "Clients needing quantified ROI (C3 tool)"
+    ],
+    "pricing": "6,000-8,000 SEK/day (~5% project cost)",
+    "contact": {
+      "phone": "+46 8 695 60 00",
+      "website": "https://swecogroup.com/",
+      "askFor": "Amanda Borneke + Buildings Division",
+      "reference": "Mention: Blique success (3,600 tons CO₂ saved)"
+    },
+    "strengths": [
+      "Proven circular ROI (Blique: €120M total savings)",
+      "One-stop-shop (architecture + engineering + sustainability + PM)",
+      "C3 tool for quantification",
+      "Excellent certification capability (LEED/BREEAM)",
+      "22,000 employees = substantial resources"
+    ],
+    "concerns": [
+      "Design overlap - Sweco DOES architecture (scope carefully!)",
+      "Large firm complexity - need specific team",
+      "Mid-high pricing",
+      "Engineering-minded culture"
+    ],
+    "scopingCritical": "MUST clarify: Sweco PM+Engineering | Fyra Interior Design to avoid overlap"
+  },
+  {
+    "id": "hifab_ab",
+    "tier": 1,
+    "name": "HIFAB AB",
+    "priority": "★★★★☆",
+    "priorityLabel": "HIGH - Cost-Effective Choice",
+    "tagline": "70 Years PM Experience, Pure PM Focus",
+    "description": "Established project management and owner's advisory firm with 70+ years experience, 400 employees, 15 offices nationwide. Pure PM (does NOT do design) = natural Fyra partner. Known for cost-effective, reliable execution.",
+    "size": "~400 employees",
+    "location": "Stockholm HQ + 15 offices (most comprehensive regional coverage)",
+    "website": "https://hifab.se/",
+    "founded": "1947",
+    "hospitalityExperience": true,
+    "circularEconomyExperience": false,
+    "hospitalityProjects": "5-10",
+    "circularRating": "★★☆☆☆ Emerging",
+    "keyProjects": [
+      "Airport hotels (multiple)",
+      "Hotel Oden conversion (adaptive reuse)",
+      "Clarion @ Airport City"
+    ],
+    "keyContact": "Christian Horn (Head of PM Stockholm)",
+    "bestFor": [
+      "Budget-conscious clients",
+      "Regional/rural projects (15 offices)",
+      "Public sector clients",
+      "Partnering contracts",
+      "50-100 room projects where Fyra leads sustainability"
+    ],
+    "pricing": "~6,000 SEK/day (cost-effective)",
+    "contact": {
+      "website": "https://hifab.se/",
+      "askFor": "Christian Horn or experienced hospitality PM",
+      "reference": "Mention: 70 years + growing sustainability focus"
+    },
+    "strengths": [
+      "70 years experience = institutional knowledge",
+      "15 offices = best regional coverage",
+      "Pure PM (zero design overlap with Fyra)",
+      "Excellent regulatory navigation (BBR + municipal)",
+      "Cost-effective management",
+      "Public sector relationships"
+    ],
+    "concerns": [
+      "Not sustainability specialist (<15% reuse historically)",
+      "Conservative execution style",
+      "Requires external for LCA/certifications",
+      "Less hospitality depth than Forsen"
+    ]
+  },
+  {
+    "id": "wsp_sverige",
+    "tier": 2,
+    "name": "WSP SVERIGE",
+    "priority": "★★★☆☆",
+    "priorityLabel": "MEDIUM - Engineering Specialist",
+    "tagline": "Engineering-Led with Reuse Coordination",
+    "description": "Global engineering consultancy (70,000 globally, 4,000+ Sweden) with strong sustainability tools. Best as technical partner (engineering + sustainability) rather than lead PM.",
+    "size": "4,000+ staff in Sweden",
+    "location": "Stockholm + all Sweden + global",
+    "website": "https://wsp.com/",
+    "hospitalityExperience": false,
+    "circularEconomyExperience": true,
+    "hospitalityProjects": "3-5 (engineering roles)",
+    "circularRating": "★★★★☆ High",
+    "bestFor": [
+      "Engineering-heavy projects (HVAC optimization)",
+      "Complex building physics",
+      "WELL Building Standard",
+      "As sub-consultant (not lead PM)"
+    ],
+    "pricing": "Engineering rates apply",
+    "contact": {
+      "website": "https://wsp.com/",
+      "keyPeople": "Erik Höglund (Sustainability Director), Maria Brogren (Green Building)"
+    },
+    "strengths": [
+      "Engineering excellence (MEP, building physics)",
+      "Future Ready® climate tools",
+      "Reuse coordination service",
+      "Excellent certification capability"
+    ],
+    "concerns": [
+      "Limited hotel PM track record",
+      "Engineering-first culture",
+      "Best as sub-consultant, not lead PM"
+    ],
+    "recommendedUse": "Pair with Forsen (lead PM) + WSP (engineering) + Fyra (design) for complex projects"
+  },
+  {
+    "id": "afry_ab",
+    "tier": 2,
+    "name": "AFRY AB",
+    "priority": "★★★☆☆",
+    "priorityLabel": "MEDIUM - Nordic Network",
+    "tagline": "Swedish-Finnish with Office-to-Hotel Experience",
+    "description": "Architecture + engineering + sustainability with Swedish-Finnish heritage. Office-to-hotel conversion experience (Fyrkanten, BREEAM Very Good) and Nordic Choice energy program.",
+    "size": "Large multidisciplinary",
+    "location": "Stockholm + Nordic reach",
+    "website": "https://afry.com/",
+    "hospitalityExperience": true,
+    "circularEconomyExperience": true,
+    "hospitalityProjects": "3-5",
+    "circularRating": "★★★☆☆ Medium-High",
+    "keyProjects": [
+      "Fyrkanten 14 (office-to-hotel, BREEAM Very Good)",
+      "Nordic Choice energy program (12 hotels)"
+    ],
+    "bestFor": [
+      "Adaptive reuse (office → hotel)",
+      "Energy optimization",
+      "Nordic cross-border knowledge",
+      "BREEAM certification"
+    ],
+    "contact": {
+      "website": "https://afry.com/",
+      "keyPeople": "Henric Björck, Ulf Gustavsson"
+    },
+    "strengths": [
+      "Office-to-hotel conversion experience",
+      "Nordic Choice relationship",
+      "Energy optimization expertise",
+      "Swedish-Finnish network"
+    ],
+    "concerns": [
+      "Moderate hospitality depth",
+      "Growing circular practice"
+    ]
+  },
+  {
+    "id": "ramboll_sweden",
+    "tier": 2,
+    "name": "RAMBOLL SWEDEN",
+    "priority": "★★☆☆☆",
+    "priorityLabel": "LOW-MEDIUM - Limited Hospitality",
+    "tagline": "Engineering-Led with Circular Thought Leadership",
+    "description": "Major Nordic engineering firm with advanced circular economy credentials and published guidance, but limited hospitality PM track record (1-2 projects, sub-consultant roles).",
+    "size": "Major Nordic firm",
+    "location": "Stockholm + Gothenburg",
+    "website": "https://ramboll.com/",
+    "hospitalityExperience": false,
+    "circularEconomyExperience": true,
+    "hospitalityProjects": "1-2",
+    "circularRating": "★★★★☆ Advanced",
+    "bestFor": [
+      "Sustainability specialist sub-consultant"
+    ],
+    "contact": {
+      "website": "https://ramboll.com/"
+    },
+    "strengths": [
+      "Advanced circular economy credentials",
+      "Published guidance on circularity",
+      "Webinar thought leadership"
+    ],
+    "concerns": [
+      "Very limited hospitality track record",
+      "Primarily engineering sub-consultant",
+      "Unproven as hotel PM lead"
+    ],
+    "verdict": "Strong on circularity but insufficient hospitality track record for Fyra's primary PM needs. Possible use as sustainability specialist sub-consultant."
+  }
+]

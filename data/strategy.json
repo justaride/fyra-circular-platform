@@ -1,0 +1,33 @@
+{
+  "marketAnalysis": {
+    "swedenOverview": "",
+    "hotelSector": "",
+    "circularEconomyTrends": "",
+    "opportunities": [],
+    "challenges": []
+  },
+  "fyraPositioning": {
+    "valueProposition": "",
+    "differentiators": [],
+    "targetMarket": "",
+    "competitiveAdvantages": []
+  },
+  "recommendations": {
+    "immediate": [
+      "Priority: Company",
+      "Priority: Company",
+      "Priority: Hotel/Organization"
+    ],
+    "shortTerm": [],
+    "longTerm": []
+  },
+  "implementation": {
+    "roadmap": [
+      "Permit Timelines: Unknown Finnish norms",
+      "Timeline: 12-18 months design + construction"
+    ],
+    "milestones": [],
+    "resources": [],
+    "successMetrics": []
+  }
+}

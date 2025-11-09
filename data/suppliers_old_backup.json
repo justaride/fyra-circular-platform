@@ -1,0 +1,502 @@
+[
+  {
+    "id": "input_interior___greenified",
+    "name": "INPUT INTERIÖR / GREENIFIED",
+    "description": "• Sales of refurbished furniture • Marketplace commission (Greenified) • Rental options • Full-service project fees (turnkey)",
+    "location": "Dalby, Skåne, Sweden; Primary: Dalby (Nordens største refurbishment factory) **Secondary:** Jönköping warehouse **Sales Office:** Stockholm; Stockholm, Sweden; 41 showrooms nationwide across Sweden Stockholm HQ prominent; Primary Supplier",
+    "services": [],
+    "capabilities": {
+      "volume": "Corporate headquarters scale (E.ON example = entire office fit-out)",
+      "leadTime": "• Greenified stock items: 1-3 weeks • Custom sourcing projects: 6-12 weeks • Refurbishment services: Add 3-6 weeks",
+      "inventory": "YLLW (Dalby) + Input (Stockholm HQ)",
+      "logistics": "✅ Sverige ↔ Finland: Nordic presence suggests capable"
+    },
+    "contact": {
+      "name": "Ola Sjödin (ola@yllw.com)",
+      "phone": "+46 200 77 00 25",
+      "email": "info@inputinterior.se",
+      "website": "https://www.inputinterior.se (Input) https://greenified.se (Greenified circular platform)"
+    },
+    "certifications": [
+      "⚠️ Product-level certifications not documented ✅ E.ON case: Full sustainability reporting (195 tonnes CO₂e quantified)"
+    ],
+    "hospitalityReadiness": {
+      "score": "⭐⭐⭐⭐ TIER 1 - HIGH (Slightly below YLLW due to less explicit hospitality marketing, but capability clear)",
+      "strengths": [],
+      "gaps": []
+    },
+    "pricing": "Likely volume discounts; turnkey service = bundled pricing model",
+    "projectExamples": []
+  },
+  {
+    "id": "rekomo_ab",
+    "name": "REKOMO AB",
+    "description": "• Buy/resell used office furniture • Rental options • Fast delivery = core value proposition",
+    "location": "Appears Stockholm-based (major showroom presence); Major Showrooms: Stockholm, Gothenburg (Göteborg), Malmö (three primary hubs) **Additional:** Multiple other Swedish cities mentioned **Warehouses:** Large warehouses at each major showroom location",
+    "services": [],
+    "capabilities": {
+      "volume": "Large corporate office fit-outs documented",
+      "leadTime": "• Stock items: 1-2 weeks (fast delivery emphasis) • Volume orders: May require 2-4 weeks to accumulate",
+      "inventory": "",
+      "logistics": "✅ Sverige ↔ Finland: CONFIRMED (\"serves entire Nordics\")"
+    },
+    "contact": {
+      "name": "",
+      "phone": "010-33 33 111",
+      "email": "info@rekomo.se",
+      "website": "https://www.rekomo.se"
+    },
+    "certifications": [
+      "❌ Not documented"
+    ],
+    "hospitalityReadiness": {
+      "score": "⭐⭐⭐ TIER 1 - MEDIUM-HIGH **Best for:** Budget hotels, hostels, cost-focused chain refurbishments **Limitations:** Generic aesthetics, less compliance support",
+      "strengths": [],
+      "gaps": []
+    },
+    "pricing": "Likely volume discounts available",
+    "projectExamples": []
+  },
+  {
+    "id": "kompanjonen_dacke_consulting_subsidiary",
+    "name": "KOMPANJONEN (Dacke Consulting subsidiary)",
+    "description": "Consulting/facilitation fees: • Project advisory retainer • Percentage of materials value • Hourly/daily consulting rates (Specific rates not documented)",
+    "location": "Stockholm-based; Office/consulting base (not large warehouse operation)",
+    "services": [],
+    "capabilities": {
+      "volume": "Large building renovation scale (entire hotel interior documented in references)",
+      "leadTime": "• Sourcing projects: Variable 4-16 weeks depending on specificity and market availability • Complex items: Longer lead times",
+      "inventory": "",
+      "logistics": "⚠️ Sverige ↔ Finland: Possible via coordination but not standard service"
+    },
+    "contact": {
+      "name": "Per Håkansson",
+      "phone": "Via website",
+      "email": "Via website contact / likely via Dacke parent company",
+      "website": "https://kompanjonen.se (Dacke: http://dackeconsulting.com)"
+    },
+    "certifications": [
+      "⚠️ Consultant role = guides clients to certified options"
+    ],
+    "hospitalityReadiness": {
+      "score": "⭐⭐⭐⭐ TIER 2 - HIGH POTENTIAL **Role:** **NOT direct supplier** but **CRITICAL FACILITATOR** **Best for:** Complex circular projects needing expert coordination and compliance navigation",
+      "strengths": [],
+      "gaps": []
+    },
+    "pricing": "✅ Primary model",
+    "projectExamples": []
+  },
+  {
+    "id": "aterbruksfabriken",
+    "name": "ÅTERBRUKSFABRIKEN",
+    "description": "Sales of salvaged building materials",
+    "location": "Vrena, Södertälje/Sörmland region (near Stockholm); 5,000 m² warehouse for building materials and interior construction systems",
+    "services": [],
+    "capabilities": {
+      "volume": "Large commercial building renovation scale",
+      "leadTime": "• Stock items: 2-4 weeks • Custom sourcing: 6-12 weeks (demolition-dependent)",
+      "inventory": "",
+      "logistics": "⚠️ Sverige ↔ Finland: Unlikely for building materials (weight/cost prohibitive)"
+    },
+    "contact": {
+      "name": "",
+      "phone": "Via website",
+      "email": "Via website contact",
+      "website": "https://aterbruksfabriken.se"
+    },
+    "certifications": [
+      "⚠️ Works with green building certification projects (suggests some capability)"
+    ],
+    "hospitalityReadiness": {
+      "score": "⭐⭐ TIER 2 - LOW-MEDIUM FOR FURNITURE ⭐⭐⭐⭐ **TIER 2 - HIGH FOR BUILDING MATERIALS** **Best for:** Hotel interior **build-outs** (doors, windows, flooring, ceiling systems) rather than **furnishings**",
+      "strengths": [],
+      "gaps": []
+    },
+    "pricing": "Likely",
+    "projectExamples": []
+  },
+  {
+    "id": "place2place",
+    "name": "PLACE2PLACE",
+    "description": "Marketplace commission: • Sellers set prices • Place2Place takes transaction fee • No direct pricing from Place2Place",
+    "location": "Online platform; physical presence not primary (likely Stockholm-based team); No own warehouses - marketplace aggregates third-party sellers",
+    "services": [],
+    "capabilities": {
+      "volume": "Depends on aggregate seller availability",
+      "leadTime": "Variable 2-8 weeks: • Depends on individual seller • Each item unique negotiation",
+      "inventory": "",
+      "logistics": "⚠️ Sverige ↔ Finland: Possible if individual sellers agree; not standard platform service"
+    },
+    "contact": {
+      "name": "",
+      "phone": "Via website",
+      "email": "Via website",
+      "website": "https://www.place2place.se"
+    },
+    "certifications": [
+      "❌ Not applicable (marketplace model)"
+    ],
+    "hospitalityReadiness": {
+      "score": "⭐⭐⭐ TIER 2 - BOUTIQUE/STATEMENT PIECES ONLY **Best for:** Lobby signature furniture, unique restaurant pieces, designer suites **NOT for:** Uniform guest room furnishing, volume orders",
+      "strengths": [],
+      "gaps": []
+    },
+    "pricing": "Not applicable (individual item transactions)",
+    "projectExamples": []
+  },
+  {
+    "id": "dpj_aterbruk",
+    "name": "DPJ ÅTERBRUK",
+    "description": "",
+    "location": "",
+    "services": [],
+    "capabilities": {
+      "volume": "",
+      "leadTime": "",
+      "inventory": "",
+      "logistics": ""
+    },
+    "contact": {
+      "name": "",
+      "phone": "",
+      "email": "",
+      "website": ""
+    },
+    "certifications": [],
+    "hospitalityReadiness": {
+      "score": "",
+      "strengths": [],
+      "gaps": []
+    },
+    "pricing": "",
+    "projectExamples": []
+  },
+  {
+    "id": "brattons_aterbruk",
+    "name": "BRATTÖNS ÅTERBRUK",
+    "description": "",
+    "location": "",
+    "services": [],
+    "capabilities": {
+      "volume": "",
+      "leadTime": "",
+      "inventory": "",
+      "logistics": ""
+    },
+    "contact": {
+      "name": "",
+      "phone": "",
+      "email": "",
+      "website": ""
+    },
+    "certifications": [],
+    "hospitalityReadiness": {
+      "score": "",
+      "strengths": [],
+      "gaps": []
+    },
+    "pricing": "",
+    "projectExamples": []
+  },
+  {
+    "id": "malmo_aterbyggdepa",
+    "name": "MALMÖ ÅTERBYGGDEPÅ",
+    "description": "",
+    "location": "",
+    "services": [],
+    "capabilities": {
+      "volume": "",
+      "leadTime": "",
+      "inventory": "",
+      "logistics": ""
+    },
+    "contact": {
+      "name": "",
+      "phone": "",
+      "email": "",
+      "website": ""
+    },
+    "certifications": [],
+    "hospitalityReadiness": {
+      "score": "",
+      "strengths": [],
+      "gaps": []
+    },
+    "pricing": "",
+    "projectExamples": []
+  },
+  {
+    "id": "mater_design",
+    "name": "MATER DESIGN",
+    "description": "",
+    "location": "Copenhagen, Denmark",
+    "services": [],
+    "capabilities": {
+      "volume": "✅ Contract quantities (Villa Copenhagen supplied ~390 rooms)",
+      "leadTime": "",
+      "inventory": "MEDIUM - Öresund bridge enables but customs/logistics?",
+      "logistics": "✅ Danmark ↔ Sverige confirmed (Villa Copenhagen)"
+    },
+    "contact": {
+      "name": "",
+      "phone": "",
+      "email": "",
+      "website": "https://materdesign.com"
+    },
+    "certifications": [
+      "✅ Likely Cradle-to-Cradle or similar (company philosophy)"
+    ],
+    "hospitalityReadiness": {
+      "score": "⭐⭐⭐⭐ HIGH for new furniture from recycled materials ❌ **NOT a reuse operator** (manufactures new)",
+      "strengths": [],
+      "gaps": []
+    },
+    "pricing": "PREMIUM - Designer furniture pricing (similar to new high-end)",
+    "projectExamples": []
+  },
+  {
+    "id": "dansk_b2b_reuse_ecosystem_-_kunnskapshull",
+    "name": "DANSK B2B REUSE ECOSYSTEM - KUNNSKAPSHULL",
+    "description": "",
+    "location": "",
+    "services": [],
+    "capabilities": {
+      "volume": "",
+      "leadTime": "",
+      "inventory": "",
+      "logistics": ""
+    },
+    "contact": {
+      "name": "",
+      "phone": "",
+      "email": "",
+      "website": ""
+    },
+    "certifications": [],
+    "hospitalityReadiness": {
+      "score": "",
+      "strengths": [],
+      "gaps": []
+    },
+    "pricing": "",
+    "projectExamples": []
+  },
+  {
+    "id": "norsk_b2b_reuse_ecosystem_-_status",
+    "name": "NORSK B2B REUSE ECOSYSTEM - STATUS",
+    "description": "",
+    "location": "",
+    "services": [],
+    "capabilities": {
+      "volume": "",
+      "leadTime": "",
+      "inventory": "",
+      "logistics": ""
+    },
+    "contact": {
+      "name": "",
+      "phone": "",
+      "email": "",
+      "website": ""
+    },
+    "certifications": [],
+    "hospitalityReadiness": {
+      "score": "",
+      "strengths": [],
+      "gaps": []
+    },
+    "pricing": "",
+    "projectExamples": []
+  },
+  {
+    "id": "call_yllw_factory_-_highest_priority_⭐⭐⭐⭐⭐",
+    "name": "CALL YLLW FACTORY - HIGHEST PRIORITY ⭐⭐⭐⭐⭐",
+    "description": "• Sales of refurbished furniture • Likely volume discounts given regional network",
+    "location": "Not specifically documented (multiple locations suggest distributed); 8 locations across Sweden (regional warehouse network)",
+    "services": [],
+    "capabilities": {
+      "volume": "Corporate office scale",
+      "leadTime": "• Stock items: 2-3 weeks • Volume orders: 4-8 weeks to accumulate across locations",
+      "inventory": "",
+      "logistics": "⚠️ Sverige ↔ Finland: Possible via RP network but not standard furniture service"
+    },
+    "contact": {
+      "name": "",
+      "phone": "Via website",
+      "email": "Via website contact form",
+      "website": "https://rp.se"
+    },
+    "certifications": [
+      "⚠️ RP group has environmental credentials (waste management) • Specific product certifications not documented"
+    ],
+    "hospitalityReadiness": {
+      "score": "⭐⭐⭐ TIER 2 - MEDIUM POTENTIAL **Best for:** Regional projects outside Stockholm where RP has local presence; mid-market quality requirements",
+      "strengths": [],
+      "gaps": []
+    },
+    "pricing": "Likely available",
+    "projectExamples": []
+  },
+  {
+    "id": "call_input_greenified_-_second_priority_⭐⭐⭐⭐⭐",
+    "name": "CALL INPUT/GREENIFIED - SECOND PRIORITY ⭐⭐⭐⭐⭐",
+    "description": "",
+    "location": "",
+    "services": [],
+    "capabilities": {
+      "volume": "",
+      "leadTime": "",
+      "inventory": "",
+      "logistics": ""
+    },
+    "contact": {
+      "name": "",
+      "phone": "",
+      "email": "",
+      "website": ""
+    },
+    "certifications": [],
+    "hospitalityReadiness": {
+      "score": "",
+      "strengths": [],
+      "gaps": []
+    },
+    "pricing": "",
+    "projectExamples": []
+  },
+  {
+    "id": "call_rekomo_-_third_priority_⭐⭐⭐⭐",
+    "name": "CALL REKOMO - THIRD PRIORITY ⭐⭐⭐⭐",
+    "description": "",
+    "location": "",
+    "services": [],
+    "capabilities": {
+      "volume": "",
+      "leadTime": "",
+      "inventory": "",
+      "logistics": ""
+    },
+    "contact": {
+      "name": "",
+      "phone": "",
+      "email": "",
+      "website": ""
+    },
+    "certifications": [],
+    "hospitalityReadiness": {
+      "score": "",
+      "strengths": [],
+      "gaps": []
+    },
+    "pricing": "",
+    "projectExamples": []
+  },
+  {
+    "id": "develop_fyra_fire_testing_protocol_⭐⭐⭐⭐",
+    "name": "DEVELOP FYRA FIRE TESTING PROTOCOL ⭐⭐⭐⭐",
+    "description": "",
+    "location": "",
+    "services": [],
+    "capabilities": {
+      "volume": "",
+      "leadTime": "",
+      "inventory": "",
+      "logistics": ""
+    },
+    "contact": {
+      "name": "",
+      "phone": "",
+      "email": "",
+      "website": ""
+    },
+    "certifications": [],
+    "hospitalityReadiness": {
+      "score": "",
+      "strengths": [],
+      "gaps": []
+    },
+    "pricing": "",
+    "projectExamples": []
+  },
+  {
+    "id": "create_fyra_material_passport_template_⭐⭐⭐",
+    "name": "CREATE FYRA MATERIAL PASSPORT TEMPLATE ⭐⭐⭐",
+    "description": "",
+    "location": "",
+    "services": [],
+    "capabilities": {
+      "volume": "",
+      "leadTime": "",
+      "inventory": "",
+      "logistics": ""
+    },
+    "contact": {
+      "name": "",
+      "phone": "",
+      "email": "",
+      "website": ""
+    },
+    "certifications": [],
+    "hospitalityReadiness": {
+      "score": "",
+      "strengths": [],
+      "gaps": []
+    },
+    "pricing": "",
+    "projectExamples": []
+  },
+  {
+    "id": "request_for_quotation_rfq_-_benchmark_pricing_⭐⭐⭐",
+    "name": "REQUEST FOR QUOTATION (RFQ) - BENCHMARK PRICING ⭐⭐⭐",
+    "description": "",
+    "location": "",
+    "services": [],
+    "capabilities": {
+      "volume": "",
+      "leadTime": "",
+      "inventory": "",
+      "logistics": ""
+    },
+    "contact": {
+      "name": "",
+      "phone": "",
+      "email": "",
+      "website": ""
+    },
+    "certifications": [],
+    "hospitalityReadiness": {
+      "score": "",
+      "strengths": [],
+      "gaps": []
+    },
+    "pricing": "",
+    "projectExamples": []
+  },
+  {
+    "id": "geographic_deployment:",
+    "name": "GEOGRAPHIC DEPLOYMENT:",
+    "description": "",
+    "location": "",
+    "services": [],
+    "capabilities": {
+      "volume": "",
+      "leadTime": "",
+      "inventory": "",
+      "logistics": ""
+    },
+    "contact": {
+      "name": "",
+      "phone": "",
+      "email": "",
+      "website": ""
+    },
+    "certifications": [],
+    "hospitalityReadiness": {
+      "score": "",
+      "strengths": [],
+      "gaps": []
+    },
+    "pricing": "",
+    "projectExamples": []
+  }
+]

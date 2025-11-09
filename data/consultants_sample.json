@@ -1,0 +1,78 @@
+[
+  {
+    "id": "forsen",
+    "name": "Forsen AB",
+    "location": "Sweden",
+    "description": "Construction management specialists with 10+ hotel renovation projects. Strong expertise in hospitality sector with circular economy integration.",
+    "services": ["Construction Management", "Project Planning", "Contractor Coordination", "Budget Management"],
+    "hospitalityExperience": true,
+    "circularEconomyExperience": true,
+    "hotelProjects": 10,
+    "contact": {
+      "website": "https://www.forsen.se"
+    },
+    "certifications": ["ISO 9001", "Environmental Management"],
+    "strengths": ["Hotel expertise", "CM contracting", "Budget control"],
+    "relevantProjects": ["Multiple hotel renovations across Sweden"]
+  },
+  {
+    "id": "sweco",
+    "name": "Sweco",
+    "location": "Stockholm + Nationwide",
+    "description": "Multidisciplinary powerhouse with architecture, engineering, and environmental consulting. Large-scale project capability.",
+    "services": ["Architecture", "Engineering", "Environmental Consulting", "Project Management"],
+    "hospitalityExperience": true,
+    "circularEconomyExperience": true,
+    "contact": {
+      "website": "https://www.sweco.se"
+    },
+    "certifications": ["ISO 14001", "LEED Accredited"],
+    "strengths": ["Full-service offering", "Large scale capability", "Sustainability expertise"],
+    "relevantProjects": ["Major hotel chains", "Mixed-use developments"]
+  },
+  {
+    "id": "hifab",
+    "name": "Hifab AB",
+    "location": "Sweden",
+    "description": "70 years of project management experience. Technical consulting for complex renovation projects.",
+    "services": ["Project Management", "Technical Consulting", "Regulatory Compliance"],
+    "hospitalityExperience": true,
+    "circularEconomyExperience": false,
+    "contact": {
+      "website": "https://www.hifab.se"
+    },
+    "certifications": ["ISO 9001"],
+    "strengths": ["Deep PM experience", "Regulatory expertise", "Risk management"],
+    "relevantProjects": ["Commercial renovations", "Heritage buildings"]
+  },
+  {
+    "id": "white",
+    "name": "White Arkitekter",
+    "location": "Stockholm + Multiple offices",
+    "description": "Sustainability-focused architecture firm with strong circular economy credentials. Award-winning hotel and hospitality projects.",
+    "services": ["Sustainable Architecture", "Interior Design", "Circular Design Strategy"],
+    "hospitalityExperience": true,
+    "circularEconomyExperience": true,
+    "contact": {
+      "website": "https://www.white.se"
+    },
+    "certifications": ["LEED Platinum", "Circular Economy Leader"],
+    "strengths": ["Sustainability leadership", "Design excellence", "Circular economy pioneers"],
+    "relevantProjects": ["Nordic Choice Hotels", "Sustainable hotel concepts"]
+  },
+  {
+    "id": "arup-nordics",
+    "name": "Arup (Nordics)",
+    "location": "Stockholm + Copenhagen",
+    "description": "Global engineering consultancy with Nordic presence. Expertise in sustainable building systems and fire safety compliance.",
+    "services": ["Engineering", "Fire Safety", "Sustainability Consulting", "Building Performance"],
+    "hospitalityExperience": true,
+    "circularEconomyExperience": true,
+    "contact": {
+      "website": "https://www.arup.com"
+    },
+    "certifications": ["ISO 14001", "Fire Safety Engineering"],
+    "strengths": ["Technical excellence", "Fire safety expertise", "Global resources"],
+    "relevantProjects": ["International hotel chains", "Complex renovations"]
+  }
+]

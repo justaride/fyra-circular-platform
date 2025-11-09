@@ -1,0 +1,42 @@
+{
+  "fireSafety": {
+    "overview": "",
+    "bbrRequirements": [],
+    "testingStandards": [
+      "Fire cert for reupholstered furniture: Often requires re-testing"
+    ],
+    "documentation": [
+      "RISE Fire Research: Multiple locations (Stockholm, Borås, Lund)",
+      "Fire Coverage: EN 1021-1 minimum for upholstered furniture",
+      "Non-compliance (fails fire test at site): Replace with certified item",
+      "Reused fire doors: Strict; usually requires original EI₂ 30 cert"
+    ]
+  },
+  "buildingCodes": {
+    "overview": "",
+    "hotelSpecific": [],
+    "materialRequirements": [
+      "BBR Chapter 5 (Boverkets Byggregler): Boverket"
+    ]
+  },
+  "bvbStandards": {
+    "overview": "",
+    "scoring": [],
+    "certificationProcess": [
+      "BVB non-rated materials: Often flags for review"
+    ]
+  },
+  "documentation": {
+    "required": [],
+    "recommended": [],
+    "templates": [
+      "Documentation Quality: 5%",
+      "Missing documentation: Obtain from supplier or test"
+    ]
+  },
+  "implementation": {
+    "tips": [],
+    "bestPractices": [],
+    "commonChallenges": []
+  }
+}

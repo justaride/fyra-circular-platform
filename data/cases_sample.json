@@ -1,0 +1,144 @@
+[
+  {
+    "id": "blique-nobis",
+    "name": "Blique by Nobis",
+    "location": "Stockholm, Sweden",
+    "year": "2016",
+    "size": "249 rooms",
+    "category": "Boutique Hotel",
+    "description": "Adaptive reuse of 1930s industrial building into modern boutique hotel. Pioneering circular economy approach in Nordic hospitality.",
+    "circularElements": [
+      "Reclaimed wood flooring from demolished buildings",
+      "Vintage furniture refurbished for public spaces",
+      "Upcycled industrial elements as design features",
+      "Locally sourced reclaimed materials"
+    ],
+    "impact": {
+      "co2Savings": "~300 tonnes CO2e",
+      "circularPercent": "35%",
+      "costSavings": "15% on interior fit-out"
+    },
+    "architect": "Wingårdhs",
+    "partners": ["Local salvage operators", "Vintage furniture specialists"],
+    "challenges": ["Fire safety documentation", "Volume procurement of matching items"],
+    "outcomes": ["Award-winning design", "Strong sustainability brand", "Media recognition"],
+    "relevance": "Demonstrates feasibility of large-scale circular renovation in hospitality"
+  },
+  {
+    "id": "gothia-towers",
+    "name": "Gothia Towers",
+    "location": "Göteborg, Sweden",
+    "year": "2019-2020",
+    "size": "1,200+ rooms",
+    "category": "Conference Hotel",
+    "description": "Major renovation of Scandinavia's largest hotel with sustainability focus. Phased approach to minimize operational disruption.",
+    "circularElements": [
+      "Furniture reuse program (chairs, desks)",
+      "Carpet recycling initiative",
+      "Fixture refurbishment",
+      "Donation of old furniture to social enterprises"
+    ],
+    "impact": {
+      "co2Savings": "~500 tonnes CO2e",
+      "circularPercent": "25%",
+      "wasteReduction": "60% diverted from landfill"
+    },
+    "partners": ["Input Interiör", "Recycling Partner"],
+    "challenges": ["Scale and timeline", "Consistency across 1,200 rooms"],
+    "outcomes": ["Maintained operations during renovation", "Achieved sustainability certifications"],
+    "relevance": "Proves circular approach works at enterprise scale"
+  },
+  {
+    "id": "hotel-ottilia",
+    "name": "Hotel Ottilia",
+    "location": "Copenhagen, Denmark",
+    "year": "2017",
+    "size": "155 rooms",
+    "category": "Design Hotel",
+    "description": "Former car factory converted to hotel with strong circular design narrative. Industrial heritage preserved and celebrated.",
+    "circularElements": [
+      "Original factory floors retained",
+      "Industrial furniture repurposed",
+      "Reclaimed materials from site",
+      "Vintage lighting fixtures restored"
+    ],
+    "impact": {
+      "co2Savings": "~200 tonnes CO2e",
+      "circularPercent": "40%",
+      "heritagePreservation": "80% of original structure retained"
+    },
+    "architect": "Brøchner Hotels (in-house)",
+    "challenges": ["Heritage compliance", "Matching vintage aesthetics at scale"],
+    "outcomes": ["Strong design identity", "Guest satisfaction with sustainability story"],
+    "relevance": "Shows how circular design enhances brand differentiation"
+  },
+  {
+    "id": "clarion-post",
+    "name": "Clarion Hotel Post",
+    "location": "Göteborg, Sweden",
+    "year": "2011 (early pioneer)",
+    "size": "500+ rooms",
+    "category": "Urban Hotel",
+    "description": "Conversion of historic post office into major hotel. Pioneering reuse project that influenced Nordic hotel development.",
+    "circularElements": [
+      "Building shell fully retained",
+      "Original architectural features preserved",
+      "Vintage furniture in public spaces",
+      "Adaptive reuse of historic structure"
+    ],
+    "impact": {
+      "co2Savings": "~1,000 tonnes CO2e vs new build",
+      "heritagePreservation": "100% building retention"
+    },
+    "partners": ["Nordic Choice Hotels", "Heritage consultants"],
+    "outcomes": ["Flagship property for Nordic Choice", "Tourism destination in itself"],
+    "relevance": "Early proof-of-concept for adaptive reuse in hospitality"
+  },
+  {
+    "id": "generator-stockholm",
+    "name": "Generator Stockholm",
+    "location": "Stockholm, Sweden",
+    "year": "2019",
+    "size": "244 rooms",
+    "category": "Hostel/Budget Hotel",
+    "description": "Conversion of former brewery with industrial aesthetic. Budget-conscious circular approach for millennial travelers.",
+    "circularElements": [
+      "Industrial salvage as decor",
+      "Reclaimed furniture in common areas",
+      "DIY aesthetic using waste materials",
+      "Local artist collaborations with upcycled materials"
+    ],
+    "impact": {
+      "co2Savings": "~150 tonnes CO2e",
+      "circularPercent": "30%",
+      "costSavings": "20% on interior budget"
+    },
+    "challenges": ["Budget constraints", "Fire safety with varied materials"],
+    "outcomes": ["Strong social media presence", "Appeals to sustainability-conscious travelers"],
+    "relevance": "Demonstrates circular economy viability in budget segment"
+  },
+  {
+    "id": "scandic-continental",
+    "name": "Scandic Continental",
+    "location": "Stockholm, Sweden",
+    "year": "2018",
+    "size": "392 rooms",
+    "category": "City Hotel",
+    "description": "Major chain hotel renovation with circular procurement strategy. Systematic approach to sustainable renovation.",
+    "circularElements": [
+      "Furniture reuse program",
+      "Carpet recycling",
+      "Fixture refurbishment",
+      "Mattress recycling program"
+    ],
+    "impact": {
+      "co2Savings": "~250 tonnes CO2e",
+      "circularPercent": "20%",
+      "wasteReduction": "50% diverted from landfill"
+    },
+    "partners": ["YLLW Factory", "Scandic procurement team"],
+    "challenges": ["Brand standards compliance", "Chain-wide scalability"],
+    "outcomes": ["Replicable model for Scandic group", "Certification achievements"],
+    "relevance": "Template for hotel chain circular renovation"
+  }
+]
