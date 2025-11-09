@@ -27,6 +27,21 @@ import { ExclamationCircleIcon as ExclamationCircleSolid, StarIcon, HeartIcon as
 type Supplier = typeof suppliersData[0];
 type TabType = 'overview' | 'services' | 'trackRecord' | 'contact';
 
+// Helper to check if contact info is valid (not placeholder text)
+const isValidContactInfo = (value: string | undefined): boolean => {
+  if (!value) return false;
+  const placeholders = [
+    'not documented',
+    'via website',
+    'contact via',
+    'not available',
+    'n/a',
+    'tbd'
+  ];
+  const lowerValue = value.toLowerCase();
+  return !placeholders.some(placeholder => lowerValue.includes(placeholder));
+};
+
 // Service categorization helper
 const categorizeServices = (services: string[]) => {
   const coreServices = ['Furniture Sales', 'Refurbishment', 'Custom Design', 'Quality Inspection', 'Reuse Sales', 'Sourcing'];
@@ -292,7 +307,7 @@ function SupplierCard({
 
             {/* Quick Contact */}
             <div className="flex gap-3 pt-2">
-              {supplier.contact.phone && (
+              {supplier.contact.phone && isValidContactInfo(supplier.contact.phone) && (
                 <a
                   href={`tel:${supplier.contact.phone}`}
                   className="flex-1 bg-emerald-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-emerald-700 transition flex items-center justify-center gap-2"
@@ -301,7 +316,7 @@ function SupplierCard({
                   Call Now
                 </a>
               )}
-              {supplier.contact.email && (
+              {supplier.contact.email && isValidContactInfo(supplier.contact.email) && (
                 <a
                   href={`mailto:${supplier.contact.email}`}
                   className="flex-1 bg-white text-emerald-600 px-4 py-2 rounded-md text-sm font-medium border-2 border-emerald-600 hover:bg-emerald-50 transition flex items-center justify-center gap-2"
@@ -547,9 +562,13 @@ function SupplierCard({
                     <PhoneIcon className="w-5 h-5 text-gray-400 mt-1" />
                     <div>
                       <div className="text-xs text-gray-500 uppercase tracking-wide">Phone</div>
-                      <a href={`tel:${supplier.contact.phone}`} className="text-sm font-medium text-emerald-600 hover:text-emerald-700">
-                        {supplier.contact.phone}
-                      </a>
+                      {isValidContactInfo(supplier.contact.phone) ? (
+                        <a href={`tel:${supplier.contact.phone}`} className="text-sm font-medium text-emerald-600 hover:text-emerald-700">
+                          {supplier.contact.phone}
+                        </a>
+                      ) : (
+                        <span className="text-sm text-gray-600 italic">{supplier.contact.phone}</span>
+                      )}
                     </div>
                   </div>
                 )}
@@ -558,9 +577,13 @@ function SupplierCard({
                     <EnvelopeIcon className="w-5 h-5 text-gray-400 mt-1" />
                     <div>
                       <div className="text-xs text-gray-500 uppercase tracking-wide">Email</div>
-                      <a href={`mailto:${supplier.contact.email}`} className="text-sm font-medium text-emerald-600 hover:text-emerald-700 break-all">
-                        {supplier.contact.email}
-                      </a>
+                      {isValidContactInfo(supplier.contact.email) ? (
+                        <a href={`mailto:${supplier.contact.email}`} className="text-sm font-medium text-emerald-600 hover:text-emerald-700 break-all">
+                          {supplier.contact.email}
+                        </a>
+                      ) : (
+                        <span className="text-sm text-gray-600 italic">{supplier.contact.email}</span>
+                      )}
                     </div>
                   </div>
                 )}
@@ -584,7 +607,7 @@ function SupplierCard({
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              {supplier.contact.phone && (
+              {supplier.contact.phone && isValidContactInfo(supplier.contact.phone) && (
                 <a
                   href={`tel:${supplier.contact.phone}`}
                   className="bg-emerald-600 text-white px-6 py-3 rounded-md font-medium hover:bg-emerald-700 transition flex items-center justify-center gap-2"
@@ -593,7 +616,7 @@ function SupplierCard({
                   Call {supplier.name}
                 </a>
               )}
-              {supplier.contact.email && (
+              {supplier.contact.email && isValidContactInfo(supplier.contact.email) && (
                 <a
                   href={`mailto:${supplier.contact.email}`}
                   className="bg-white text-emerald-600 px-6 py-3 rounded-md font-medium border-2 border-emerald-600 hover:bg-emerald-50 transition flex items-center justify-center gap-2"
@@ -745,7 +768,7 @@ function ComparisonTable({
                   {suppliers.map(supplier => (
                     <td key={supplier.id} className="p-3 text-center">
                       <div className="flex gap-2 justify-center">
-                        {supplier.contact.phone && (
+                        {supplier.contact.phone && isValidContactInfo(supplier.contact.phone) && (
                           <a
                             href={`tel:${supplier.contact.phone}`}
                             className="p-2 bg-emerald-100 text-emerald-700 rounded-full hover:bg-emerald-200"
@@ -753,7 +776,7 @@ function ComparisonTable({
                             <PhoneIcon className="w-4 h-4" />
                           </a>
                         )}
-                        {supplier.contact.email && (
+                        {supplier.contact.email && isValidContactInfo(supplier.contact.email) && (
                           <a
                             href={`mailto:${supplier.contact.email}`}
                             className="p-2 bg-blue-100 text-blue-700 rounded-full hover:bg-blue-200"
