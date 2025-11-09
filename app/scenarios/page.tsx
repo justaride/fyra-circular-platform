@@ -197,10 +197,10 @@ export default function ScenariosPage() {
                         <span className="text-red-600 mr-2 mt-1">⚠</span>
                         <div className="flex-1">
                           <p className="font-semibold text-gray-900 mb-1">{risk.risk}</p>
-                          {risk.timeline && (
+                          {'timeline' in risk && risk.timeline && (
                             <p className="text-xs text-gray-600 mb-2">Timeline impact: {risk.timeline}</p>
                           )}
-                          {risk.cost && (
+                          {'cost' in risk && risk.cost && (
                             <p className="text-xs text-gray-600 mb-2">Cost: {risk.cost}</p>
                           )}
                           <div className="bg-white rounded p-3 mt-2">
